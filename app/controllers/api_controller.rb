@@ -20,7 +20,7 @@ class ApiController < ApplicationController
 		print "This is my new post request."
 		print params
 	  rtn = {
-	  	status: "422"
+	  	status: "201"
 	  }
 		render :json => rtn
 	end
