@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post         'api/postRequest'
   get          'api/getActivities'
 
+  get          'users/signin'
+
   resources    :users
   
 end
