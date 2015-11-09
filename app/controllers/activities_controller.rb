@@ -40,6 +40,12 @@ class ActivitiesController < ApplicationController
 		render :json => rtn
 	end
 
+	def getsingle
+		rtn = {
+	  	status: "201"
+	  }
+		render :json => rtn
+	end
 
 	private
 		
