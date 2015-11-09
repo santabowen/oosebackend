@@ -67,7 +67,6 @@ class ActivitiesController < ApplicationController
 			activity[:location]      = params[:Location]
 			activity[:groupSize]     = params[:GroupSize]
 			activity[:comments]      = params[:Comments]
-			activity[:startTime]     = params[:StartTime]
 			activity[:duration]      = params[:Duration]
 			activity[:memberNum]     = 0
 			return activity
