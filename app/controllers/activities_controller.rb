@@ -41,7 +41,18 @@ class ActivitiesController < ApplicationController
 	end
 
 	def getsingle
+		a = Activity.find_by(id: params[:actId])
+		rtnacts = {
+			actid:          a.id,
+			actType:        a.activityType,
+			groupSize:      a.groupSize,
+			location:       a.location,
+			startTime:      a.startTime,
+			duration:       a.duration,
+			comments:       a.comments
+		}
 		rtn = {
+			act:    rtnact,
 	  	status: "201"
 	  }
 		render :json => rtn
