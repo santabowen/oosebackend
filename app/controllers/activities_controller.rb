@@ -43,9 +43,6 @@ class ActivitiesController < ApplicationController
 	def getsingle
 		a = Activity.find_by(id: params[:actId])
 		members = []
-		puts "~~~~~~~~~~~~~~~~~\n"
-		puts a
-		puts "~~~~~~~~~~~~~~~~~\n"
 		a.memberactivities.each do |ma|
 			members << {
 				uid:      ma.user_id
