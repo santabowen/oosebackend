@@ -5655,3 +5655,17 @@ Processing by ActivitiesController#getsingle as */*
   [1m[36mActivity Load (0.3ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1  ORDER BY "activities"."created_at" DESC LIMIT 1[0m  [["id", 2]]
   [1m[35mMemberactivity Load (0.3ms)[0m  SELECT "memberactivities".* FROM "memberactivities" WHERE "memberactivities"."activity_id" = $1  [["activity_id", 2]]
 Completed 200 OK in 40ms (Views: 0.4ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/activities/join" for ::1 at 2015-11-09 01:14:20 -0500
+Processing by ActivitiesController#join as */*
+  Parameters: {"UserID"=>"1", "ActID"=>"2"}
+Can't verify CSRF token authenticity
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1  ORDER BY "activities"."created_at" DESC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "activities" SET "memberNum" = $1, "updated_at" = $2 WHERE "activities"."id" = $3[0m  [["memberNum", 1], ["updated_at", "2015-11-09 06:14:20.662354"], ["id", 2]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["activity_id", 2], ["created_at", "2015-11-09 06:14:20.684828"], ["updated_at", "2015-11-09 06:14:20.684828"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 10.4ms)

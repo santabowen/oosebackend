@@ -42,6 +42,7 @@ class ActivitiesController < ApplicationController
 
 	def join
 		a = Activity.find_by(id: params[:ActID])
+		a.update(memberNum: a.memberNum + 1)
 		a.memberactivities.create(user_id: params[:UserID], activity_id: params[:ActID])
 		rtn = {
 	  	status: "201"
@@ -90,7 +91,7 @@ class ActivitiesController < ApplicationController
 			activity[:duration]      = params[:Duration]
 			activity[:longitude]     = params[:Lng]
 			activity[:latitude]      = params[:Lat]
-			activity[:memberNum]     = 0
+			activity[:memberNum]     = 1
 			return activity
 		end
 end
