@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
         puts "\n~~~~~~~~~~Right Email and Password~~~~~~~~~~~~\n"
         user
       else
+        puts "\n~~~~~~~~~~Wrong Password~~~~~~~~~~~~\n"
         puts ::BCrypt::Engine.hash_secret(password, user.password_salt)
       end
     else
