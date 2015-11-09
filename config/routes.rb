@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   get          'api/getActivities'
 
   get          'users/signin'
+  get          'users/fbsignin'
   post         'activities/post'
-  get          'activities/get'
+  get          'activities/getsingle'
 
   resources    :users
   resources    :activities

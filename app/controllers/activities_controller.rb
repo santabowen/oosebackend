@@ -3,8 +3,8 @@ class ActivitiesController < ApplicationController
   end
 
   def post
-		@act = Activity.new(activity_params) 
-		if @act.save
+  	@user = User.find_by(id: params[:HostID])
+		if @user.activities.create(activity_params) 
 			print "Successfully create an activity."
 			rtn = {
 		  	status: "201"
@@ -45,13 +45,14 @@ class ActivitiesController < ApplicationController
 		
 		def activity_params
 			activity = Hash.new
+			activity[:hostid]        = params[:HostID]
 			activity[:activityType]  = params[:ActivityType]
 			activity[:location]      = params[:Location]
 			activity[:groupSize]     = params[:GroupSize]
 			activity[:comments]      = params[:Comments]
 			activity[:startTime]     = params[:StartTime]
-			activity[:hostid]        = params[:HostID]
 			activity[:duration]      = params[:Duration]
+			activity[:memberNum]     = 0
 			return activity
 		end
 end
