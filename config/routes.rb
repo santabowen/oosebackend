@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post         'activities/post'
   get          'activities/getsingle'
   get          'activities/get'
+  post				 'activities/join'
 
   resources    :users
   resources    :activities

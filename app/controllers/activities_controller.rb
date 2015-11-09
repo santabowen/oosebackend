@@ -40,9 +40,19 @@ class ActivitiesController < ApplicationController
 		render :json => rtn
 	end
 
+	def join
+		a = Activity.find_by(id: params[:ActID])
+		a.memberactivities.create(user_id: params[:UserID], activity_id: params[:ActID])
+		rtn = {
+	  	status: "201"
+	  }
+		render :json => rtn
+	end
+
 	def getsingle
 		a = Activity.find_by(id: params[:actId])
 		members = []
+		
 		a.memberactivities.each do |ma|
 			members << {
 				uid:      ma.user_id
