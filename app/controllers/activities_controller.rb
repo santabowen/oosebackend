@@ -42,7 +42,7 @@ class ActivitiesController < ApplicationController
 
 	def getsingle
 		a = Activity.find_by(id: params[:actId])
-		rtnacts = {
+		rtnact = {
 			actid:          a.id,
 			actType:        a.activityType,
 			groupSize:      a.groupSize,

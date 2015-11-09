@@ -14,14 +14,14 @@ class User < ActiveRecord::Base
 
   def encrypt_password
     if password.present?      
-      self.password_salt = ::BCrypt::Engine.generate_salt
-      self.password_digest = ::BCrypt::Engine.hash_secret(password, password_salt)
+      self.password_salt = BCrypt::Engine.generate_salt
+      self.password_digest = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
 
   def self.authenticate(user, password)  
     if user
-      if user.password_digest == ::BCrypt::Engine.hash_secret(password, user.password_salt)
+      if user.password_digest == BCrypt::Engine.hash_secret(password, user.password_salt)
         puts "\n~~~~~~~~~~Right Email and Password~~~~~~~~~~~~\n"
         user
       else
