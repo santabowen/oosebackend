@@ -42,14 +42,27 @@ class ActivitiesController < ApplicationController
 
 	def getsingle
 		a = Activity.find_by(id: params[:actId])
+		members = []
+		puts "~~~~~~~~~~~~~~~~~\n"
+		puts a
+		puts "~~~~~~~~~~~~~~~~~\n"
+		a.memberactivities.each do |ma|
+			members << {
+				uid:      ma.user_id
+			}
+		end
 		rtnact = {
-			actid:          a.id,
-			actType:        a.activityType,
-			groupSize:      a.groupSize,
-			location:       a.location,
-			startTime:      a.startTime,
-			duration:       a.duration,
-			comments:       a.comments
+			actid:            a.id,
+			actType:          a.activityType,
+			groupSize:        a.groupSize,
+			currentGroupSize: a.memberNum,
+			location:         a.location,
+			startTime:        a.startTime,
+			duration:         a.duration,
+			comments:         a.comments,
+			longitude:        a.longitude,
+			latitude:         a.latitude,
+			memberlist:       members
 		}
 		rtn = {
 			act:    rtnact,
@@ -68,6 +81,8 @@ class ActivitiesController < ApplicationController
 			activity[:groupSize]     = params[:GroupSize]
 			activity[:comments]      = params[:Comments]
 			activity[:duration]      = params[:Duration]
+			activity[:longitude]     = params[:Lng]
+			activity[:latitude]      = params[:Lat]
 			activity[:memberNum]     = 0
 			return activity
 		end

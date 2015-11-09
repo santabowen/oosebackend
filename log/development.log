@@ -5095,3 +5095,356 @@ Can't verify CSRF token authenticity
   [1m[35mSQL (1.7ms)[0m  INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "startTime", "duration", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["hostid", "1"], ["activityType", "JOGGING"], ["location", "Piccadilly Circus"], ["groupSize", 2], ["comments", "test #4."], ["startTime", "2000-01-01 00:00:00.000000"], ["duration", 1], ["memberNum", 0], ["user_id", 1], ["created_at", "2015-11-09 02:34:24.066478"], ["updated_at", "2015-11-09 02:34:24.066478"]]
   [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
 Completed 200 OK in 80ms (Views: 0.3ms | ActiveRecord: 11.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMemberActivities (20151109040414)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (18.3ms)[0m  [1mCREATE TABLE "member_activities" ("id" serial primary key, "user_id" integer, "activity_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.9ms)[0m  CREATE  INDEX  "index_relationships_on_user_id" ON "relationships"  ("user_id")
+PG::UndefinedTable: ERROR:  relation "relationships" does not exist
+: CREATE  INDEX  "index_relationships_on_user_id" ON "relationships"  ("user_id")
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMemberactivities (20151109040720)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "memberactivities" ("id" serial primary key, "user_id" integer, "activity_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_memberactivities_on_user_id" ON "memberactivities"  ("user_id")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_memberactivities_on_activity_id" ON "memberactivities"  ("activity_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "index_memberactivities_on_user_id_and_activity_id" ON "memberactivities"  ("user_id", "activity_id")
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151109040720"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (6.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/activities/getsingle" for ::1 at 2015-11-08 23:25:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ActivitiesController#getsingle as */*
+  [1m[35mActivity Load (1.8ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" IS NULL  ORDER BY "activities"."created_at" DESC LIMIT 1
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.0ms)
+
+NoMethodError (undefined method `memberactivities' for nil:NilClass):
+  app/controllers/activities_controller.rb:46:in `getsingle'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (41.4ms)
+
+
+Started GET "/activities/getsingle?actId=1" for ::1 at 2015-11-08 23:27:02 -0500
+Processing by ActivitiesController#getsingle as */*
+  Parameters: {"actId"=>"1"}
+  [1m[36mActivity Load (0.8ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1  ORDER BY "activities"."created_at" DESC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `memberactivities' for nil:NilClass):
+  app/controllers/activities_controller.rb:46:in `getsingle'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (41.6ms)
+
+
+Started GET "/activities/getsingle?actId=1" for ::1 at 2015-11-08 23:27:51 -0500
+Processing by ActivitiesController#getsingle as */*
+  Parameters: {"actId"=>"1"}
+  [1m[35mActivity Load (0.8ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1  ORDER BY "activities"."created_at" DESC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 3.1ms)
+
+NoMethodError (undefined method `memberactivities' for nil:NilClass):
+  app/controllers/activities_controller.rb:49:in `getsingle'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (36.0ms)
+
+
+Started GET "/activities/getsingle?actId=3" for ::1 at 2015-11-08 23:28:37 -0500
+Processing by ActivitiesController#getsingle as */*
+  Parameters: {"actId"=>"3"}
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1  ORDER BY "activities"."created_at" DESC LIMIT 1[0m  [["id", 3]]
+  [1m[35mMemberactivity Load (0.9ms)[0m  SELECT "memberactivities".* FROM "memberactivities" WHERE "memberactivities"."activity_id" = $1  [["activity_id", 3]]
+Completed 200 OK in 47ms (Views: 0.4ms | ActiveRecord: 5.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddLatlngToActivity (20151109043416)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mALTER TABLE "activities" ADD "longitute" decimal(64,12)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" ADD "latitude" decimal(64,12)
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151109043416"]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (6.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (7.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started POST "/activities/post" for ::1 at 2015-11-08 23:46:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"3", "GroupSize"=>"2", "Lng"=>"-0.1346614", "ActivityType"=>"JOGGING", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"0", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.4ms)
+
+NoMethodError (undefined method `activities' for nil:NilClass):
+  app/controllers/activities_controller.rb:7:in `post'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (34.1ms)
+
+
+Started POST "/activities/post" for ::1 at 2015-11-08 23:48:17 -0500
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"2", "GroupSize"=>"2", "Lng"=>"-0.1346614", "ActivityType"=>"JOGGING", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"0", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 5.9ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'longitude' for Activity.):
+  app/controllers/activities_controller.rb:7:in `post'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (42.5ms)
+
+
+Started POST "/activities/post" for ::1 at 2015-11-08 23:49:49 -0500
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"2", "GroupSize"=>"2", "Lng"=>"-0.1346614", "ActivityType"=>"JOGGING", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"0", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'longitude' for Activity.):
+  app/controllers/activities_controller.rb:7:in `post'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (41.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddLatlngToActivity (20151109043416)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.8ms)[0m  ALTER TABLE "activities" DROP "latitude"
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "activities" DROP "longitute"[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1  [["version", "20151109043416"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddLatlngToActivity (20151109043416)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "activities" ADD "longitude" decimal(64,12)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" ADD "latitude" decimal(64,12)
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151109043416"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started POST "/activities/post" for ::1 at 2015-11-08 23:51:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"2", "GroupSize"=>"2", "Lng"=>"-0.1346614", "ActivityType"=>"JOGGING", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"0", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 8.5ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'members' for Activity.):
+  app/controllers/activities_controller.rb:7:in `post'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (38.1ms)
+
+
+Started POST "/activities/post" for ::1 at 2015-11-08 23:52:42 -0500
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"2", "GroupSize"=>"2", "Lng"=>"-0.1346614", "ActivityType"=>"JOGGING", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"0", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["hostid", "2"], ["activityType", "JOGGING"], ["location", "Piccadilly Circus"], ["groupSize", 2], ["comments", "test #4."], ["duration", 1000], ["longitude", "-0.1346614"], ["latitude", "51.5101005"], ["memberNum", 0], ["user_id", 2], ["created_at", "2015-11-09 04:52:42.239994"], ["updated_at", "2015-11-09 04:52:42.239994"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 61ms (Views: 0.5ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/activities/getsingle?actId=3" for ::1 at 2015-11-08 23:53:07 -0500
+Processing by ActivitiesController#getsingle as */*
+  Parameters: {"actId"=>"3"}
+  [1m[36mActivity Load (0.8ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1  ORDER BY "activities"."created_at" DESC LIMIT 1[0m  [["id", 3]]
+  [1m[35mMemberactivity Load (0.7ms)[0m  SELECT "memberactivities".* FROM "memberactivities" WHERE "memberactivities"."activity_id" = $1  [["activity_id", 3]]
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/activities/getsingle?actId=5" for ::1 at 2015-11-08 23:53:41 -0500
+Processing by ActivitiesController#getsingle as */*
+  Parameters: {"actId"=>"5"}
+  [1m[36mActivity Load (0.8ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1  ORDER BY "activities"."created_at" DESC LIMIT 1[0m  [["id", 5]]
+  [1m[35mMemberactivity Load (0.4ms)[0m  SELECT "memberactivities".* FROM "memberactivities" WHERE "memberactivities"."activity_id" = $1  [["activity_id", 5]]
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.2ms)
