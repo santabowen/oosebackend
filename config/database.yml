@@ -1,25 +1,17 @@
 development:
   adapter: postgresql
-  host: localhost
   encoding: unicode
-  database: myapp_development
+  database: oose2015dev
   pool: 5
-  username: myapp
-  password: password1
 
 test:
   adapter: postgresql
-  host: localhost
   encoding: unicode
-  database: myapp_test
+  database: oose2015test
   pool: 5
-  username: myapp
-  password: password1
 
 production:
-  <<: *default
   adapter: postgresql
-  host: localhost
-  database: production
-  encoding: UTF8
-
+  encoding: unicode
+  database: oose2015prod
+  pool: 5
