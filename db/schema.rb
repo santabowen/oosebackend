@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20151109043416) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "authtoken"
-    t.string   "password_salt"    
+    t.string   "password_salt"
     t.string   "gender"
   end
 
