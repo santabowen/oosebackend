@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :activities, dependent: :destroy
 	attr_accessor :password
-	before_save { self.email = email.downcase }
+	before_save { self.email  = email.downcase }
+  before_save { self.gender = gender.downcase }
 	before_save :encrypt_password
 	validates :name, presence: true, length: { maximum: 50 } 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
@@ -22,7 +24,8 @@ class User < ActiveRecord::Base
         puts "\n~~~~~~~~~~Right Email and Password~~~~~~~~~~~~\n"
         user
       else
-        puts BCrypt::Engine.hash_secret(password, user.password_salt)
+        puts "\n~~~~~~~~~~Wrong Password~~~~~~~~~~~~\n"
+        puts ::BCrypt::Engine.hash_secret(password, user.password_salt)
       end
     else
       nil

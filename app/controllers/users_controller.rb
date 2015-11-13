@@ -27,11 +27,9 @@ class UsersController < ApplicationController
       @user = User.find_by(email: params[:email])
       
       if @user 
-        if User.authenticate(@user, params[:password]) 
-        	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-        	puts @user.authtoken
-        	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+        if User.authenticate(@user, params[:password])
           rtn = {
+          	uid:        @user.id,
           	authtoken:  @user.authtoken,
           	status: 		"200"
           }
@@ -57,6 +55,7 @@ class UsersController < ApplicationController
 			user[:name]      = params[:name]
 			user[:email]     = params[:email]
 			user[:password]  = params[:password]
+			user[:gender]    = params[:gender]
 			user[:authtoken] = rand_string(20)
 			return user
 		end

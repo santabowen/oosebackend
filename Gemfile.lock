@@ -154,7 +154,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt (= 3.1.10)
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
   jbuilder (= 2.2.3)
