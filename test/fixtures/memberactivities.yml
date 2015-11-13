@@ -3,3 +3,7 @@
 one:
   user_id: 1
   activity_id: 1
+
+two:
+  user_id: 1
+  activity_id: 1

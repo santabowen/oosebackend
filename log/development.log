@@ -2650,25 +2650,6 @@ Processing by ApiController#postRequest as */*
   Parameters: {"password"=>"[FILTERED]", "username"=>"Bowen"}
 Can't verify CSRF token authenticity
 Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
-<<<<<<< HEAD
-
-
-Started GET "/api/getActivities" for ::1 at 2015-10-24 20:53:16 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-=======
   [1m[36m (17.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
   [1m[35m (2.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -3958,8 +3939,6 @@ Processing by UsersController#signin as */*
   Parameters: {"email"=>"libowensta@gmail.com", "password"=>"[FILTERED]"}
   [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
 Completed 200 OK in 112ms (Views: 0.5ms | ActiveRecord: 1.1ms)
-<<<<<<< HEAD
-=======
 
 
 Started GET "/users/signin?email=libowensta%40gmail%2Ecom&password=[FILTERED]" for ::1 at 2015-11-07 16:54:43 -0500
@@ -4034,7 +4013,6 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Use
   activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
   activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
   activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
->>>>>>> master
   actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -4063,35 +4041,6 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Use
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (3.4ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (90.2ms)
-
-
-Started GET "/api/getActivities" for ::1 at 2015-10-24 20:54:32 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -4126,7 +4075,6 @@ AbstractController::ActionNotFound (The action 'index' could not be found for Us
   activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
   activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
   activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
->>>>>>> master
   actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -4155,43 +4103,6 @@ AbstractController::ActionNotFound (The action 'index' could not be found for Us
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.5ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (80.5ms)
-
-
-Started GET "/api/getActivities" for ::1 at 2015-10-24 20:54:49 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
-  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -4204,7 +4115,6 @@ Started GET "/user" for ::1 at 2015-11-07 17:20:02 -0500
 
 ActionController::RoutingError (No route matches [GET] "/user"):
   web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
->>>>>>> master
   web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
@@ -4225,35 +4135,6 @@ ActionController::RoutingError (No route matches [GET] "/user"):
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.7ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (85.6ms)
-
-
-Started GET "/api/getActivities" for ::1 at 2015-10-24 20:58:41 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -4309,7 +4190,6 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Use
   activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
   activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
   activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
->>>>>>> master
   actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -4338,35 +4218,6 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Use
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (86.5ms)
-
-
-Started GET "/" for ::1 at 2015-10-24 21:03:08 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -4401,7 +4252,6 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Use
   activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
   activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
   activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
->>>>>>> master
   actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -4430,35 +4280,6 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Use
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (92.5ms)
-
-
-Started GET "/" for ::1 at 2015-10-24 21:04:53 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -4493,7 +4314,6 @@ AbstractController::ActionNotFound (The action 'index' could not be found for Us
   activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
   activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
   activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
->>>>>>> master
   actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -4522,35 +4342,6 @@ AbstractController::ActionNotFound (The action 'index' could not be found for Us
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (3.3ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.1ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.1ms)
-
-
-Started GET "/" for ::1 at 2015-10-24 21:04:56 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -4647,7 +4438,6 @@ LoadError (Unable to autoload constant ActivitiesController, expected /Users/Bow
   activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
   activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
   activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
->>>>>>> master
   actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -4676,35 +4466,6 @@ LoadError (Unable to autoload constant ActivitiesController, expected /Users/Bow
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (2.8ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
-  Rendered /Users/BowenLi/.gem/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (77.1ms)
-
-
-Started GET "/" for ::1 at 2015-10-24 22:30:42 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -4753,7 +4514,6 @@ LoadError (Unable to autoload constant ActivitiesController, expected /Users/Bow
   activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
   activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
   activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
->>>>>>> master
   actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -4782,35 +4542,6 @@ LoadError (Unable to autoload constant ActivitiesController, expected /Users/Bow
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (3.1ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.3ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (91.2ms)
-
-
-Started POST "/console/repl_sessions/52ae7fc8ae9b68fb5cb189a9dbd7ac2c/trace" for ::1 at 2015-10-24 22:31:00 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -4877,7 +4608,6 @@ AbstractController::ActionNotFound (The action 'index' could not be found for Us
   activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
   activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
   activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
->>>>>>> master
   actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -4906,43 +4636,6 @@ AbstractController::ActionNotFound (The action 'index' could not be found for Us
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (2.9ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (76.3ms)
-
-
-Started POST "/console/repl_sessions/52ae7fc8ae9b68fb5cb189a9dbd7ac2c/trace" for ::1 at 2015-10-24 22:31:04 -0400
-
-ActiveRecord::AdapterNotSpecified (database configuration does not specify adapter):
-  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:171:in `spec'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
-  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
-  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
-  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
-  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
-  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -5808,7 +5501,6 @@ Started GET "/api/changeLogo" for ::1 at 2015-11-09 01:06:36 -0500
 
 ActionController::RoutingError (No route matches [GET] "/api/changeLogo"):
   web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
->>>>>>> master
   web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
@@ -5829,52 +5521,6 @@ ActionController::RoutingError (No route matches [GET] "/api/changeLogo"):
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (2.9ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.4ms)
-
-
-Started GET "/" for ::1 at 2015-10-24 22:39:48 -0400
-
-PG::ConnectionBad (FATAL:  database "development" does not exist
-):
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `initialize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:87:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
-  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -5908,7 +5554,6 @@ Started GET "/api/changeLogo" for ::1 at 2015-11-09 01:06:39 -0500
 
 ActionController::RoutingError (No route matches [GET] "/api/changeLogo"):
   web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
->>>>>>> master
   web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
@@ -5929,52 +5574,6 @@ ActionController::RoutingError (No route matches [GET] "/api/changeLogo"):
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.7ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (84.9ms)
-
-
-Started GET "/" for ::1 at 2015-10-24 22:43:39 -0400
-
-PG::ConnectionBad (FATAL:  database "development" does not exist
-):
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `initialize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:87:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
-  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -5990,7 +5589,6 @@ Started GET "/api/getActivities" for ::1 at 2015-11-09 01:06:40 -0500
 
 ActionController::RoutingError (No route matches [GET] "/api/getActivities"):
   web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
->>>>>>> master
   web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
@@ -6011,18 +5609,6 @@ ActionController::RoutingError (No route matches [GET] "/api/getActivities"):
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-<<<<<<< HEAD
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/BowenLi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (3.0ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
-  Rendered /Users/BowenLi/.rvm/gems/ruby-2.2.3/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.0ms)
-=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -6083,9 +5669,7 @@ Can't verify CSRF token authenticity
   [1m[35mSQL (0.5ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["activity_id", 2], ["created_at", "2015-11-09 06:14:20.684828"], ["updated_at", "2015-11-09 06:14:20.684828"]]
   [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
 Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 10.4ms)
->>>>>>> a441ddd381b3bf7da711290052cf40c497cc72fb
->>>>>>> master
-  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
 To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
 
@@ -6094,1149 +5678,39 @@ To disable this warning and keep the current behavior, you can add the following
   end
 
 Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (10.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (5.4ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (5.0ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 19:34:36', '2015-11-13 19:34:36', 980190962)[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 19:34:36', '2015-11-13 19:34:36', 298486374)
-  [1m[36mFixture Delete (4.2ms)[0m  [1mDELETE FROM "member_activities"[0m
-PG::UndefinedTable: ERROR:  relation "member_activities" does not exist
-LINE 1: DELETE FROM "member_activities"
-                    ^
-: DELETE FROM "member_activities"
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.9ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (2.1ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 19:50:09', '2015-11-13 19:50:09', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 19:50:09', '2015-11-13 19:50:09', 298486374)
-  [1m[36mFixture Delete (1.2ms)[0m  [1mDELETE FROM "member_activities"[0m
-PG::UndefinedTable: ERROR:  relation "member_activities" does not exist
-LINE 1: DELETE FROM "member_activities"
-                    ^
-: DELETE FROM "member_activities"
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.8ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 19:50:57', '2015-11-13 19:50:57', 980190962)[0m
-  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 19:50:57', '2015-11-13 19:50:57', 298486374)
-  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "member_activities"[0m
-PG::UndefinedTable: ERROR:  relation "member_activities" does not exist
-LINE 1: DELETE FROM "member_activities"
-                    ^
-: DELETE FROM "member_activities"
-  [1m[35m (0.2ms)[0m  ROLLBACK
-  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.7ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 19:59:31', '2015-11-13 19:59:31', 980190962)[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 19:59:31', '2015-11-13 19:59:31', 298486374)
-  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "member_activities"[0m
-PG::UndefinedTable: ERROR:  relation "member_activities" does not exist
-LINE 1: DELETE FROM "member_activities"
-                    ^
-: DELETE FROM "member_activities"
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-Migrating to AddLatlngToActivity (20151109043416)
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35m (12.3ms)[0m  ALTER TABLE "activities" DROP "latitude"
-  [1m[36m (0.5ms)[0m  [1mALTER TABLE "activities" DROP "longitude"[0m
-  [1m[35mSQL (1.4ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1  [["version", "20151109043416"]]
-  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (6.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (6.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'memberactivities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36m (4.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-Migrating to CreateMemberactivities (20151109040720)
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35m (2.6ms)[0m  DROP INDEX "index_memberactivities_on_user_id_and_activity_id"
-  [1m[36m (0.4ms)[0m  [1mDROP INDEX "index_memberactivities_on_activity_id"[0m
-  [1m[35m (0.4ms)[0m  DROP INDEX "index_memberactivities_on_user_id"
-  [1m[36m (5.6ms)[0m  [1mDROP TABLE "memberactivities"[0m
-  [1m[35mSQL (0.4ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1  [["version", "20151109040720"]]
-  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (5.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (4.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Migrating to CreateMemberActivities (20151109040720)
-  [1m[35m (0.2ms)[0m  BEGIN
-  [1m[36m (57.0ms)[0m  [1mCREATE TABLE "member_activities" ("id" serial primary key, "user_id" integer, "activity_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
-  [1m[35m (2.2ms)[0m  CREATE  INDEX  "index_member_activities_on_user_id" ON "member_activities"  ("user_id")
-  [1m[36m (2.1ms)[0m  [1mCREATE  INDEX  "index_member_activities_on_activity_id" ON "member_activities"  ("activity_id")[0m
-  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX  "index_member_activities_on_user_id_and_activity_id" ON "member_activities"  ("user_id", "activity_id")
-  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151109040720"]]
-  [1m[35m (1.0ms)[0m  COMMIT
-Migrating to AddLatlngToActivity (20151109043416)
-  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
-  [1m[35m (2.8ms)[0m  ALTER TABLE "activities" ADD "longitude" decimal(64,12)
-  [1m[36m (0.9ms)[0m  [1mALTER TABLE "activities" ADD "latitude" decimal(64,12)[0m
-  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151109043416"]]
-  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (5.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (4.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'member_activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36m (3.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-Migrating to AddLatlngToActivity (20151109043416)
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35m (1.2ms)[0m  ALTER TABLE "activities" DROP "latitude"
-  [1m[36m (0.4ms)[0m  [1mALTER TABLE "activities" DROP "longitude"[0m
-  [1m[35mSQL (0.4ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1  [["version", "20151109043416"]]
-  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (5.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (4.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'member_activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36m (3.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (4.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'member_activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36m (3.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-Migrating to CreateMemberActivities (20151109040720)
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35m (1.3ms)[0m  DROP INDEX "index_member_activities_on_user_id_and_activity_id"
-  [1m[36m (0.4ms)[0m  [1mDROP INDEX "index_member_activities_on_activity_id"[0m
-  [1m[35m (0.8ms)[0m  DROP INDEX "index_member_activities_on_user_id"
-  [1m[36m (1.5ms)[0m  [1mDROP TABLE "member_activities"[0m
-  [1m[35mSQL (0.4ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1  [["version", "20151109040720"]]
-  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (4.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (3.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Migrating to CreateMemberActivities (20151109040720)
-  [1m[35m (0.2ms)[0m  BEGIN
-  [1m[36m (9.3ms)[0m  [1mCREATE TABLE "member_activities" ("id" serial primary key, "user_id" integer, "activity_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
-  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_member_activities_on_user_id" ON "member_activities"  ("user_id")
-  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_member_activities_on_activity_id" ON "member_activities"  ("activity_id")[0m
-  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_member_activities_on_user_id_and_activity_id" ON "member_activities"  ("user_id", "activity_id")
-  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151109040720"]]
-  [1m[35m (1.0ms)[0m  COMMIT
-Migrating to AddLatlngToActivity (20151109043416)
-  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
-  [1m[35m (1.2ms)[0m  ALTER TABLE "activities" ADD "longitude" decimal(64,12)
-  [1m[36m (0.9ms)[0m  [1mALTER TABLE "activities" ADD "latitude" decimal(64,12)[0m
-  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151109043416"]]
-  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (4.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'member_activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36m (3.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (1.0ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "member_activities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "member_activities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "member_activities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:53:36', '2015-11-13 20:53:36', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:53:36', '2015-11-13 20:53:36', 298486374)
-PG::UndefinedTable: ERROR:  relation "memberactivities" does not exist
-LINE 5:                WHERE a.attrelid = '"memberactivities"'::regc...
-                                          ^
-:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
-                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
-                FROM pg_attribute a LEFT JOIN pg_attrdef d
-                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
-               WHERE a.attrelid = '"memberactivities"'::regclass
-                 AND a.attnum > 0 AND NOT a.attisdropped
-               ORDER BY a.attnum
-
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "member_activities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-Migrating to AddLatlngToActivity (20151109043416)
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35m (1.9ms)[0m  ALTER TABLE "activities" DROP "latitude"
-  [1m[36m (0.4ms)[0m  [1mALTER TABLE "activities" DROP "longitude"[0m
-  [1m[35mSQL (0.4ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1  [["version", "20151109043416"]]
-  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (5.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (4.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'member_activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36m (9.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-Migrating to CreateMemberActivities (20151109040720)
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35m (0.8ms)[0m  DROP INDEX "index_member_activities_on_user_id_and_activity_id"
-  [1m[36m (0.4ms)[0m  [1mDROP INDEX "index_member_activities_on_activity_id"[0m
-  [1m[35m (0.4ms)[0m  DROP INDEX "index_member_activities_on_user_id"
-  [1m[36m (1.2ms)[0m  [1mDROP TABLE "member_activities"[0m
-  [1m[35mSQL (0.4ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1  [["version", "20151109040720"]]
-  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (5.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (4.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Migrating to CreateMemberactivities (20151109040720)
-  [1m[35m (0.2ms)[0m  BEGIN
-  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "memberactivities" ("id" serial primary key, "user_id" integer, "activity_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
-  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_memberactivities_on_user_id" ON "memberactivities"  ("user_id")
-  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_memberactivities_on_activity_id" ON "memberactivities"  ("activity_id")[0m
-  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX  "index_memberactivities_on_user_id_and_activity_id" ON "memberactivities"  ("user_id", "activity_id")
-  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151109040720"]]
-  [1m[35m (0.6ms)[0m  COMMIT
-Migrating to AddLatlngToActivity (20151109043416)
-  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
-  [1m[35m (1.2ms)[0m  ALTER TABLE "activities" ADD "longitude" decimal(64,12)
-  [1m[36m (0.6ms)[0m  [1mALTER TABLE "activities" ADD "latitude" decimal(64,12)[0m
-  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151109043416"]]
-  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (4.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'activities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[35m (4.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'memberactivities'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-
-  [1m[36m (5.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
-FROM pg_constraint c
-JOIN pg_class t1 ON c.conrelid = t1.oid
-JOIN pg_class t2 ON c.confrelid = t2.oid
-JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
-JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
-JOIN pg_namespace t3 ON c.connamespace = t3.oid
-WHERE c.contype = 'f'
-  AND t1.relname = 'users'
-  AND t3.nspname = ANY (current_schemas(false))
-ORDER BY c.conname
-[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:54:53', '2015-11-13 20:54:53', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:54:53', '2015-11-13 20:54:53', 298486374)
-  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 20:54:53', '2015-11-13 20:54:53', 980190962)
-  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 20:54:53', '2015-11-13 20:54:53', 298486374)[0m
-PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_memberactivities_on_user_id_and_activity_id"
-DETAIL:  Key (user_id, activity_id)=(1, 1) already exists.
-: INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 20:54:53', '2015-11-13 20:54:53', 298486374)
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:55:41', '2015-11-13 20:55:41', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:55:41', '2015-11-13 20:55:41', 298486374)
-  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 20:55:41', '2015-11-13 20:55:41', 980190962)
-  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 20:55:41', '2015-11-13 20:55:41', 980190962)
-  [1m[36mFixture Insert (0.8ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 20:55:41', '2015-11-13 20:55:41', 298486374)[0m
-PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
-DETAIL:  Key (email)=(MyString) already exists.
-: INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 20:55:41', '2015-11-13 20:55:41', 298486374)
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.7ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.7ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:56:19', '2015-11-13 20:56:19', 980190962)[0m
-  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:56:19', '2015-11-13 20:56:19', 298486374)
-  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 20:56:19', '2015-11-13 20:56:19', 980190962)
-  [1m[36mFixture Delete (2.4ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (1.7ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 20:56:19', '2015-11-13 20:56:19', 980190962)
-  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[35m (0.2ms)[0m  ROLLBACK
-  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.9ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.8ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:56:37', '2015-11-13 20:56:37', 980190962)[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 20:56:37', '2015-11-13 20:56:37', 298486374)
-  [1m[36mFixture Delete (1.2ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 20:56:37', '2015-11-13 20:56:37', 980190962)
-  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 20:56:37', '2015-11-13 20:56:37', 980190962)
-  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[35mUser Exists (2.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
+  [1m[35m (1.1ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:05:29', '2015-11-13 21:05:29', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:05:29', '2015-11-13 21:05:29', 298486374)
-  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:05:29', '2015-11-13 21:05:29', 980190962)
-  [1m[36mFixture Delete (1.5ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:05:29', '2015-11-13 21:05:29', 980190962)
-  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------
-UserTest: test_name_should_be_present
--------------------------------------
-  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:55:02', '2015-11-13 21:55:02', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:55:02', '2015-11-13 21:55:02', 298486374)
+  [1m[36mFixture Delete (1.3ms)[0m  [1mDELETE FROM "member_activities"[0m
+PG::UndefinedTable: ERROR:  relation "member_activities" does not exist
+LINE 1: DELETE FROM "member_activities"
+                    ^
+: DELETE FROM "member_activities"
   [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:08:35', '2015-11-13 21:08:35', 980190962)[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:08:35', '2015-11-13 21:08:35', 298486374)
-  [1m[36mFixture Delete (1.1ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:08:35', '2015-11-13 21:08:35', 980190962)
-  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:08:35', '2015-11-13 21:08:35', 980190962)
-  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
---------------------------------------
-UserTest: test_email_should_be_present
---------------------------------------
-  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
--------------------------------------
-UserTest: test_name_should_be_present
--------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:55:02', '2015-11-13 21:55:02', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:55:02', '2015-11-13 21:55:02', 298486374)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "member_activities"[0m
+PG::UndefinedTable: ERROR:  relation "member_activities" does not exist
+LINE 1: DELETE FROM "member_activities"
+                    ^
+: DELETE FROM "member_activities"
   [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (1.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:09:20', '2015-11-13 21:09:20', 980190962)[0m
-  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:09:20', '2015-11-13 21:09:20', 298486374)
-  [1m[36mFixture Delete (0.9ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:09:20', '2015-11-13 21:09:20', 980190962)
-  [1m[36mFixture Delete (1.3ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (1.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:09:20', '2015-11-13 21:09:20', 980190962)
-  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
---------------------------------------
-UserTest: test_email_should_be_present
---------------------------------------
-  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
--------------------------------------------
-UserTest: test_email_should_not_be_too_long
--------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------
-UserTest: test_name_should_be_present
--------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-------------------------------------------
-UserTest: test_name_should_not_be_too_long
-------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:13:15', '2015-11-13 21:13:15', 980190962)[0m
-  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:13:15', '2015-11-13 21:13:15', 298486374)
-  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:13:15', '2015-11-13 21:13:15', 980190962)
-  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:13:15', '2015-11-13 21:13:15', 980190962)
-  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
---------------------------------------
-UserTest: test_email_should_be_present
---------------------------------------
-  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
--------------------------------------------
-UserTest: test_email_should_not_be_too_long
--------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com') LIMIT 1[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:55:03', '2015-11-13 21:55:03', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:55:03', '2015-11-13 21:55:03', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "member_activities"[0m
+PG::UndefinedTable: ERROR:  relation "member_activities" does not exist
+LINE 1: DELETE FROM "member_activities"
+                    ^
+: DELETE FROM "member_activities"
   [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------------------------------
-UserTest: test_email_validation_should_accept_valid_addresses
--------------------------------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
--------------------------------------
-UserTest: test_name_should_be_present
--------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------------------
-UserTest: test_name_should_not_be_too_long
-------------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:24:29', '2015-11-13 21:24:29', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:24:29', '2015-11-13 21:24:29', 298486374)
-  [1m[36mFixture Delete (1.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:24:29', '2015-11-13 21:24:29', 980190962)
-  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:24:29', '2015-11-13 21:24:29', 980190962)
-  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
------------------------------------------------
-UserTest: test_email_addresses_should_be_unique
------------------------------------------------
-  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
-  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Example User"], ["email", "user@example.com"], ["gender", "male"], ["authtoken", "mTveHjvOHVccAhvEMbeEa"], ["password_salt", "$2a$10$1w2nTR9gzRAdBwcxBMHhg."], ["password_digest", "$2a$10$1w2nTR9gzRAdBwcxBMHhg.guSDBP.YQtrQLXPPIlCDlC9Uhhw7ETO"], ["created_at", "2015-11-13 21:24:29.276481"], ["updated_at", "2015-11-13 21:24:29.276481"]]
-  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.2ms)[0m  BEGIN
---------------------------------------
-UserTest: test_email_should_be_present
---------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------------
-UserTest: test_email_should_not_be_too_long
--------------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
--------------------------------------------------------------
-UserTest: test_email_validation_should_accept_valid_addresses
--------------------------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------
-UserTest: test_name_should_be_present
--------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-------------------------------------------
-UserTest: test_name_should_not_be_too_long
-------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:25:18', '2015-11-13 21:25:18', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:25:18', '2015-11-13 21:25:18', 298486374)
-  [1m[36mFixture Delete (1.1ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:25:18', '2015-11-13 21:25:18', 980190962)
-  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:25:18', '2015-11-13 21:25:18', 980190962)
-  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
-  [1m[35m (1.0ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
------------------------------------------------
-UserTest: test_email_addresses_should_be_unique
------------------------------------------------
-  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
-  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Example User"], ["email", "user@example.com"], ["gender", "male"], ["authtoken", "IGiHdZVSgzoBNhGlKQGUv"], ["password_salt", "$2a$10$7ENHhjwkjbFNeMzy4F/Pc."], ["password_digest", "$2a$10$7ENHhjwkjbFNeMzy4F/Pc.5rtrdifFYq3mYss31AuO3xojS8WPj.i"], ["created_at", "2015-11-13 21:25:18.850850"], ["updated_at", "2015-11-13 21:25:18.850850"]]
-  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
---------------------------------------
-UserTest: test_email_should_be_present
---------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1[0m
-  [1m[35m (0.2ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------------
-UserTest: test_email_should_not_be_too_long
--------------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.2ms)[0m  BEGIN
--------------------------------------------------------------
-UserTest: test_email_validation_should_accept_valid_addresses
--------------------------------------------------------------
-  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------
-UserTest: test_name_should_be_present
--------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-------------------------------------------
-UserTest: test_name_should_not_be_too_long
-------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:27:27', '2015-11-13 21:27:27', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:27:27', '2015-11-13 21:27:27', 298486374)
-  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:27:27', '2015-11-13 21:27:27', 980190962)
-  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:27:27', '2015-11-13 21:27:27', 980190962)
-  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
------------------------------------------------
-UserTest: test_email_addresses_should_be_unique
------------------------------------------------
-  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
-  [1m[36mUser Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Example User"], ["email", "user@example.com"], ["gender", "male"], ["authtoken", "yKkxVRLoSjYNGJJDrCOFS"], ["password_salt", "$2a$10$VHGv1gATWmy6QQ.c5KtbQO"], ["password_digest", "$2a$10$VHGv1gATWmy6QQ.c5KtbQOeMDw3H5Ln.bZeVT9ttBWzObFsToIn4q"], ["created_at", "2015-11-13 21:27:27.390645"], ["updated_at", "2015-11-13 21:27:27.390645"]]
-  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1
-  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
---------------------------------------
-UserTest: test_email_should_be_present
---------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------------
-UserTest: test_email_should_not_be_too_long
--------------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
--------------------------------------------------------------
-UserTest: test_email_validation_should_accept_valid_addresses
--------------------------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------
-UserTest: test_name_should_be_present
--------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-------------------------------------------
-UserTest: test_name_should_not_be_too_long
-------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-----------------------------------------------------
-UserTest: test_password_should_be_present_(nonblank)
-----------------------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-----------------------------------------------------
-UserTest: test_password_should_have_a_minimum_length
-----------------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-DEPRECATION WARNING: You did not specify a value for the configuration option `active_support.test_order`. In Rails 5, the default value of this option will change from `:sorted` to `:random`.
-To disable this warning and keep the current behavior, you can add the following line to your `config/environments/test.rb`:
-
-  Rails.application.configure do
-    config.active_support.test_order = :sorted
-  end
-
-Alternatively, you can opt into the future behavior by setting this option to `:random`. (called from test_order at /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/activesupport-4.2.4/lib/active_support/test_case.rb:42)
-  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "activities" DISABLE TRIGGER ALL
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
-  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:27:37', '2015-11-13 21:27:37', 980190962)[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:27:37', '2015-11-13 21:27:37', 298486374)
-  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "memberactivities"[0m
-  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:27:37', '2015-11-13 21:27:37', 980190962)
-  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
-  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:27:37', '2015-11-13 21:27:37', 980190962)
-  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
-  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
------------------------------------------------
-UserTest: test_email_addresses_should_be_unique
------------------------------------------------
-  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
-  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Example User"], ["email", "user@example.com"], ["gender", "male"], ["authtoken", "lfbYNbnZeMqdEWbeEfOXQ"], ["password_salt", "$2a$10$BYZLTqo1xcS9FVB0OKU2Q."], ["password_digest", "$2a$10$BYZLTqo1xcS9FVB0OKU2Q./w5b9Mxct/eV01WzPS5WEFZimJqzI0K"], ["created_at", "2015-11-13 21:27:37.460858"], ["updated_at", "2015-11-13 21:27:37.460858"]]
-  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
-  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
---------------------------------------
-UserTest: test_email_should_be_present
---------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------------
-UserTest: test_email_should_not_be_too_long
--------------------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
--------------------------------------------------------------
-UserTest: test_email_validation_should_accept_valid_addresses
--------------------------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1[0m
-  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1
-  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
--------------------------------------
-UserTest: test_name_should_be_present
--------------------------------------
-  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-------------------------------------------
-UserTest: test_name_should_not_be_too_long
-------------------------------------------
-  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-----------------------------------------------------
-UserTest: test_password_should_be_present_(nonblank)
-----------------------------------------------------
-  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
-  [1m[35m (0.1ms)[0m  BEGIN
-----------------------------------------------------
-UserTest: test_password_should_have_a_minimum_length
-----------------------------------------------------
-  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-------------------------------
-UserTest: test_should_be_valid
-------------------------------
-  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
-  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "activities" ENABLE TRIGGER ALL[0m

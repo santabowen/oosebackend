@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :activities, dependent: :destroy
+
 	attr_accessor :password
 	before_save { self.email  = email.downcase }
   before_save { self.gender = gender.downcase }
