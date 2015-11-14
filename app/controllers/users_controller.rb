@@ -31,7 +31,7 @@ class UsersController < ApplicationController
           rtn = {
           	uid:        @user.id,
           	authtoken:  @user.authtoken,
-          	status: 		"200"
+          	status: 		"200",
           	avatarUrl:  "https://graph.facebook.com/127235060968514/picture?type=large"
           }
           render :json => rtn
