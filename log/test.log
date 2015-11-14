@@ -1,0 +1,624 @@
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (127.5ms)[0m  [1mDROP DATABASE IF EXISTS "oose2015test"[0m
+  [1m[35m (380.2ms)[0m  CREATE DATABASE "oose2015test" ENCODING = 'unicode'
+  [1m[36mSQL (1.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (22.5ms)[0m  CREATE TABLE "activities" ("id" serial primary key, "activityType" character varying, "location" character varying, "groupSize" integer, "memberNum" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "comments" character varying, "duration" integer, "startTime" time, "hostid" character varying, "user_id" integer, "longitude" decimal(64,12), "latitude" decimal(64,12)) 
+  [1m[36m (2.7ms)[0m  [1mCREATE  INDEX  "index_activities_on_user_id_and_created_at" ON "activities" USING btree ("user_id", "created_at")[0m
+  [1m[35m (2.4ms)[0m  CREATE  INDEX  "index_activities_on_user_id" ON "activities" USING btree ("user_id")
+  [1m[36m (6.6ms)[0m  [1mCREATE TABLE "memberactivities" ("id" serial primary key, "user_id" integer, "activity_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_memberactivities_on_activity_id" ON "memberactivities" USING btree ("activity_id")
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_memberactivities_on_user_id_and_activity_id" ON "memberactivities" USING btree ("user_id", "activity_id")[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_memberactivities_on_user_id" ON "memberactivities" USING btree ("user_id")
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "authtoken" character varying, "password_salt" character varying, "gender" character varying) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151109043416')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151025045531')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151107012825')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151107014044')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151107020351')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151107190213')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151107200918')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151107223434')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151108214918')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151108215441')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151108232724')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151109040720')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (3.2ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (1.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:15:11', '2015-11-13 21:15:11', 980190962)[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:15:11', '2015-11-13 21:15:11', 298486374)
+  [1m[36mFixture Delete (1.8ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:15:11', '2015-11-13 21:15:11', 980190962)
+  [1m[36mFixture Delete (1.3ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:15:11', '2015-11-13 21:15:11', 980190962)
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------
+ActivityTest: test_activity_get_owner
+-------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.9ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:18:46', '2015-11-13 21:18:46', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:18:46', '2015-11-13 21:18:46', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:18:46', '2015-11-13 21:18:46', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:18:46', '2015-11-13 21:18:46', 980190962)
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------
+UserTest: test_user_vaild
+-------------------------
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------
+ActivityTest: test_activity_get_owner
+-------------------------------------
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:19:13', '2015-11-13 21:19:13', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:19:13', '2015-11-13 21:19:13', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:19:13', '2015-11-13 21:19:13', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:19:13', '2015-11-13 21:19:13', 980190962)
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------
+UserTest: test_user_vaild
+-------------------------
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('email') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+ActivityTest: test_activity_get_owner
+-------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:25:56', '2015-11-13 21:25:56', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:25:56', '2015-11-13 21:25:56', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:25:56', '2015-11-13 21:25:56', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:25:56', '2015-11-13 21:25:56', 980190962)
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:26:07', '2015-11-13 21:26:07', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:26:07', '2015-11-13 21:26:07', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:26:07', '2015-11-13 21:26:07', 980190962)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:26:07', '2015-11-13 21:26:07', 980190962)
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:26:17', '2015-11-13 21:26:17', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:26:17', '2015-11-13 21:26:17', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:26:17', '2015-11-13 21:26:17', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:26:17', '2015-11-13 21:26:17', 980190962)
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:26:26', '2015-11-13 21:26:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:26:26', '2015-11-13 21:26:26', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:26:26', '2015-11-13 21:26:26', 980190962)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:26:26', '2015-11-13 21:26:26', 980190962)
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:28:35', '2015-11-13 21:28:35', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:28:35', '2015-11-13 21:28:35', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:28:35', '2015-11-13 21:28:35', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:28:35', '2015-11-13 21:28:35', 980190962)
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:40:26', '2015-11-13 21:40:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:40:26', '2015-11-13 21:40:26', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:40:26', '2015-11-13 21:40:26', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:40:26', '2015-11-13 21:40:26', 980190962)
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------
+ActivityTest: test_activity_id_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activities" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2015-11-13 21:40:26.078824"], ["updated_at", "2015-11-13 21:40:26.078824"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:40:39', '2015-11-13 21:40:39', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:40:39', '2015-11-13 21:40:39', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:40:39', '2015-11-13 21:40:39', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:40:39', '2015-11-13 21:40:39', 980190962)
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------
+ActivityTest: test_activity_id_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activities" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2015-11-13 21:40:39.353434"], ["updated_at", "2015-11-13 21:40:39.353434"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:41:29', '2015-11-13 21:41:29', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:41:29', '2015-11-13 21:41:29', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:41:29', '2015-11-13 21:41:29', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:41:29', '2015-11-13 21:41:29', 980190962)
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------
+ActivityTest: test_activity_id_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activities" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 1], ["user_id", 1], ["created_at", "2015-11-13 21:41:29.167652"], ["updated_at", "2015-11-13 21:41:29.167652"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:43:31', '2015-11-13 21:43:31', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:43:31', '2015-11-13 21:43:31', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:43:31', '2015-11-13 21:43:31', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:43:31', '2015-11-13 21:43:31', 980190962)
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------
+ActivityTest: test_activity_id_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activities" ("id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 1], ["user_id", 1], ["created_at", "2015-11-13 21:43:31.431137"], ["updated_at", "2015-11-13 21:43:31.431137"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:49:05', '2015-11-13 21:49:05', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 21:49:05', '2015-11-13 21:49:05', 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 21:49:05', '2015-11-13 21:49:05', 980190962)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 21:49:05', '2015-11-13 21:49:05', 980190962)
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------
+MemberactivityTest: test_user_id_should_be_present
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------
+MemberactivityTest: test_should_be_valid
+----------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------
+MemberactivityTest: test_activity_id_should_be_present
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (3.4ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (1.8ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "activities" DISABLE TRIGGER ALL;ALTER TABLE "memberactivities" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "activities"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 22:08:16', '2015-11-13 22:08:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "activities" ("activityType", "location", "groupSize", "memberNum", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', NULL, NULL, '2015-11-13 22:08:16', '2015-11-13 22:08:16', 298486374)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "memberactivities"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "memberactivities" ("user_id", "activity_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-11-13 22:08:16', '2015-11-13 22:08:16', 980190962)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-11-13 22:08:16', '2015-11-13 22:08:16', 980190962)
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "activities" ENABLE TRIGGER ALL;ALTER TABLE "memberactivities" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------
+MemberactivityTest: test_activity_id_should_be_present
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------
+MemberactivityTest: test_user_id_should_be_present
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------
+MemberactivityTest: test_should_be_valid
+----------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+ActivityTest: test_owner_id_should_be_present
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+ActivityTest: test_should_be_valid
+----------------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Example User"], ["email", "user@example.com"], ["gender", "male"], ["authtoken", "VMmzfXHwtrWCbrLyrbCkj"], ["password_salt", "$2a$10$XhlryuqPdMEvxCbLbho6aO"], ["password_digest", "$2a$10$XhlryuqPdMEvxCbLbho6aO/DScH1vd6OHJlI3Gw3RjORNi9TYx45e"], ["created_at", "2015-11-13 22:08:17.091763"], ["updated_at", "2015-11-13 22:08:17.091763"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@foo.COM') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@foo.bar.org') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('first.last@foo.jp') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('alice+bob@baz.cn') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2015-11-13 17:08:17 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>" ", "email"=>"user@invalid", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK

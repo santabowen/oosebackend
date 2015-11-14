@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  activityType: MyString
-  location: MyString
-  groupSize: 
-  memberNum: 
+# one:
+#   activityType: MyString
+#   location: MyString
+#   groupSize: 
+#   memberNum: 
 
-two:
-  activityType: MyString
-  location: MyString
-  groupSize: 
-  memberNum: 
+# two:
+#   activityType: MyString
+#   location: MyString
+#   groupSize: 
+#   memberNum: 

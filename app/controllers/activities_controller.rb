@@ -50,6 +50,16 @@ class ActivitiesController < ApplicationController
 		render :json => rtn
 	end
 
+	def drop
+		a = Activity.find_by(id: params[:ActID])
+		relation = a.memberactivities.find_by(user_id: params[:UserID])
+		relation.delete
+		rtn = {
+	  	status: "201"
+	  }
+		render :json => rtn
+	end
+	
 	def getsingle
 		a = Activity.find_by(id: params[:actId])
 		members = []
