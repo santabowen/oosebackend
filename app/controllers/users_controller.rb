@@ -29,6 +29,7 @@ class UsersController < ApplicationController
       if @user 
         if User.authenticate(@user, params[:password])
           rtn = {
+          	name:       @user.name,
           	uid:        @user.id,
           	authtoken:  @user.authtoken,
           	status: 		"200",
