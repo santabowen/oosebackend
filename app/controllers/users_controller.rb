@@ -86,7 +86,11 @@ class UsersController < ApplicationController
 
     def user_params_fb(profile)
       user = Hash.new
-      user[:name]      = profile["first_name"] + " " + profile["last_name"]
+      # user[:name]      = profile["first_name"] + " " + profile["last_name"]
+      # print "~~~~~~~~~~~~~~~~~~~"
+      # print profile
+      # print "~~~~~~~~~~~~~~~~~~~"
+      user[:name]      = profile["name"]
       user[:email]     = profile["email"]
       user[:password]  = rand_string(15)
       user[:gender]    = profile["gender"]
