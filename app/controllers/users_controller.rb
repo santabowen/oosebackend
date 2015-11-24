@@ -50,12 +50,14 @@ class UsersController < ApplicationController
   def fblogin
     @graph = Koala::Facebook::API.new(params[:fbToken])
     profile = @graph.get_object("me")
-
-    user = User.find_by(email: profile["email"])
+    print "~~~~~~~~~~~~~~~~~~~~~~"
+    print profile
+    print "~~~~~~~~~~~~~~~~~~~~~~"
+    user = User.find_by(email: params[:email])
     if user.nil?
       @user = User.new(user_params_fb(profile))
       if @user.save
-        user = User.find_by(email: profile["email"])
+        user = User.find_by(email: params[:email])
         print "Successfully creat a user."
         rtn = returnparams(user)
         render :json => rtn
@@ -86,14 +88,10 @@ class UsersController < ApplicationController
 
     def user_params_fb(profile)
       user = Hash.new
-      # user[:name]      = profile["first_name"] + " " + profile["last_name"]
-      # print "~~~~~~~~~~~~~~~~~~~"
-      # print profile
-      # print "~~~~~~~~~~~~~~~~~~~"
       user[:name]      = profile["name"]
-      user[:email]     = profile["email"]
+      user[:email]     = params["email"]
       user[:password]  = rand_string(15)
-      user[:gender]    = profile["gender"]
+      user[:gender]    = params["gender"]
       user[:authtoken] = rand_string(20)
       return user
     end

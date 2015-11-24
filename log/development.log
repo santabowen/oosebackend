@@ -18809,3 +18809,694 @@ MemberactivityTest: test_should_be_valid
 MemberactivityTest: test_user_id_should_be_present
 --------------------------------------------------
   [1m[35m (0.2ms)[0m  ROLLBACK
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:02:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAL8BcgfFYiK3ZAtROcmonwxWj7pOmm95G1ztDSPjvSuUGVQ3LkLOeKZB5AoZAo59czo9WOlVTjtDfpt6GLaZC73VuXrqRtW99n11XOLju7JEQk6ZBJEen0t47vu0jXhb0tvodttkZC0h3UjKn6Vp3Hfa1PnlzWOj1pVFT6Jn4rMKVZC6HMnL6n8DHPO9WNxnZAhVTuf8eypV"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (1.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 542ms (Views: 0.6ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:05:48 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAL8BcgfFYiK3ZAtROcmonwxWj7pOmm95G1ztDSPjvSuUGVQ3LkLOeKZB5AoZAo59czo9WOlVTjtDfpt6GLaZC73VuXrqRtW99n11XOLju7JEQk6ZBJEen0t47vu0jXhb0tvodttkZC0h3UjKn6Vp3Hfa1PnlzWOj1pVFT6Jn4rMKVZC6HMnL6n8DHPO9WNxnZAhVTuf8eypV"}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 0.0ms)
+
+Koala::Facebook::AuthenticationError (type: OAuthException, code: 190, error_subcode: 463, message: Error validating access token: Session has expired on Tuesday, 24-Nov-15 13:00:00 PST. The current time is Tuesday, 24-Nov-15 13:02:31 PST. [HTTP 400]):
+  app/controllers/users_controller.rb:59:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (47.8ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:06:26 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAL8BcgfFYiK3ZAtROcmonwxWj7pOmm95G1ztDSPjvSuUGVQ3LkLOeKZB5AoZAo59czo9WOlVTjtDfpt6GLaZC73VuXrqRtW99n11XOLju7JEQk6ZBJEen0t47vu0jXhb0tvodttkZC0h3UjKn6Vp3Hfa1PnlzWOj1pVFT6Jn4rMKVZC6HMnL6n8DHPO9WNxnZAhVTuf8eypV"}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 0.0ms)
+
+Koala::Facebook::AuthenticationError (type: OAuthException, code: 190, error_subcode: 463, message: Error validating access token: Session has expired on Tuesday, 24-Nov-15 13:00:00 PST. The current time is Tuesday, 24-Nov-15 13:03:09 PST. [HTTP 400]):
+  app/controllers/users_controller.rb:59:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (9.5ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (38.0ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:09:22 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAL8BcgfFYiK3ZAtROcmonwxWj7pOmm95G1ztDSPjvSuUGVQ3LkLOeKZB5AoZAo59czo9WOlVTjtDfpt6GLaZC73VuXrqRtW99n11XOLju7JEQk6ZBJEen0t47vu0jXhb0tvodttkZC0h3UjKn6Vp3Hfa1PnlzWOj1pVFT6Jn4rMKVZC6HMnL6n8DHPO9WNxnZAhVTuf8eypV"}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 0.0ms)
+
+Koala::Facebook::AuthenticationError (type: OAuthException, code: 190, error_subcode: 463, message: Error validating access token: Session has expired on Tuesday, 24-Nov-15 13:00:00 PST. The current time is Tuesday, 24-Nov-15 13:06:05 PST. [HTTP 400]):
+  app/controllers/users_controller.rb:61:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (44.1ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:09:58 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAL8BcgfFYiK3ZAtROcmonwxWj7pOmm95G1ztDSPjvSuUGVQ3LkLOeKZB5AoZAo59czo9WOlVTjtDfpt6GLaZC73VuXrqRtW99n11XOLju7JEQk6ZBJEen0t47vu0jXhb0tvodttkZC0h3UjKn6Vp3Hfa1PnlzWOj1pVFT6Jn4rMKVZC6HMnL6n8DHPO9WNxnZAhVTuf8eypV"}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms)
+
+Koala::Facebook::AuthenticationError (type: OAuthException, code: 190, error_subcode: 463, message: Error validating access token: Session has expired on Tuesday, 24-Nov-15 13:00:00 PST. The current time is Tuesday, 24-Nov-15 13:06:40 PST. [HTTP 400]):
+  app/controllers/users_controller.rb:59:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.9ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:10:00 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAL8BcgfFYiK3ZAtROcmonwxWj7pOmm95G1ztDSPjvSuUGVQ3LkLOeKZB5AoZAo59czo9WOlVTjtDfpt6GLaZC73VuXrqRtW99n11XOLju7JEQk6ZBJEen0t47vu0jXhb0tvodttkZC0h3UjKn6Vp3Hfa1PnlzWOj1pVFT6Jn4rMKVZC6HMnL6n8DHPO9WNxnZAhVTuf8eypV"}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms)
+
+Koala::Facebook::AuthenticationError (type: OAuthException, code: 190, error_subcode: 463, message: Error validating access token: Session has expired on Tuesday, 24-Nov-15 13:00:00 PST. The current time is Tuesday, 24-Nov-15 13:06:42 PST. [HTTP 400]):
+  app/controllers/users_controller.rb:59:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (31.0ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:11:19 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAL8BcgfFYiK3ZAtROcmonwxWj7pOmm95G1ztDSPjvSuUGVQ3LkLOeKZB5AoZAo59czo9WOlVTjtDfpt6GLaZC73VuXrqRtW99n11XOLju7JEQk6ZBJEen0t47vu0jXhb0tvodttkZC0h3UjKn6Vp3Hfa1PnlzWOj1pVFT6Jn4rMKVZC6HMnL6n8DHPO9WNxnZAhVTuf8eypV"}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.0ms)
+
+Koala::Facebook::AuthenticationError (type: OAuthException, code: 190, error_subcode: 463, message: Error validating access token: Session has expired on Tuesday, 24-Nov-15 13:00:00 PST. The current time is Tuesday, 24-Nov-15 13:08:02 PST. [HTTP 400]):
+  app/controllers/users_controller.rb:58:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (29.5ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:11:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAL8BcgfFYiK3ZAtROcmonwxWj7pOmm95G1ztDSPjvSuUGVQ3LkLOeKZB5AoZAo59czo9WOlVTjtDfpt6GLaZC73VuXrqRtW99n11XOLju7JEQk6ZBJEen0t47vu0jXhb0tvodttkZC0h3UjKn6Vp3Hfa1PnlzWOj1pVFT6Jn4rMKVZC6HMnL6n8DHPO9WNxnZAhVTuf8eypV"}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms)
+
+Koala::Facebook::AuthenticationError (type: OAuthException, code: 190, error_subcode: 463, message: Error validating access token: Session has expired on Tuesday, 24-Nov-15 13:00:00 PST. The current time is Tuesday, 24-Nov-15 13:08:34 PST. [HTTP 400]):
+  app/controllers/users_controller.rb:58:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (28.7ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:13:50 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADLBaVzfIkMDWuktYsuOJxwrxvrXSXGSQfCZBXZAYGGAzRpbM2BIsUR6tgR0tCNHsM1IFZAg2wIgpYf0YcfWZArdbcqlLljAQLSfEYvfMlDwgjwVKFWXhCjmo6blmDhzZCo97mySamSBVdmL32qbWdetKQdnvc1TJP50abeSBme1ZCM02c7ogvZByMsjPeNn8Ugaisaj8pu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (2.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 343ms (Views: 1.1ms | ActiveRecord: 16.3ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:16:29 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADLBaVzfIkMDWuktYsuOJxwrxvrXSXGSQfCZBXZAYGGAzRpbM2BIsUR6tgR0tCNHsM1IFZAg2wIgpYf0YcfWZArdbcqlLljAQLSfEYvfMlDwgjwVKFWXhCjmo6blmDhzZCo97mySamSBVdmL32qbWdetKQdnvc1TJP50abeSBme1ZCM02c7ogvZByMsjPeNn8Ugaisaj8pu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (2.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('libowensta@gmail.com') LIMIT 1
+  [1m[36mSQL (7.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Bowen Li"], ["email", "libowensta@gmail.com"], ["gender", "male"], ["authtoken", "eUTgKqKWcAWMzTvvytdIp"], ["password_salt", "$2a$10$1UELEFjJsQxrmEbB7AgxA."], ["password_digest", "$2a$10$1UELEFjJsQxrmEbB7AgxA.PAIBL85eeaE58lm2ga8xN/VvoQB6HDu"], ["created_at", "2015-11-24 21:16:30.034354"], ["updated_at", "2015-11-24 21:16:30.034354"]]
+  [1m[35m (2.7ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 19.2ms)
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/controllers/users_controller.rb:73:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (41.7ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:17:13 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADLBaVzfIkMDWuktYsuOJxwrxvrXSXGSQfCZBXZAYGGAzRpbM2BIsUR6tgR0tCNHsM1IFZAg2wIgpYf0YcfWZArdbcqlLljAQLSfEYvfMlDwgjwVKFWXhCjmo6blmDhzZCo97mySamSBVdmL32qbWdetKQdnvc1TJP50abeSBme1ZCM02c7ogvZByMsjPeNn8Ugaisaj8pu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+Completed 500 Internal Server Error in 348ms (ActiveRecord: 7.3ms)
+
+ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates"
+  * "/Users/BowenLi/Documents/workspace/projects/OOSE 600.421/project/OOSE/Code/BackEnd/Ruby/app/views"
+  * "/Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/app/views"
+):
+  actionview (4.2.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.4) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.6ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:18:02 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADLBaVzfIkMDWuktYsuOJxwrxvrXSXGSQfCZBXZAYGGAzRpbM2BIsUR6tgR0tCNHsM1IFZAg2wIgpYf0YcfWZArdbcqlLljAQLSfEYvfMlDwgjwVKFWXhCjmo6blmDhzZCo97mySamSBVdmL32qbWdetKQdnvc1TJP50abeSBme1ZCM02c7ogvZByMsjPeNn8Ugaisaj8pu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "libowensta@gmail.com"]]
+Completed 500 Internal Server Error in 488ms (ActiveRecord: 0.8ms)
+
+ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates"
+  * "/Users/BowenLi/Documents/workspace/projects/OOSE 600.421/project/OOSE/Code/BackEnd/Ruby/app/views"
+  * "/Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/app/views"
+):
+  actionview (4.2.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.4) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.4ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:18:20 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADLBaVzfIkMDWuktYsuOJxwrxvrXSXGSQfCZBXZAYGGAzRpbM2BIsUR6tgR0tCNHsM1IFZAg2wIgpYf0YcfWZArdbcqlLljAQLSfEYvfMlDwgjwVKFWXhCjmo6blmDhzZCo97mySamSBVdmL32qbWdetKQdnvc1TJP50abeSBme1ZCM02c7ogvZByMsjPeNn8Ugaisaj8pu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 0.6ms)
+
+ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates"
+  * "/Users/BowenLi/Documents/workspace/projects/OOSE 600.421/project/OOSE/Code/BackEnd/Ruby/app/views"
+  * "/Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/app/views"
+):
+  actionview (4.2.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.4) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.4ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:19:02 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADLBaVzfIkMDWuktYsuOJxwrxvrXSXGSQfCZBXZAYGGAzRpbM2BIsUR6tgR0tCNHsM1IFZAg2wIgpYf0YcfWZArdbcqlLljAQLSfEYvfMlDwgjwVKFWXhCjmo6blmDhzZCo97mySamSBVdmL32qbWdetKQdnvc1TJP50abeSBme1ZCM02c7ogvZByMsjPeNn8Ugaisaj8pu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "libowensta@gmail.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('libowensta@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Bowen Li"], ["email", "libowensta@gmail.com"], ["gender", "male"], ["authtoken", "uLMwXcyUrkShIfOHAyjol"], ["password_salt", "$2a$10$O5R25QMcANpgkMfpvdgMxO"], ["password_digest", "$2a$10$O5R25QMcANpgkMfpvdgMxOkeqhLcZQmLwK7xJrNp.bTtj7sVlxl3m"], ["created_at", "2015-11-24 21:19:02.697169"], ["updated_at", "2015-11-24 21:19:02.697169"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+Completed 200 OK in 248ms (Views: 0.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:20:02 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADLBaVzfIkMDWuktYsuOJxwrxvrXSXGSQfCZBXZAYGGAzRpbM2BIsUR6tgR0tCNHsM1IFZAg2wIgpYf0YcfWZArdbcqlLljAQLSfEYvfMlDwgjwVKFWXhCjmo6blmDhzZCo97mySamSBVdmL32qbWdetKQdnvc1TJP50abeSBme1ZCM02c7ogvZByMsjPeNn8Ugaisaj8pu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "libowensta@gmail.com"]]
+Completed 200 OK in 137ms (Views: 0.3ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:46:02 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAAOtr36wPY0BAHt5yC2DgS3qZAk13ZBDBxeZCQOGflg5k7lUnUXRAJZB90Nd29G8EbO8ouG870v2ZC0oL52P3QNR9EkFJDm0zIj1rgNWPeQZB2BHGZBLhdXsBqspxeaZCZAcRZBM1TokjxSV3Td1Q5ZAL3exfr00gK3z4QWr6HRm62JgHwojpkXGjMWHJEL0mYHtyu7ZA8rBCf3ntKsbRoyts9bZAoGkqDnGUkotdNZANKv6QjAAZDZD"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 2070ms (ActiveRecord: 2.5ms)
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/users_controller.rb:89:in `user_params_fb'
+  app/controllers/users_controller.rb:56:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (38.0ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:46:19 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAAOtr36wPY0BAHt5yC2DgS3qZAk13ZBDBxeZCQOGflg5k7lUnUXRAJZB90Nd29G8EbO8ouG870v2ZC0oL52P3QNR9EkFJDm0zIj1rgNWPeQZB2BHGZBLhdXsBqspxeaZCZAcRZBM1TokjxSV3Td1Q5ZAL3exfr00gK3z4QWr6HRm62JgHwojpkXGjMWHJEL0mYHtyu7ZA8rBCf3ntKsbRoyts9bZAoGkqDnGUkotdNZANKv6QjAAZDZD"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 2409ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/users_controller.rb:89:in `user_params_fb'
+  app/controllers/users_controller.rb:56:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (19.5ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (54.5ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:52:23 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAAOtr36wPY0BAHt5yC2DgS3qZAk13ZBDBxeZCQOGflg5k7lUnUXRAJZB90Nd29G8EbO8ouG870v2ZC0oL52P3QNR9EkFJDm0zIj1rgNWPeQZB2BHGZBLhdXsBqspxeaZCZAcRZBM1TokjxSV3Td1Q5ZAL3exfr00gK3z4QWr6HRm62JgHwojpkXGjMWHJEL0mYHtyu7ZA8rBCf3ntKsbRoyts9bZAoGkqDnGUkotdNZANKv6QjAAZDZD"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 189ms (Views: 0.5ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:53:38 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADIFVShZAXpvTvVe8EKo9YxdBlPQ95UxCDa5VRkGflr4ZCE5ZBzOCUprOiZAOy6oUyv3njjBbHPcXofID02KSeL0WXOrZAXH0oWiA9Bg86EKGvL6D0qA9r3lYk4lZA1nVswFR8g6g1PLCboM4oeRmyK01mZBv1iaWsYKNWdMT6M6ArYE4Kae2Wn3fDR9rwIX4APEsBnyZCD7"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+Completed 200 OK in 2142ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:54:04 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADIFVShZAXpvTvVe8EKo9YxdBlPQ95UxCDa5VRkGflr4ZCE5ZBzOCUprOiZAOy6oUyv3njjBbHPcXofID02KSeL0WXOrZAXH0oWiA9Bg86EKGvL6D0qA9r3lYk4lZA1nVswFR8g6g1PLCboM4oeRmyK01mZBv1iaWsYKNWdMT6M6ArYE4Kae2Wn3fDR9rwIX4APEsBnyZCD7"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "libowensta@gmail.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('libowensta@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Bowen Li"], ["email", "libowensta@gmail.com"], ["gender", "male"], ["authtoken", "zupWVUmOrTKPWQAavqCAV"], ["password_salt", "$2a$10$65dHFNKYnmKgY2pMIBVC1O"], ["password_digest", "$2a$10$65dHFNKYnmKgY2pMIBVC1OJAE1v92FX8YsC0OOc1S5vdRT9BTRg0e"], ["created_at", "2015-11-24 21:54:05.130921"], ["updated_at", "2015-11-24 21:54:05.130921"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+Completed 200 OK in 625ms (Views: 0.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:57:58 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADIFVShZAXpvTvVe8EKo9YxdBlPQ95UxCDa5VRkGflr4ZCE5ZBzOCUprOiZAOy6oUyv3njjBbHPcXofID02KSeL0WXOrZAXH0oWiA9Bg86EKGvL6D0qA9r3lYk4lZA1nVswFR8g6g1PLCboM4oeRmyK01mZBv1iaWsYKNWdMT6M6ArYE4Kae2Wn3fDR9rwIX4APEsBnyZCD7"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "libowensta@gmail.com"]]
+Completed 200 OK in 142ms (Views: 0.3ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 16:58:11 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBADIFVShZAXpvTvVe8EKo9YxdBlPQ95UxCDa5VRkGflr4ZCE5ZBzOCUprOiZAOy6oUyv3njjBbHPcXofID02KSeL0WXOrZAXH0oWiA9Bg86EKGvL6D0qA9r3lYk4lZA1nVswFR8g6g1PLCboM4oeRmyK01mZBv1iaWsYKNWdMT6M6ArYE4Kae2Wn3fDR9rwIX4APEsBnyZCD7"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+Completed 500 Internal Server Error in 524ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/users_controller.rb:90:in `user_params_fb'
+  app/controllers/users_controller.rb:56:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (33.0ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 17:00:32 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAJJBi8sCe4K7EEzB0AGLaGNHFJkqHLV7NgUqfBo0hKx2zoTCSUWuLK1Cdof2mymgQFaB0aXrgHVhllMBoCEgGfCziwt1ZCsjr1UtOZAFgSx8ZBzt8hoHgGeajQnP5HwpHDnd8B5ZBebQlNdG4Yl7oVlAfYpfoZBwpMKWmbKRLpmP67sFaGyEM0OTZAtMvOLDsQC2ZCYuJdK"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "libowensta@gmail.com"]]
+Completed 500 Internal Server Error in 2171ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/users_controller.rb:90:in `user_params_fb'
+  app/controllers/users_controller.rb:56:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (12.3ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (43.7ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 17:01:05 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAJJBi8sCe4K7EEzB0AGLaGNHFJkqHLV7NgUqfBo0hKx2zoTCSUWuLK1Cdof2mymgQFaB0aXrgHVhllMBoCEgGfCziwt1ZCsjr1UtOZAFgSx8ZBzt8hoHgGeajQnP5HwpHDnd8B5ZBebQlNdG4Yl7oVlAfYpfoZBwpMKWmbKRLpmP67sFaGyEM0OTZAtMvOLDsQC2ZCYuJdK"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+Completed 500 Internal Server Error in 1080ms (ActiveRecord: 2.4ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/users_controller.rb:93:in `user_params_fb'
+  app/controllers/users_controller.rb:56:in `fblogin'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (46.8ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 17:01:43 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAACEdEose0cBAJJBi8sCe4K7EEzB0AGLaGNHFJkqHLV7NgUqfBo0hKx2zoTCSUWuLK1Cdof2mymgQFaB0aXrgHVhllMBoCEgGfCziwt1ZCsjr1UtOZAFgSx8ZBzt8hoHgGeajQnP5HwpHDnd8B5ZBebQlNdG4Yl7oVlAfYpfoZBwpMKWmbKRLpmP67sFaGyEM0OTZAtMvOLDsQC2ZCYuJdK"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "libowensta@gmail.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('libowensta@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "gender", "authtoken", "password_salt", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Bowen Li"], ["email", "libowensta@gmail.com"], ["gender", "male"], ["authtoken", "OWpUWowTqlgsClelcXffu"], ["password_salt", "$2a$10$04rfAs2ONH53rY6IsgfTQO"], ["password_digest", "$2a$10$04rfAs2ONH53rY6IsgfTQOy8R4nYOv00t6W4dK7YY7IJHepJyzCpi"], ["created_at", "2015-11-24 22:01:44.092635"], ["updated_at", "2015-11-24 22:01:44.092635"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "libowensta@gmail.com"]]
+Completed 200 OK in 588ms (Views: 0.3ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users/fblogin" for ::1 at 2015-11-24 17:14:51 -0500
+Processing by UsersController#fblogin as */*
+  Parameters: {"fbToken"=>"CAAOtr36wPY0BABgRWpeoehZB6zIKgYPsSFAxQZCxKZA4ZAneGtEwtALaHOwZCURZC4NgY2VCfWJo0ZAwiCfxIATZATVxpz1dj0Ew9Ddw8HtlPRWEGkOT2LgOpZBS9UmByRSc7osXlZBEme0doWRyAKLgw07F7tHRNJ7Hnx60xkLW5n26WZAo3rmZAXe1kxKyxJUvly8J7pMg5ZB3uqUCjbu7XPv1Ee1XV8YOfIcltQABZC1EMfegZDZD"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 200 OK in 178ms (Views: 0.5ms | ActiveRecord: 4.3ms)
