@@ -19,22 +19,19 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def resetpw
+  end
+
 	def signin
 		rtn = {
 	  	status: "401"
 	  }
     if params && params[:email] && params[:password]        
-      @user = User.find_by(email: params[:email])
+      user = User.find_by(email: params[:email])
       
-      if @user 
-        if User.authenticate(@user, params[:password])
-          rtn = {
-          	name:       @user.name,
-          	uid:        @user.id,
-          	authtoken:  @user.authtoken,
-          	status: 		"200",
-          	avatarUrl:  "https://graph.facebook.com/127235060968514/picture?type=large"
-          }
+      if user 
+        if User.authenticate(user, params[:password])
+          rtn = returnparams(user)
           render :json => rtn
         else
           # e = Error.new(status: 401, message: "Wrong Password")
@@ -50,6 +47,30 @@ class UsersController < ApplicationController
     end
   end
 
+  def fblogin
+    @graph = Koala::Facebook::API.new(params[:fbToken])
+    profile = @graph.get_object("me")
+
+    user = User.find_by(email: profile["email"])
+    if user.nil?
+      @user = User.new(user_params_fb(profile))
+      if @user.save
+        user = User.find_by(email: profile["email"])
+        print "Successfully creat a user."
+        rtn = returnparams(user)
+        render :json => rtn
+      else
+        print "Fail to create a user."
+        rtn = {
+          status: "401"
+        }
+        render :json => rtn
+      end
+    else
+      rtn = returnparams(user)
+      render :json => rtn
+    end
+  end
 
 	private
 		
@@ -63,6 +84,16 @@ class UsersController < ApplicationController
 			return user
 		end
 
+    def user_params_fb(profile)
+      user = Hash.new
+      user[:name]      = profile["first_name"] + " " + profile["last_name"]
+      user[:email]     = profile["email"]
+      user[:password]  = rand_string(15)
+      user[:gender]    = profile["gender"]
+      user[:authtoken] = rand_string(20)
+      return user
+    end
+
 		def check_for_valid_authtoken
 	    authenticate_or_request_with_http_token do |token, options|     
 	      @user = User.where(:api_authtoken => token).first      
@@ -75,4 +106,14 @@ class UsersController < ApplicationController
 
 	    return string
 	  end
+
+    def returnparams(user)
+      rtn = {
+        name:       user.name,
+        uid:        user.id,
+        authtoken:  user.authtoken,
+        status:     "200",
+        avatarUrl:  "https://graph.facebook.com/127235060968514/picture?type=large"
+      }
+    end
 end

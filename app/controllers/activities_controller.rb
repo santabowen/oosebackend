@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
 
   def post
   	@user = User.find_by(id: params[:HostID])
-		if @user.activities.create(activity_params) 
+		if @user and @user.activities.create(activity_params) 
 			print "Successfully create an activity."
 			rtn = {
 		  	status: "201"

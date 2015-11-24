@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root     'home#index'
   post     'users/signin'
-  get      'users/fbsignin'
+  post     'users/resetpw'
+  post     'users/fblogin'
+
   post     'activities/post'
   get      'activities/getsingle'
   get      'activities/get'
