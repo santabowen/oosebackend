@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       @graph = Koala::Facebook::API.new(params[:fbToken])
       profile = @graph.get_object("me")
 		  @user = User.new(user_params_fb(profile)) 
-    elsif params[:mode] == "email"
+    else
       @user = User.new(user_params)
     end
     
@@ -55,19 +55,19 @@ class UsersController < ApplicationController
   end
 
   def forgetpw
-	@user = User.find_by(email: params[:email])
+	user = User.find_by(email: params[:email])
 	# print params[:email]
 	# UserMailer.forget_password_confirmation(@user).deliver
-	if !@user.nil?
+	if !user.nil?
 		rtn = {
   		status: "201"
   		}
 		render :json => rtn
     validation_code = rand_string(6)
     validation_time = Time.now
-    @user.update(validation_time: validation_time, validation_time: validation_time)
+    user.update(validation_time: validation_time, validation_time: validation_time)
 
-		UserMailer.forget_password_confirmation(@user).deliver
+		UserMailer.forget_password_confirmation(user).deliver
 	else
 		rtn = {
   		status: "404"
