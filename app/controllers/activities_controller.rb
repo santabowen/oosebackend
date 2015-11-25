@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
 			rtn = {
 		  	status: "404"
 		  }
-			render :json => rtn
+		render :json => rtn
 		end
 	end
 

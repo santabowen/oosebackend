@@ -3,7 +3,14 @@ class UsersController < ApplicationController
   end
 
   def create
-		@user = User.new(user_params) 
+    if params[:mode] == "fb"
+      @graph = Koala::Facebook::API.new(params[:fbToken])
+      profile = @graph.get_object("me")
+		  @user = User.new(user_params_fb(profile)) 
+    elsif params[:mode] == "email"
+      @user = User.new(user_params)
+    end
+    
 		if @user.save
 			print "Successfully creat a user."
 			rtn = {
@@ -45,6 +52,25 @@ class UsersController < ApplicationController
       # e = Error.new(status: 400, message: "required parameters are missing")
       render :json => rtn
     end
+  end
+
+  def forgetpw
+	@user = User.find_by(email: params[:email])
+	# print params[:email]
+	# UserMailer.forget_password_confirmation(@user).deliver
+	if !@user.nil?
+		rtn = {
+  		status: "201"
+  		}
+		render :json => rtn
+
+		UserMailer.forget_password_confirmation(@user).deliver
+	else
+		rtn = {
+  		status: "404"
+  		}
+		render :json => rtn
+	end
   end
 
   def fblogin

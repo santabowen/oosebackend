@@ -66,6 +66,23 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.default :charset => "utf-8"
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+  # Change mail delivery to either :smtp :sendmail :file :test
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.sendgrid.net",
+   :port                 => 587,
+   :domain               => "heroku.com",
+   :user_name            => ENV['SENDGRID_USERNAME'],
+   :password             => ENV['SENDGRID_PASSWORD'],
+   :authentication       => "plain",
+   :enable_starttls_auto => true
+  }
+
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 

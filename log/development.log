@@ -18811,6 +18811,261 @@ MemberactivityTest: test_user_id_should_be_present
   [1m[35m (0.2ms)[0m  ROLLBACK
 
 
+<<<<<<< HEAD
+Started GET "/users/forgetpw" for ::1 at 2015-11-24 16:51:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (1.9ms)
+
+
+Started GET "/users/forgetpw" for ::1 at 2015-11-24 16:53:47 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/users/forgetpw" for ::1 at 2015-11-24 16:54:00 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (0.3ms)
+
+
+Started GET "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:01:29 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (1.9ms)
+
+
+Started GET "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:07:42 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+=======
 Started POST "/users/fblogin" for ::1 at 2015-11-24 16:02:54 -0500
   [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by UsersController#fblogin as */*
@@ -19034,6 +19289,7 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
   activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
   actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+>>>>>>> master
   actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
   actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
   actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
@@ -19046,7 +19302,11 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
   actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
   rack (1.6.4) lib/rack/etag.rb:24:in `call'
+<<<<<<< HEAD
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+=======
   rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+>>>>>>> master
   rack (1.6.4) lib/rack/head.rb:13:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
@@ -19084,6 +19344,20 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/users/test" for ::1 at 2015-11-24 17:09:13 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -19149,6 +19423,7 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
   activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
   actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+>>>>>>> master
   actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
   actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
   actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
@@ -19161,7 +19436,11 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
   actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
   rack (1.6.4) lib/rack/etag.rb:24:in `call'
+<<<<<<< HEAD
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+=======
   rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+>>>>>>> master
   rack (1.6.4) lib/rack/head.rb:13:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
@@ -19199,6 +19478,20 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/test" for ::1 at 2015-11-24 17:11:23 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.4) lib/abstract_controller/base.rb:132:in `process'
+=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -19264,6 +19557,7 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
   activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
   actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+>>>>>>> master
   actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
   actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
   actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
@@ -19276,7 +19570,11 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
   actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
   rack (1.6.4) lib/rack/etag.rb:24:in `call'
+<<<<<<< HEAD
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+=======
   rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+>>>>>>> master
   rack (1.6.4) lib/rack/head.rb:13:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
   actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
@@ -19314,6 +19612,2247 @@ ActionView::MissingTemplate (Missing template users/fblogin, application/fblogin
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ChrisXi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:11:38 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 1.1ms
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 8.7ms)
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/mailers/user_mailer.rb:8:in `forget_password_confirmation'
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (72.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:13:06 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.4ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.4ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 187.0ms
+
+Sent mail to clcblueljw@gmail.com (576.7ms)
+Date: Tue, 24 Nov 2015 17:13:06 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e0f24fa6f_1f9c3ff2178a4a7879953@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e0f24d6bf_1f9c3ff2178a4a787986f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e0f24d6bf_1f9c3ff2178a4a787986f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e0f24d6bf_1f9c3ff2178a4a787986f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e0f24d6bf_1f9c3ff2178a4a787986f--
+
+Completed 500 Internal Server Error in 791ms (ActiveRecord: 4.7ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (70.2ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:14:53 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.7ms)
+
+NameError (undefined local variable or method `user' for #<UsersController:0x007fe42f6fa368>):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (59.7ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:15:25 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:16:23 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 28.6ms
+
+Sent mail to clcblueljw@gmail.com (572.1ms)
+Date: Tue, 24 Nov 2015 17:16:24 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e1b818a53_1f9c3ff217b2d77c8010@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e1b817909_1f9c3ff217b2d77c800a9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e1b817909_1f9c3ff217b2d77c800a9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e1b817909_1f9c3ff217b2d77c800a9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e1b817909_1f9c3ff217b2d77c800a9--
+
+Completed 500 Internal Server Error in 634ms (ActiveRecord: 6.9ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (60.0ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:17:18 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:19:01 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.0ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.0ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 28.5ms
+
+Sent mail to clcblueljw@gmail.com (479.7ms)
+Date: Tue, 24 Nov 2015 17:19:02 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e256eeab_1f9c3ff217be46d480355@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e256d189_1f9c3ff217be46d4802c8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e256d189_1f9c3ff217be46d4802c8
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e256d189_1f9c3ff217be46d4802c8
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e256d189_1f9c3ff217be46d4802c8--
+
+Completed 500 Internal Server Error in 529ms (ActiveRecord: 2.3ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.1ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (66.8ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:24:48 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.7ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 47.5ms
+
+Sent mail to clcblueljw@gmail.com (150.6ms)
+Date: Tue, 24 Nov 2015 17:24:48 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e3b04b846_1f9c3ff2185005c48052a@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e3b048c8e_1f9c3ff2185005c480423";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e3b048c8e_1f9c3ff2185005c480423
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e3b048c8e_1f9c3ff2185005c480423
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e3b048c8e_1f9c3ff2185005c480423--
+
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 0.6ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (67.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:25:16 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.2ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 41.5ms
+
+Sent mail to clcblueljw@gmail.com (133.3ms)
+Date: Tue, 24 Nov 2015 17:25:16 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e3ccb4734_1f9c3ff2185005c48078f@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e3ccb1b02_1f9c3ff2185005c480693";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e3ccb1b02_1f9c3ff2185005c480693
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e3ccb1b02_1f9c3ff2185005c480693
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e3ccb1b02_1f9c3ff2185005c480693--
+
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 0.3ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (79.1ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:25:28 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.0ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.0ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 32.7ms
+
+Sent mail to clcblueljw@gmail.com (165.0ms)
+Date: Tue, 24 Nov 2015 17:25:28 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e3d8a5742_1f9c3ff2185005c4809a0@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e3d8a2e78_1f9c3ff2185005c480851";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e3d8a2e78_1f9c3ff2185005c480851
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e3d8a2e78_1f9c3ff2185005c480851
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e3d8a2e78_1f9c3ff2185005c480851--
+
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 0.2ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.8ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:33:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (2.0ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.4ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 187.4ms
+
+Sent mail to clcblueljw@gmail.com (577.3ms)
+Date: Tue, 24 Nov 2015 17:33:18 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e5aecc83_20ba3ffd56130c7013824@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e5aeadc8_20ba3ffd56130c7013751";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e5aeadc8_20ba3ffd56130c7013751
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e5aeadc8_20ba3ffd56130c7013751
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e5aeadc8_20ba3ffd56130c7013751--
+
+Completed 500 Internal Server Error in 805ms (ActiveRecord: 5.0ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (66.3ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:35:59 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.4ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 45.1ms
+
+Sent mail to clcblueljw@gmail.com (489.0ms)
+Date: Tue, 24 Nov 2015 17:36:00 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e650a21_20ba3ffd57d2b63c1408@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e64ff251f_20ba3ffd57d2b63c13946";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e64ff251f_20ba3ffd57d2b63c13946
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e64ff251f_20ba3ffd57d2b63c13946
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e64ff251f_20ba3ffd57d2b63c13946--
+
+Completed 500 Internal Server Error in 557ms (ActiveRecord: 0.8ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (69.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:37:37 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.0ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 53.8ms
+
+Sent mail to clcblueljw@gmail.com (139.3ms)
+Date: Tue, 24 Nov 2015 17:37:37 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e6b14b89a_20ba3ffd57ed602c1423b@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e6b14928e_20ba3ffd57ed602c14112";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e6b14928e_20ba3ffd57ed602c14112
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e6b14928e_20ba3ffd57ed602c14112
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e6b14928e_20ba3ffd57ed602c14112--
+
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 0.9ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (13.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (74.9ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:37:45 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 31.4ms
+
+Sent mail to clcblueljw@gmail.com (145.0ms)
+Date: Tue, 24 Nov 2015 17:37:45 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e6b9a164a_20ba3ffd57ed602c144e9@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e6b99f701_20ba3ffd57ed602c143ca";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e6b99f701_20ba3ffd57ed602c143ca
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e6b99f701_20ba3ffd57ed602c143ca
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e6b99f701_20ba3ffd57ed602c143ca--
+
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.3ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (64.2ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:38:53 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 1.1ms
+Completed 200 OK in 32ms (Views: 1.3ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:41:15 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.4ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 35.0ms
+
+Sent mail to clcblueljw@gmail.com (151.1ms)
+Date: Tue, 24 Nov 2015 17:41:15 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e78bce5b6_20ba3ffd5710dd64146aa@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e78bccbed_20ba3ffd5710dd641455c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e78bccbed_20ba3ffd5710dd641455c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e78bccbed_20ba3ffd5710dd641455c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e78bccbed_20ba3ffd5710dd641455c--
+
+Completed 500 Internal Server Error in 212ms (ActiveRecord: 2.5ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.9ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:44:30 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.4ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 62.0ms
+
+Sent mail to clcblueljw@gmail.com (166.9ms)
+Date: Tue, 24 Nov 2015 17:44:30 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e84e9bbb1_20ba3ffd54956c5814833@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e84e97ba8_20ba3ffd54956c581475b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e84e97ba8_20ba3ffd54956c581475b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e84e97ba8_20ba3ffd54956c581475b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e84e97ba8_20ba3ffd54956c581475b--
+
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 0.3ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (70.7ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:45:23 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.2ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 44.0ms
+
+Sent mail to clcblueljw@gmail.com (148.8ms)
+Date: Tue, 24 Nov 2015 17:45:23 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e883ffa4_20ba3ffd5781439c150de@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e883d8d5_20ba3ffd5781439c14961";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e883d8d5_20ba3ffd5781439c14961
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e883d8d5_20ba3ffd5781439c14961
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e883d8d5_20ba3ffd5781439c14961--
+
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 0.3ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:45:29 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 34.9ms
+
+Sent mail to clcblueljw@gmail.com (153.4ms)
+Date: Tue, 24 Nov 2015 17:45:29 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e8893fea7_20ba3ffd5781439c1525b@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e8893d407_20ba3ffd5781439c151b1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e8893d407_20ba3ffd5781439c151b1
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e8893d407_20ba3ffd5781439c151b1
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e8893d407_20ba3ffd5781439c151b1--
+
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 0.2ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (70.9ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:48:23 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 29.0ms
+
+Sent mail to clcblueljw@gmail.com (153.4ms)
+Date: Tue, 24 Nov 2015 17:48:24 -0500
+From: clcblueljw@gmail.com
+To: clcblueljw@gmail.com
+Message-ID: <5654e9381bd28_20ba3ffd57d92fe415439@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654e9381a39d_20ba3ffd57d92fe4153c6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654e9381a39d_20ba3ffd57d92fe4153c6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654e9381a39d_20ba3ffd57d92fe4153c6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654e9381a39d_20ba3ffd57d92fe4153c6--
+
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 4.1ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (64.2ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 17:53:43 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb (0.4ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 49.0ms
+
+Sent mail to clcblueljw@gmail.com (5.9ms)
+Date: Tue, 24 Nov 2015 17:53:43 -0500
+To: clcblueljw@gmail.com
+Message-ID: <5654ea77be714_20ba3ffd57e117b8156a8@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654ea77bc8d6_20ba3ffd57e117b815587";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654ea77bc8d6_20ba3ffd57e117b815587
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+----==_mimepart_5654ea77bc8d6_20ba3ffd57e117b815587
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+----==_mimepart_5654ea77bc8d6_20ba3ffd57e117b815587--
+
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 5.1ms)
+
+ArgumentError (An SMTP From address is required to send a message. Set the message smtp_envelope_from, return_path, sender, or from address.):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (85.9ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:23:36 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.4ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 61.2ms
+
+Sent mail to clcblueljw@gmail.com (663.1ms)
+Date: Tue, 24 Nov 2015 19:23:36 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5654ff88ba4d4_20ba3ffd577984f415891@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5654ff88b78e2_20ba3ffd577984f415712";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5654ff88b78e2_20ba3ffd577984f415712
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5654ff88b78e2_20ba3ffd577984f415712
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5654ff88b78e2_20ba3ffd577984f415712--
+
+Completed 500 Internal Server Error in 785ms (ActiveRecord: 4.3ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (10.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (79.7ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:26:57 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 39.6ms
+
+Sent mail to clcblueljw@gmail.com (178.5ms)
+Date: Tue, 24 Nov 2015 19:26:57 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <56550051addba_20ba3ffd5785923016029@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550051acad8_20ba3ffd57859230159f4";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550051acad8_20ba3ffd57859230159f4
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_56550051acad8_20ba3ffd57859230159f4
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550051acad8_20ba3ffd57859230159f4--
+
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.6ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (64.8ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:27:05 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.2ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 40.7ms
+
+Sent mail to clcblueljw@gmail.com (153.2ms)
+Date: Tue, 24 Nov 2015 19:27:05 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <56550059530a4_20ba3ffd578592301628d@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565500594fe24_20ba3ffd5785923016145";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565500594fe24_20ba3ffd5785923016145
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_565500594fe24_20ba3ffd5785923016145
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565500594fe24_20ba3ffd5785923016145--
+
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 0.2ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (72.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:31:57 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 3.9ms)
+
+SyntaxError (/Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/mailers/user_mailer.rb:12: syntax error, unexpected keyword_end, expecting ')'):
+  app/mailers/user_mailer.rb:12: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (76.0ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:32:12 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.2ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 29.9ms
+
+Sent mail to clcblueljw@gmail.com (496.3ms)
+Date: Tue, 24 Nov 2015 19:32:12 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <5655018c274d7_20ba3ffd563bdcf4164b5@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5655018c25d7b_20ba3ffd563bdcf4163a0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5655018c25d7b_20ba3ffd563bdcf4163a0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5655018c25d7b_20ba3ffd563bdcf4163a0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5655018c25d7b_20ba3ffd563bdcf4163a0--
+
+Completed 500 Internal Server Error in 549ms (ActiveRecord: 2.6ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.5ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:33:48 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 45.0ms
+
+Sent mail to clcblueljw@gmail.com (135.2ms)
+Date: Tue, 24 Nov 2015 19:33:48 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <565501ece892b_20ba3ffd57fe1ed016692@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565501ece60a5_20ba3ffd57fe1ed0165f3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565501ece60a5_20ba3ffd57fe1ed0165f3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_565501ece60a5_20ba3ffd57fe1ed0165f3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565501ece60a5_20ba3ffd57fe1ed0165f3--
+
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.3ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:34:08 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 30.7ms
+
+Sent mail to clcblueljw@gmail.com (142.1ms)
+Date: Tue, 24 Nov 2015 19:34:08 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <56550200dc09_20ba3ffd57fe1ed01680@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550200ba57_20ba3ffd57fe1ed01672f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550200ba57_20ba3ffd57fe1ed01672f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_56550200ba57_20ba3ffd57fe1ed01672f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550200ba57_20ba3ffd57fe1ed01672f--
+
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 0.4ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (63.1ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:34:31 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.0ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 35.1ms
+
+Sent mail to clcblueljw@gmail.com (146.0ms)
+Date: Tue, 24 Nov 2015 19:34:31 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <56550217c5964_20ba3ffd57fe1ed017081@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550217c333b_20ba3ffd57fe1ed016951";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550217c333b_20ba3ffd57fe1ed016951
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_56550217c333b_20ba3ffd57fe1ed016951
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550217c333b_20ba3ffd57fe1ed016951--
+
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.5ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (62.7ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:38:13 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb (0.3ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 43.2ms
+
+Sent mail to clcblueljw@gmail.com (4.3ms)
+Date: Tue, 24 Nov 2015 19:38:14 -0500
+To: clcblueljw@gmail.com
+Message-ID: <565502f6196b3_20ba3ffd57838ea4172b4@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565502f617d22_20ba3ffd57838ea417121";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565502f617d22_20ba3ffd57838ea417121
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+----==_mimepart_565502f617d22_20ba3ffd57838ea417121
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+----==_mimepart_565502f617d22_20ba3ffd57838ea417121--
+
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 4.5ms)
+
+ArgumentError (An SMTP From address is required to send a message. Set the message smtp_envelope_from, return_path, sender, or from address.):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.7ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:40:21 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb (0.0ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 38.5ms
+
+Sent mail to clcblueljw@gmail.com (595.3ms)
+Date: Tue, 24 Nov 2015 19:40:21 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <565503759255f_20ba3ffd5712c0ac17444@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5655037590b29_20ba3ffd5712c0ac1731";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5655037590b29_20ba3ffd5712c0ac1731
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+----==_mimepart_5655037590b29_20ba3ffd5712c0ac1731
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+----==_mimepart_5655037590b29_20ba3ffd5712c0ac1731--
+
+Completed 500 Internal Server Error in 667ms (ActiveRecord: 3.2ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.1ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (66.0ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:43:19 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.2ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 29.9ms
+
+Sent mail to clcblueljw@gmail.com (549.2ms)
+Date: Tue, 24 Nov 2015 19:43:19 -0500
+From: from@example.com
+To: clcblueljw@gmail.com
+Message-ID: <56550427c908f_20ba3ffd54e868a41767c@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550427c717f_20ba3ffd54e868a41753f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550427c717f_20ba3ffd54e868a41753f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_56550427c717f_20ba3ffd54e868a41753f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550427c717f_20ba3ffd54e868a41753f--
+
+Completed 500 Internal Server Error in 631ms (ActiveRecord: 4.6ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (72.9ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:43:41 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.0ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 22.9ms
+
+Sent mail to clcblueljw@gmail.com (154.9ms)
+Date: Tue, 24 Nov 2015 19:43:41 -0500
+From: clcblueljw@gmail.com
+To: clcblueljw@gmail.com
+Message-ID: <5655043d7d066_20ba3ffd54e868a4178f7@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5655043d7c1b6_20ba3ffd54e868a41776d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5655043d7c1b6_20ba3ffd54e868a41776d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5655043d7c1b6_20ba3ffd54e868a41776d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5655043d7c1b6_20ba3ffd54e868a41776d--
+
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 7.9ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.2ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:46:19 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.2ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 33.2ms
+
+Sent mail to clcblueljw@gmail.com (568.8ms)
+Date: Tue, 24 Nov 2015 19:46:19 -0500
+From: clcblueljw@gmail.com
+To: clcblueljw@gmail.com
+Message-ID: <565504db4f2ec_20ba3ffd57eead2418068@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565504db4d990_20ba3ffd57eead2417973";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565504db4d990_20ba3ffd57eead2417973
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_565504db4d990_20ba3ffd57eead2417973
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565504db4d990_20ba3ffd57eead2417973--
+
+Completed 500 Internal Server Error in 606ms (ActiveRecord: 0.5ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (67.0ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:52:43 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.6ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 49.8ms
+
+Sent mail to clcblueljw@gmail.com (503.6ms)
+Date: Tue, 24 Nov 2015 19:52:43 -0500
+From: clcblueljw@gmail.com
+To: clcblueljw@gmail.com
+Message-ID: <5655065bcaff3_20ba3ffd5773194818245@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5655065bc7d51_20ba3ffd5773194818167";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5655065bc7d51_20ba3ffd5773194818167
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5655065bc7d51_20ba3ffd5773194818167
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5655065bc7d51_20ba3ffd5773194818167--
+
+Completed 500 Internal Server Error in 580ms (ActiveRecord: 0.7ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (67.3ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:57:29 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.7ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 47.2ms
+
+Sent mail to clcblueljw@gmail.com (1173.9ms)
+Date: Tue, 24 Nov 2015 19:57:29 -0500
+From: clcblueljw@gmail.com
+To: clcblueljw@gmail.com
+Message-ID: <5655077988960_20ba3ffd578a4be018414@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550779854fb_20ba3ffd578a4be01833e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550779854fb_20ba3ffd578a4be01833e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_56550779854fb_20ba3ffd578a4be01833e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550779854fb_20ba3ffd578a4be01833e--
+
+Completed 500 Internal Server Error in 1244ms (ActiveRecord: 0.6ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (69.8ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 19:59:26 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.2ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 50.0ms
+
+Sent mail to clcblueljw@gmail.com (1167.2ms)
+Date: Tue, 24 Nov 2015 19:59:26 -0500
+From: clcblueljw@gmail.com
+To: clcblueljw@gmail.com
+Message-ID: <565507ee31c10_20ba3ffd571e9dc81860@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565507ee308b0_20ba3ffd571e9dc81851c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565507ee308b0_20ba3ffd571e9dc81851c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_565507ee308b0_20ba3ffd571e9dc81851c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565507ee308b0_20ba3ffd571e9dc81851c--
+
+Completed 500 Internal Server Error in 1221ms (ActiveRecord: 0.3ms)
+
+Net::SMTPAuthenticationError (530-5.5.1 Authentication Required. Learn more at
+):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.1ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:06:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (1.7ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.3ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 198.5ms
+
+Sent mail to clcblueljw@gmail.com (436.9ms)
+Date: Tue, 24 Nov 2015 20:06:32 -0500
+From: clcblueljw@gmail.com
+To: clcblueljw@gmail.com
+Message-ID: <5655099824c2f_22fb3fcbb87b7ed8640e1@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5655099822590_22fb3fcbb87b7ed863952";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5655099822590_22fb3fcbb87b7ed863952
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_5655099822590_22fb3fcbb87b7ed863952
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5655099822590_22fb3fcbb87b7ed863952--
+
+Completed 500 Internal Server Error in 678ms (ActiveRecord: 5.7ms)
+
+Errno::EHOSTUNREACH (No route to host - connect(2) for "smtp.gmail.com" port 25):
+  app/controllers/users_controller.rb:56:in `forgetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:06:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:56)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (1.6ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.4ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 197.9ms
+
+Sent mail to clcblueljw@gmail.com (1680.2ms)
+Date: Tue, 24 Nov 2015 20:06:54 -0500
+From: clcblueljw@gmail.com
+To: clcblueljw@gmail.com
+Message-ID: <565509aeb3906_23013fd770b06d14108e6@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565509aeb1785_23013fd770b06d141077f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565509aeb1785_23013fd770b06d141077f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_565509aeb1785_23013fd770b06d141077f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565509aeb1785_23013fd770b06d141077f--
+
+Completed 200 OK in 1918ms (Views: 0.4ms | ActiveRecord: 4.3ms)
+=======
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/BowenLi/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -19500,3 +22039,429 @@ Can't verify CSRF token authenticity
   [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
 Completed 200 OK in 178ms (Views: 0.5ms | ActiveRecord: 4.3ms)
+>>>>>>> master
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:16:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:140: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/users_controller.rb:140: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (11.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (84.0ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:18:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:19:49 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:21:10 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:60)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (1.6ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.3ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 197.6ms
+
+Sent mail to clcblueljw@gmail.com (974.4ms)
+Date: Tue, 24 Nov 2015 20:21:10 -0500
+From: noname@example.com
+To: clcblueljw@gmail.com
+Message-ID: <56550d06d9fd5_238e3ffc1417c668253a8@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550d06d8365_238e3ffc1417c66825221";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550d06d8365_238e3ffc1417c66825221
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_56550d06d8365_238e3ffc1417c66825221
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550d06d8365_238e3ffc1417c66825221--
+
+Completed 200 OK in 1204ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu1" for ::1 at 2015-11-24 20:21:20 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu1"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu1"]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:21:25 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:60)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 34.3ms
+
+Sent mail to clcblueljw@gmail.com (1548.4ms)
+Date: Tue, 24 Nov 2015 20:21:25 -0500
+From: noname@example.com
+To: clcblueljw@gmail.com
+Message-ID: <56550d15d1104_238e3ffc1417c66825537@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550d15d0266_238e3ffc1417c6682544a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550d15d0266_238e3ffc1417c6682544a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#forget_password_confirmation
+
+Hi, find me in app/views/user_mailer/forget_password_confirmation.text.erb
+
+
+----==_mimepart_56550d15d0266_238e3ffc1417c6682544a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550d15d0266_238e3ffc1417c6682544a--
+
+Completed 200 OK in 1586ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:24:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:60)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (2.3ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.3ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 194.8ms
+
+Sent mail to yxi5@jhu.edu (2270.9ms)
+Date: Tue, 24 Nov 2015 20:24:57 -0500
+From: noname@example.com
+To: yxi5@jhu.edu
+Message-ID: <56550de926f58_23b73fecd1e3e164283b6@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550de924d2c_23b73fecd1e3e16428217";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550de924d2c_23b73fecd1e3e16428217
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Let's Go forget password confirmation
+
+Hi yang,
+
+Here is your validation code, it will be expired in 30 minutes.
+erb
+
+
+----==_mimepart_56550de924d2c_23b73fecd1e3e16428217
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550de924d2c_23b73fecd1e3e16428217--
+
+Completed 200 OK in 2509ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:27:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:60)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (1.7ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.9ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 204.3ms
+
+Sent mail to yxi5@jhu.edu (2945.4ms)
+Date: Tue, 24 Nov 2015 20:27:29 -0500
+From: noname@example.com
+To: yxi5@jhu.edu
+Message-ID: <56550e81b01d8_23c63fce296e54386656@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550e81ae603_23c63fce296e543866490";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550e81ae603_23c63fce296e543866490
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Let's Go forget password confirmation
+
+Hi yang,
+
+Here is your validation code, it will be expired in 30 minutes.
+erb
+
+
+----==_mimepart_56550e81ae603_23c63fce296e543866490
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>UserMailer#forget_password_confirmation</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/forget_password_confirmation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550e81ae603_23c63fce296e543866490--
+
+Completed 200 OK in 3197ms (Views: 0.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 20:30:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:60)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (1.7ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.3ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 182.7ms
+
+Sent mail to yxi5@jhu.edu (2165.4ms)
+Date: Tue, 24 Nov 2015 20:30:50 -0500
+From: noname@example.com
+To: yxi5@jhu.edu
+Message-ID: <56550f4a32888_23e03ffb08b8d3d084ee@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56550f4a30ab3_23e03ffb08b8d3d08363";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56550f4a30ab3_23e03ffb08b8d3d08363
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Let's Go Forget Password Confirmation
+
+Hi yang,
+
+Here is your validation code, it will be expired in 30 minutes.
+erb
+
+
+----==_mimepart_56550f4a30ab3_23e03ffb08b8d3d08363
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>Let's Go Forget Password Confirmation</h1>
+
+<p>
+  Hi yang, <br>
+  Here is your validation code, it will be expired in 30 minutes.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56550f4a30ab3_23e03ffb08b8d3d08363--
+
+Completed 200 OK in 2392ms (Views: 0.2ms | ActiveRecord: 4.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddValidationCodeTimeToUser (20151125013722)
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36m (14.0ms)[0m  [1mALTER TABLE "users" ADD "validation_code" character varying[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "users" ADD "validation_time" timestamp
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151125013722"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to AddAvatarToUser (20151125013831)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "avatar" character varying
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151125013831"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddValidationCodeTimeToUser (20151125013722)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (10.4ms)[0m  [1mALTER TABLE "users" ADD "validation_code" character varying[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "validation_time" timestamp
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151125013722"]]
+  [1m[35m (1.9ms)[0m  COMMIT
+Migrating to AddAvatarToUser (20151125013831)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "avatar" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151125013831"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (10.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
