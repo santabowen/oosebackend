@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125183720) do
+ActiveRecord::Schema.define(version: 20151125194929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20151125183720) do
     t.string   "activityType"
     t.string   "location"
     t.integer  "groupSize"
+    t.integer  "memberNum"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "comments"
     t.integer  "duration"
     t.string   "hostid"
-    t.integer  "memberNum"
     t.integer  "user_id"
     t.decimal  "longitude",    precision: 64, scale: 12
     t.decimal  "latitude",     precision: 64, scale: 12
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20151125183720) do
   add_index "memberactivities", ["activity_id"], name: "index_memberactivities_on_activity_id", using: :btree
   add_index "memberactivities", ["user_id", "activity_id"], name: "index_memberactivities_on_user_id_and_activity_id", unique: true, using: :btree
   add_index "memberactivities", ["user_id"], name: "index_memberactivities_on_user_id", using: :btree
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "activity_id"
+    t.integer  "user_id"
+    t.integer  "member_id"
+    t.integer  "rating"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

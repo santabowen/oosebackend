@@ -115,7 +115,6 @@ class UsersController < ApplicationController
   def forgetpw
 	user = User.find_by(email: params[:email])
 	# print params[:email]
-	# UserMailer.forget_password_confirmation(@user).deliver
 	if !user.nil?
 
    	 	validation_code = rand_string(6)
@@ -136,10 +135,6 @@ class UsersController < ApplicationController
 		render :json => rtn
 
 		# UserMailer.forget_password_confirmation(@user).deliver_now
-
-	    validation_code = rand_string(6)
-	    validation_time = Time.now
-	    user.update(validation_time: validation_time, validation_time: validation_time)
 	else
 		rtn = {
   		status: "404"
@@ -175,6 +170,72 @@ class UsersController < ApplicationController
     end
   end
 
+  def ratemember
+  	act_id = params[:act_id]
+  	user_id = params[:uid]
+  	authtoken = params[:authtoken]
+  	members = params[:members]
+
+  	members.each do |ma|
+  		member_id = members.member_id
+  		rating = members.rating
+  		Rating.create(activity_id: act_id, user_id: user_id,
+  					  member_id: member_id, rating:rating)
+  	end
+  	rtn = {
+	  	status: "201"
+	}
+	render :json => rtn
+
+  end
+
+
+  def rating
+  	
+  	act_id = params[:act_id]
+  	user_id = params[:uid]
+  	authtoken = params[:authtoken]
+
+  	act = Activity.find_by(id: act_id)
+	ratings = []
+	# puts "user id: " 
+	# print user_id
+	act.memberactivities.each do |ma|
+		member_id = ma.user_id
+
+		member = User.find_by(id: member_id)
+		member_name = member.name
+		member_avatar = member.avatar
+		
+		if member_id != user_id
+			# puts "member id: "
+			# print member_id 
+			rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+
+			if !rate.nil?
+				ratings << {
+			        member_id:          member_id,
+			        member_name:        member_name,
+			        member_avatar:      member_avatar,
+			        rating:       		rate.rating
+	      		}
+			else
+				ratings << {
+			        member_id:          member_id,
+			        member_name:        member_name,
+			        member_avatar:      member_avatar,
+			        rating:       		-1
+	      		}
+			end
+		end
+	end
+	rtn = {
+      members:   ratings,
+      status:    "201"
+    }
+    render :json => rtn
+  end
+
 	private
 		
 	def user_params
@@ -197,7 +258,7 @@ class UsersController < ApplicationController
       return user
     end
 
-		def check_for_valid_authtoken
+	  def check_for_valid_authtoken
 	    authenticate_or_request_with_http_token do |token, options|     
 	      @user = User.where(:api_authtoken => token).first      
 	    end
