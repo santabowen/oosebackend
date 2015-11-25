@@ -7,6 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def forget_password_confirmation(user)
     @user_name = user.name
+    @user_validation = user.validation_code
     # mail to: "user.email", subject: "forget Password Confirmation"
     mail(to: user.email, subject: "forget Password Confirmation")
   end

@@ -63,6 +63,9 @@ class UsersController < ApplicationController
   		status: "201"
   		}
 		render :json => rtn
+    validation_code = rand_string(6)
+    validation_time = Time.now
+    @user.update(validation_time: validation_time, validation_time: validation_time)
 
 		UserMailer.forget_password_confirmation(@user).deliver
 	else
