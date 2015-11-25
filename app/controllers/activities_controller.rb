@@ -3,90 +3,179 @@ class ActivitiesController < ApplicationController
   end
 
   def post
-    @user = User.find_by(id: params[:HostID])
-    if @user and @user.activities.create(activity_params) 
-      print "Successfully create an activity."
-      rtn = {
-        status: "201"
+  	if checkAuth(params)
+  		@user = User.find_by(id: params[:HostID])
+	    if @user and @user.activities.create(activity_params) 
+	      print "Successfully create an activity."
+	      rtn = {
+	        status: "201"
+	      }
+				render :json => rtn
+			else
+				print "Fail to create an activity."
+				rtn = {
+					errormsg: "Fail to create an activity.",
+	        status:   "404"
+	      }
+	    	render :json => rtn
+	    end
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
       }
-			render :json => rtn
-		else
-			print "Fail to create an activity."
-			rtn = {
-        status: "404"
-      }
-    render :json => rtn
-    end
+	    render :json => rtn
+  	end
+    
   end
 
-  def get
-    rtnacts = []
-    acts = Activity.all
-    acts.each do |a|
-      rtnacts << {
-        actid:          a.id,
-        actType:        a.activityType,
-        groupSize:      a.groupSize,
-        location:       a.location,
-        startTime:      a.startTime,
-        duration:       a.duration,
-        comments:       a.comments
+  def getByUserID
+  	if checkAuth(params)
+  		user = User.find(params[:UserID])
+  		joined_id = Memberactivity.where(user_id: params[:UserID])
+  		joined = []
+  		joined_id.each do |j|
+  			joined << Activity.find_by(id: j.activity_id)
+  		end	
+	    acts = user.activities + joined
+
+	    rtnacts = []
+	    acts.each do |a|
+	      rtnacts << {
+	        actid:          a.id,
+	        actType:        a.activityType,
+	        groupSize:      a.groupSize,
+	        location:       a.location,
+	        startTime:      a.startTime,
+	        duration:       a.duration,
+	        comments:       a.comments
+	      }
+	    end
+	    rtn = {
+	      acts:   rtnacts,
+	      status: "201"
+	    }
+	    render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
       }
-    end
-    rtn = {
-      acts:   rtnacts,
-      status: "201"
-    }
-    render :json => rtn
+	    render :json => rtn
+  	end
+  end
+
+  def getByGeoInfo
+  	if checkAuth(params)
+  		@min_lng = params[:Lng] - 0.045
+  		@max_lng = params[:Lng] + 0.045
+  		@min_lat = params[:Lat] - 0.045
+  		@max_lat = params[:Lat] + 0.045
+
+  		acts = Actitity.find_by_sql("SELECT * FROM activities 
+  			WHERE longitude < #{@max_lng} AND longitude > #{@min_lng} 
+  			AND latitude < #{@max_lat} AND latitude > #{@min_lat}")
+  		
+	    rtnacts = []
+	    acts.each do |a|
+	      rtnacts << {
+	        actid:          a.id,
+	        actType:        a.activityType,
+	        groupSize:      a.groupSize,
+	        location:       a.location,
+	        startTime:      a.startTime,
+	        duration:       a.duration,
+	        comments:       a.comments
+	      }
+	    end
+	    rtn = {
+	      acts:   rtnacts,
+	      status: "201"
+	    }
+	    render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+	    render :json => rtn
+  	end
+    
   end
 
   def join
-    a = Activity.find_by(id: params[:ActID])
-    a.update(memberNum: a.memberNum + 1)
-    a.memberactivities.create(user_id: params[:UserID], activity_id: params[:ActID])
-		rtn = {
-	  	status: "201"
-	  }
-		render :json => rtn
+  	if checkAuth(params)
+  		a = Activity.find_by(id: params[:ActID])
+	    a.update(memberNum: a.memberNum + 1)
+	    a.memberactivities.create(user_id: params[:UserID], activity_id: params[:ActID])
+			rtn = {
+		  	status: "201"
+		  }
+			render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+	    render :json => rtn
+  	end
+    
 	end
 
 	def drop
-		a = Activity.find_by(id: params[:ActID])
-		relation = a.memberactivities.find_by(user_id: params[:UserID])
-		relation.delete
-		rtn = {
-	  	status: "201"
-	  }
-		render :json => rtn
+		if checkAuth(params)
+  		a = Activity.find_by(id: params[:ActID])
+			relation = a.memberactivities.find_by(user_id: params[:UserID])
+			relation.delete
+			rtn = {
+		  	status: "201"
+		  }
+			render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+	    render :json => rtn
+  	end
+		
 	end
 	
 	def getsingle
-		a = Activity.find_by(id: params[:actId])
-		members = []
-		
-		a.memberactivities.each do |ma|
-			members << {
-				uid:      ma.user_id
+		if checkAuth(params)
+  		a = Activity.find_by(id: params[:actId])
+			members = []
+			
+			a.memberactivities.each do |ma|
+				members << {
+					uid:      ma.user_id
+				}
+			end
+			rtnact = {
+				actid:            a.id,
+				actType:          a.activityType,
+				groupSize:        a.groupSize,
+				currentGroupSize: a.memberNum,
+				location:         a.location,
+				startTime:        a.startTime,
+				duration:         a.duration,
+				comments:         a.comments,
+				longitude:        a.longitude,
+				latitude:         a.latitude,
+				memberlist:       members
 			}
-		end
-		rtnact = {
-			actid:            a.id,
-			actType:          a.activityType,
-			groupSize:        a.groupSize,
-			currentGroupSize: a.memberNum,
-			location:         a.location,
-			startTime:        a.startTime,
-			duration:         a.duration,
-			comments:         a.comments,
-			longitude:        a.longitude,
-			latitude:         a.latitude,
-			memberlist:       members
-		}
-		rtn = {
-			act:    rtnact,
-	  	status: "201"
-	  }
-		render :json => rtn
+			rtn = {
+				act:    rtnact,
+		  	status: "201"
+		  }
+			render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+	    render :json => rtn
+  	end
 	end
 
 	private

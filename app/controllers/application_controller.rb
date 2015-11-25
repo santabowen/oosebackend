@@ -5,4 +5,13 @@ class ApplicationController < ActionController::Base
     e = Error.new(:status => 404, :message => "Wrong URL or HTTP method")    
     render :json => e.to_json, :status => 404
   end
+
+  def checkAuth(params)
+		user = User.find_by(id: params[:uid])
+		if user && user.authtoken == params[:authtoken]
+			return true
+		else
+			return false
+		end
+	end
 end

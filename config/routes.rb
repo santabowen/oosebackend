@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   post     'activities/post'
   get      'activities/getsingle'
-  get      'activities/get'
+  post     'activities/getByGeoInfo'
+  post     'activities/getByUserID'
   post     'activities/join'
   delete   'activities/drop'
 
