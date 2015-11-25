@@ -27,7 +27,65 @@ class UsersController < ApplicationController
 	end
 
 	def resetpw
-  end
+		user = User.find_by(email: params[:email]) 
+		if !user.nil?
+			if Time.now - user.validation_time < 60*60
+				validation_code = params[:validation_code]
+		    	
+		    	if validation_code == user.validation_code
+			    	rtn = {
+			  			status: "201"
+			  		}
+					render :json => rtn
+					psw_token = BCrypt::Engine.hash_secret(params[:new_password], user.password_salt)
+					user.update(password_digest: psw_token)
+				else # validation code not correct
+					rtn = {
+	  				status: "401"
+	  				}
+					render :json => rtn
+				end
+			else # validation code expired
+				rtn = {
+	  				status: "402"
+	  			}
+				render :json => rtn
+			end
+		else # no such email found
+			rtn = {
+	  			status: "403"
+	  		}
+			render :json => rtn
+		end
+  	end
+
+  	def changepw
+  		user = User.find_by(email: params[:email]) 
+		if !user.nil?
+			if params[:old_password] == user.password_digest 
+				validation_code = params[:validation_code]
+		    
+		    	rtn = {
+		  			status: "201"
+		  		}
+
+				render :json => rtn
+				psw_token = BCrypt::Engine.hash_secret(params[:new_password], @user.password_salt)
+				user.update(password_digest: psw_token)
+				
+			else # validation code expired
+				rtn = {
+	  				status: "402"
+	  			}
+				render :json => rtn
+			end
+		else # no such email found
+			rtn = {
+	  			status: "403"
+	  		}
+			render :json => rtn
+		end
+  	end
 
 	def signin
 		rtn = {
@@ -59,15 +117,29 @@ class UsersController < ApplicationController
 	# print params[:email]
 	# UserMailer.forget_password_confirmation(@user).deliver
 	if !user.nil?
+
+   	 	validation_code = rand_string(6)
+    	validation_time = Time.now
+
+    	user.update(validation_code: validation_code)
+    	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+    	# print user.errors.messages
+    	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+    	user.update(validation_time: validation_time)
+    	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+    	# print user.errors.messages
+    	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+
 		rtn = {
-  		status: "201"
+  			status: "201"
   		}
 		render :json => rtn
-    validation_code = rand_string(6)
-    validation_time = Time.now
-    user.update(validation_time: validation_time, validation_time: validation_time)
 
-		UserMailer.forget_password_confirmation(user).deliver
+		# UserMailer.forget_password_confirmation(@user).deliver_now
+
+	    validation_code = rand_string(6)
+	    validation_time = Time.now
+	    user.update(validation_time: validation_time, validation_time: validation_time)
 	else
 		rtn = {
   		status: "404"
@@ -105,15 +177,15 @@ class UsersController < ApplicationController
 
 	private
 		
-		def user_params
-			user = Hash.new
-			user[:name]      = params[:name]
-			user[:email]     = params[:email]
-			user[:password]  = params[:password]
-			user[:gender]    = params[:gender]
-			user[:authtoken] = rand_string(20)
-			return user
-		end
+	def user_params
+		user = Hash.new
+		user[:name]      = params[:name]
+		user[:email]     = params[:email]
+		user[:password]  = params[:password]
+		user[:gender]    = params[:gender]
+		user[:authtoken] = rand_string(20)
+		return user
+	end
 
     def user_params_fb(profile)
       user = Hash.new

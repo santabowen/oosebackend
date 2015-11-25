@@ -22465,3 +22465,1365 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+<<<<<<< HEAD
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('test2@gmail.com') AND "users"."id" != 4) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('test2@gmail.com') AND "users"."id" != 4) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+#<ActiveModel::Errors:0x007fd9cf411918 @base=#<User id: 4, name: "test2", email: "test2@gmail.com", created_at: "2015-11-14 01:05:13", updated_at: "2015-11-14 01:05:13", password_digest: "$2a$10$XGOhAy6fBKVoPBRkQvbJNOvF8IdfOoenFZCgqUoImVs...", authtoken: "HQqgQmgurtUXsyVhIVxFb", password_salt: "$2a$10$XGOhAy6fBKVoPBRkQvbJNO", gender: "male", validation_code: nil, validation_time: "2015-11-25 04:18:05", avatar: nil>, @messages={:password=>["can't be blank", "is too short (minimum is 6 characters)"]}>
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('test2@gmail.com') AND "users"."id" != 4) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('test2@gmail.com') AND "users"."id" != 4) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+#<ActiveModel::Errors:0x007fd9cb19e3b0 @base=#<User id: 4, name: "test2", email: "test2@gmail.com", created_at: "2015-11-14 01:05:13", updated_at: "2015-11-14 01:05:13", password_digest: "$2a$10$XGOhAy6fBKVoPBRkQvbJNOvF8IdfOoenFZCgqUoImVs...", authtoken: "HQqgQmgurtUXsyVhIVxFb", password_salt: "$2a$10$XGOhAy6fBKVoPBRkQvbJNO", gender: "male", validation_code: nil, validation_time: "2015-11-25 04:26:50", avatar: nil>, @messages={:password=>["can't be blank", "is too short (minimum is 6 characters)"]}>
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('test2@gmail.com') AND "users"."id" != 4) LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('test2@gmail.com') AND "users"."id" != 4) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('test2@gmail.com') AND "users"."id" != 4) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "validation_time" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["validation_time", "2015-11-25 04:34:38.427548"], ["updated_at", "2015-11-25 04:34:38.449485"], ["id", 4]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/activities/post" for ::1 at 2015-11-25 13:19:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"1", "GroupSize"=>"2", "Lng"=>"-0.1346614", "ActivityType"=>"Swimming", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"2012-12-13T06:12", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/activities/post" for ::1 at 2015-11-25 13:21:04 -0500
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"1", "GroupSize"=>"2", "Lng"=>"-0.1346614", "ActivityType"=>"Swimming", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"2012-12-13T06:12", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mSQL (8.8ms)[0m  [1mINSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["hostid", "1"], ["activityType", "Swimming"], ["location", "Piccadilly Circus"], ["groupSize", 2], ["comments", "test #4."], ["duration", 1000], ["longitude", "-0.1346614"], ["latitude", "51.5101005"], ["startTime", "2012-12-13 11:12:00.000000"], ["memberNum", 1], ["user_id", 1], ["created_at", "2015-11-25 18:21:04.686589"], ["updated_at", "2015-11-25 18:21:04.686589"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 95ms (Views: 0.3ms | ActiveRecord: 20.1ms)
+
+
+Started POST "/activities/post" for ::1 at 2015-11-25 13:22:33 -0500
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"4", "GroupSize"=>"5", "Lng"=>"-0.1346614", "ActivityType"=>"Basketball", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"2012-12-13T06:12", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["hostid", "4"], ["activityType", "Basketball"], ["location", "Piccadilly Circus"], ["groupSize", 5], ["comments", "test #4."], ["duration", 1000], ["longitude", "-0.1346614"], ["latitude", "51.5101005"], ["startTime", "2012-12-13 11:12:00.000000"], ["memberNum", 1], ["user_id", 4], ["created_at", "2015-11-25 18:22:33.329899"], ["updated_at", "2015-11-25 18:22:33.329899"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveColumn (20151125183121)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (23.9ms)[0m  [1mALTER TABLE "activities" DROP "startTime"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151125183121"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumn (20151125183720)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (7.8ms)[0m  [1mALTER TABLE "activities" ADD "startTime" timestamp[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151125183720"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (6.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (8.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started POST "/activities/post" for ::1 at 2015-11-25 13:38:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"4", "GroupSize"=>"5", "Lng"=>"-0.1346614", "ActivityType"=>"Basketball", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"2012-12-13T06:12", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.5ms)[0m  INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["hostid", "4"], ["activityType", "Basketball"], ["location", "Piccadilly Circus"], ["groupSize", 5], ["comments", "test #4."], ["duration", 1000], ["longitude", "-0.1346614"], ["latitude", "51.5101005"], ["startTime", "2012-12-13 11:12:00.000000"], ["memberNum", 1], ["user_id", 4], ["created_at", "2015-11-25 18:38:22.497857"], ["updated_at", "2015-11-25 18:38:22.497857"]]
+PG::DatatypeMismatch: ERROR:  column "startTime" is of type timestamp without time zone but expression is of type time without time zone at character 232
+HINT:  You will need to rewrite or cast the expression.
+: INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 12.9ms)
+
+PG::DatatypeMismatch (ERROR:  column "startTime" is of type timestamp without time zone but expression is of type time without time zone at character 232
+HINT:  You will need to rewrite or cast the expression.
+):
+  app/controllers/activities_controller.rb:7:in `post'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (85.7ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (131.0ms)
+
+
+Started POST "/activities/post" for ::1 at 2015-11-25 13:39:05 -0500
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"4", "GroupSize"=>"5", "Lng"=>"-0.1346614", "ActivityType"=>"Basketball", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"2012-12-13 06:12", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["hostid", "4"], ["activityType", "Basketball"], ["location", "Piccadilly Circus"], ["groupSize", 5], ["comments", "test #4."], ["duration", 1000], ["longitude", "-0.1346614"], ["latitude", "51.5101005"], ["startTime", "2012-12-13 11:12:00.000000"], ["memberNum", 1], ["user_id", 4], ["created_at", "2015-11-25 18:39:05.462067"], ["updated_at", "2015-11-25 18:39:05.462067"]]
+PG::DatatypeMismatch: ERROR:  column "startTime" is of type timestamp without time zone but expression is of type time without time zone at character 232
+HINT:  You will need to rewrite or cast the expression.
+: INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.3ms)
+
+PG::DatatypeMismatch (ERROR:  column "startTime" is of type timestamp without time zone but expression is of type time without time zone at character 232
+HINT:  You will need to rewrite or cast the expression.
+):
+  app/controllers/activities_controller.rb:7:in `post'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (35.2ms)
+
+
+Started POST "/activities/post" for ::1 at 2015-11-25 13:41:15 -0500
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"4", "GroupSize"=>"5", "Lng"=>"-0.1346614", "ActivityType"=>"Basketball", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"2012-12-13 06:12", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["hostid", "4"], ["activityType", "Basketball"], ["location", "Piccadilly Circus"], ["groupSize", 5], ["comments", "test #4."], ["duration", 1000], ["longitude", "-0.1346614"], ["latitude", "51.5101005"], ["startTime", "2012-12-13 06:12:00.000000"], ["memberNum", 1], ["user_id", 4], ["created_at", "2015-11-25 18:41:15.845242"], ["updated_at", "2015-11-25 18:41:15.845242"]]
+PG::DatatypeMismatch: ERROR:  column "startTime" is of type timestamp without time zone but expression is of type time without time zone at character 232
+HINT:  You will need to rewrite or cast the expression.
+: INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 6.8ms)
+
+PG::DatatypeMismatch (ERROR:  column "startTime" is of type timestamp without time zone but expression is of type time without time zone at character 232
+HINT:  You will need to rewrite or cast the expression.
+):
+  app/controllers/activities_controller.rb:7:in `post'
+
+
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (13.6ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.3ms)
+  Rendered /Users/BowenLi/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (45.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddColumn (20151125183720)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "activities" DROP "startTime"
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151125183720"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to RemoveColumn (20151125183121)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to RemoveColumn (20151125183121)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to RemoveColumn (20151125183121)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumn (20151125183720)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "activities" ADD "startTime" timestamps[0m
+PG::UndefinedObject: ERROR:  type "timestamps" does not exist
+LINE 1: ALTER TABLE "activities" ADD "startTime" timestamps
+                                                 ^
+: ALTER TABLE "activities" ADD "startTime" timestamps
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumn (20151125183720)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "activities" ADD "startTime" timestamp[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151125183720"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'activities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memberactivities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started POST "/activities/post" for ::1 at 2015-11-25 13:50:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"4", "GroupSize"=>"5", "Lng"=>"-0.1346614", "ActivityType"=>"Basketball", "Comments"=>"test #4.", "Location"=>"Piccadilly Circus", "StartTime"=>"2012-12-13 06:12", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["hostid", "4"], ["activityType", "Basketball"], ["location", "Piccadilly Circus"], ["groupSize", 5], ["comments", "test #4."], ["duration", 1000], ["longitude", "-0.1346614"], ["latitude", "51.5101005"], ["startTime", "2012-12-13 11:12:00.000000"], ["memberNum", 1], ["user_id", 4], ["created_at", "2015-11-25 18:50:05.064301"], ["updated_at", "2015-11-25 18:50:05.064301"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 96ms (Views: 0.3ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/activities/post" for ::1 at 2015-11-25 13:52:12 -0500
+Processing by ActivitiesController#post as */*
+  Parameters: {"Lat"=>"51.5101005", "HostID"=>"4", "GroupSize"=>"5", "Lng"=>"-0.1346614", "ActivityType"=>"Football", "Comments"=>"test #4.", "Location"=>"ABC", "StartTime"=>"2012-12-13T06:12", "Duration"=>"1000"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "activities" ("hostid", "activityType", "location", "groupSize", "comments", "duration", "longitude", "latitude", "startTime", "memberNum", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["hostid", "4"], ["activityType", "Football"], ["location", "ABC"], ["groupSize", 5], ["comments", "test #4."], ["duration", 1000], ["longitude", "-0.1346614"], ["latitude", "51.5101005"], ["startTime", "2012-12-13 11:12:00.000000"], ["memberNum", 1], ["user_id", 4], ["created_at", "2015-11-25 18:52:12.302925"], ["updated_at", "2015-11-25 18:52:12.302925"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+=======
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=00" for ::1 at 2015-11-24 21:45:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"00"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.7ms)
+
+TypeError (can't convert nil into an exact number):
+  app/controllers/users_controller.rb:32:in `resetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (71.1ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=00" for ::1 at 2015-11-24 21:46:04 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"00"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=00" for ::1 at 2015-11-24 21:46:25 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"00"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+Completed 200 OK in 37ms (Views: 0.6ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 21:52:46 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:103)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.9ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.6ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 347.3ms
+
+Sent mail to yxi5@jhu.edu (2477.7ms)
+Date: Tue, 24 Nov 2015 21:52:47 -0500
+From: noname@example.com
+To: yxi5@jhu.edu
+Message-ID: <5655227f24496_26683fed769c3904637fc@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5655227f21249_26683fed769c390463642";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5655227f21249_26683fed769c390463642
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Let's Go Forget Password Confirmation
+
+Hi yang,
+
+Here is your validation code: 123456, it will be expired in 30 minutes.
+erb
+
+
+----==_mimepart_5655227f21249_26683fed769c390463642
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>Let's Go Forget Password Confirmation</h1>
+
+<p>
+  Hi yang, <br>
+  Here is your validation code: 123456, it will be expired in 30 minutes.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5655227f21249_26683fed769c390463642--
+
+Completed 200 OK in 2964ms (Views: 0.3ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=123456" for ::1 at 2015-11-24 21:53:43 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"123456"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 21:55:11 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from forgetpw at /Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:103)
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (0.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.1ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 38.4ms
+
+Sent mail to yxi5@jhu.edu (1328.1ms)
+Date: Tue, 24 Nov 2015 21:55:11 -0500
+From: noname@example.com
+To: yxi5@jhu.edu
+Message-ID: <5655230fd0aa5_26683fed79250b9c639af@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5655230fcfb02_26683fed79250b9c638ca";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5655230fcfb02_26683fed79250b9c638ca
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Let's Go Forget Password Confirmation
+
+Hi yang,
+
+Here is your validation code: NvNoKeG, it will be expired in 30 minutes.
+erb
+
+
+----==_mimepart_5655230fcfb02_26683fed79250b9c638ca
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>Let's Go Forget Password Confirmation</h1>
+
+<p>
+  Hi yang, <br>
+  Here is your validation code: NvNoKeG, it will be expired in 30 minutes.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5655230fcfb02_26683fed79250b9c638ca--
+
+Completed 200 OK in 1411ms (Views: 0.3ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:03:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered user_mailer/forget_password_confirmation.html.erb within layouts/mailer (5.1ms)
+  Rendered user_mailer/forget_password_confirmation.text.erb within layouts/mailer (0.7ms)
+
+UserMailer#forget_password_confirmation: processed outbound mail in 363.8ms
+
+Sent mail to yxi5@jhu.edu (2278.5ms)
+Date: Tue, 24 Nov 2015 22:03:20 -0500
+From: noname@example.com
+To: yxi5@jhu.edu
+Message-ID: <565524f8945f4_26d03fddadef7034977c8@Xis-MacBook-Pro.local.mail>
+Subject: forget Password Confirmation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565524f891056_26d03fddadef703497698";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565524f891056_26d03fddadef703497698
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Let's Go Forget Password Confirmation
+
+Hi yang,
+
+Here is your validation code: jtHpclX, it will be expired in 30 minutes.
+erb
+
+
+----==_mimepart_565524f891056_26d03fddadef703497698
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>Let's Go Forget Password Confirmation</h1>
+
+<p>
+  Hi yang, <br>
+  Here is your validation code: jtHpclX, it will be expired in 30 minutes.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565524f891056_26d03fddadef703497698--
+
+Completed 200 OK in 2786ms (Views: 0.9ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:04:29 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:07:34 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu1" for ::1 at 2015-11-24 22:08:29 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu1"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu1"]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu1" for ::1 at 2015-11-24 22:09:19 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu1"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu1"]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:09:23 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:10:18 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 2) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:11:25 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 2) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:14:23 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 27ms (Views: 1.6ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:14:49 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:15:44 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (1.8ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (1.5ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:19:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 63ms (Views: 0.2ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:26:23 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (5.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 67ms (Views: 0.9ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:26:41 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:28:09 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 104ms (Views: 0.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:28:29 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (1.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:29:03 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:29:11 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:31:15 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:33:59 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "password_salt" = $1, "password_digest" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["password_salt", "$2a$10$1UsfpiOTztrvi7UIZrGqFO"], ["password_digest", "$2a$10$1UsfpiOTztrvi7UIZrGqFO4r9AhV0KgqaQM.iY20/ujvhirmOIa2a"], ["updated_at", "2015-11-25 03:33:59.364307"], ["id", 1]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "validation_code" = $1, "password_salt" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["validation_code", "MjfqfzC"], ["password_salt", "$2a$10$rYct.9nqPnVusIhJUDBwYu"], ["password_digest", "$2a$10$rYct.9nqPnVusIhJUDBwYu3wM4sPfuMRoiQ2vSoK3swUVlSmmDlRi"], ["updated_at", "2015-11-25 03:33:59.443732"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "validation_time" = $1, "password_salt" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["validation_time", "2015-11-25 03:33:59.292710"], ["password_salt", "$2a$10$ED.C6/xdJSz/kmBK9TeXmu"], ["password_digest", "$2a$10$ED.C6/xdJSz/kmBK9TeXmuQP46w0QnJudvkdVM4QiKyWgYakRJPw2"], ["updated_at", "2015-11-25 03:33:59.516573"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 241ms (Views: 0.2ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:51:15 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "password_salt" = $1, "password_digest" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["password_salt", "$2a$10$jdm5LiPMfRNBIKr5j99uru"], ["password_digest", "$2a$10$jdm5LiPMfRNBIKr5j99uruFWR9GBCvto2ZbNlfj8I/J17kidab9dC"], ["updated_at", "2015-11-25 03:51:15.442030"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "validation_code" = $1, "password_salt" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["validation_code", "OmHrLMx"], ["password_salt", "$2a$10$anzKMHoxCHqlOLtvkkRDR."], ["password_digest", "$2a$10$anzKMHoxCHqlOLtvkkRDR.xjjgqjeKf5qzIQJJM34G7SSgejkqTLu"], ["updated_at", "2015-11-25 03:51:15.523907"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "validation_time" = $1, "password_salt" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["validation_time", "2015-11-25 03:51:15.363677"], ["password_salt", "$2a$10$.F22UTfT5meNEBXmjg/nke"], ["password_digest", "$2a$10$.F22UTfT5meNEBXmjg/nkersb9FV1406.ppRIs9vriP/3E9eFNUcC"], ["updated_at", "2015-11-25 03:51:15.602872"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 200 OK in 282ms (Views: 0.9ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:51:53 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 62ms (Views: 0.2ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:52:21 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "password_salt" = $1, "password_digest" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["password_salt", "$2a$10$Tb2KX5IYSyjM9CUfURRZU."], ["password_digest", "$2a$10$Tb2KX5IYSyjM9CUfURRZU.eEgmFfcO.81U20uHN8vCdCYgdCCAY/C"], ["updated_at", "2015-11-25 03:52:21.218854"], ["id", 1]]
+  [1m[35m (2.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "validation_code" = $1, "password_salt" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["validation_code", "sLBWhRG"], ["password_salt", "$2a$10$X017seY7Jk2XAAxd.0ghCu"], ["password_digest", "$2a$10$X017seY7Jk2XAAxd.0ghCul/mksc4DlHX417qtgQ7VEAUJUwYwnW."], ["updated_at", "2015-11-25 03:52:21.300934"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "validation_time" = $1, "password_salt" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["validation_time", "2015-11-25 03:52:21.136304"], ["password_salt", "$2a$10$BIsFPuRM53JPV14z2UEGf."], ["password_digest", "$2a$10$BIsFPuRM53JPV14z2UEGf.pLTHCtXX7/rNLYimuuBqwcmrT7ufCGG"], ["updated_at", "2015-11-25 03:52:21.383787"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 200 OK in 269ms (Views: 0.2ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:54:40 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "password_salt" = $1, "password_digest" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["password_salt", "$2a$10$YFLUhuN804SRdaEFGltAuO"], ["password_digest", "$2a$10$YFLUhuN804SRdaEFGltAuOqRrHkpzcZcX2hI16kpZYxdZsC0GeKb6"], ["updated_at", "2015-11-25 03:54:40.279427"], ["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "validation_code" = $1, "password_salt" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["validation_code", "NJRZjUk"], ["password_salt", "$2a$10$L4T1oVQXl5u/0DTqIb80cu"], ["password_digest", "$2a$10$L4T1oVQXl5u/0DTqIb80cuZP4g7sMYPD/0rVbvlWrjqliLCFtjse."], ["updated_at", "2015-11-25 03:54:40.356878"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "validation_time" = $1, "password_salt" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["validation_time", "2015-11-25 03:54:40.203868"], ["password_salt", "$2a$10$w2QXn8.nAf8MlXzV.Ey02O"], ["password_digest", "$2a$10$w2QXn8.nAf8MlXzV.Ey02OiD/n/nlMgcx4Qi/Zs3NIi3Q6/KkrI2."], ["updated_at", "2015-11-25 03:54:40.432721"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 269ms (Views: 0.8ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:54:54 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "validation_time" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["validation_time", "2015-11-25 03:54:54.571873"], ["updated_at", "2015-11-25 03:54:54.575094"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:55:03 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "validation_time" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["validation_time", "2015-11-25 03:55:03.960892"], ["updated_at", "2015-11-25 03:55:03.964533"], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:56:26 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 22:56:36 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 23:58:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:63: syntax error, unexpected ':', expecting ')'
+  		user = User.find_by(: params[:email]) 
+  		                     ^
+/Users/ChrisXi/JHU Study/Courses/600.421 Object Oriented Software Engineering/project/Code/BackEnd/Ruby/app/controllers/users_controller.rb:63: syntax error, unexpected ')', expecting keyword_end
+  		user = User.find_by(: params[:email]) 
+  		                                     ^):
+  app/controllers/users_controller.rb:63: syntax error, unexpected ':', expecting ')'
+  app/controllers/users_controller.rb:63: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (10.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (81.1ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-24 23:59:59 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (5.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (2.0ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mUPDATE "users" SET "validation_code" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["validation_code", "tQFSeZk"], ["updated_at", "2015-11-25 04:59:59.834935"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "validation_time" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["validation_time", "2015-11-25 04:59:59.818217"], ["updated_at", "2015-11-25 04:59:59.846053"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 200 OK in 76ms (Views: 0.7ms | ActiveRecord: 29.3ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-25 00:03:39 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "validation_code" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["validation_code", "njRaxgV"], ["updated_at", "2015-11-25 05:03:39.274634"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "validation_time" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["validation_time", "2015-11-25 05:03:39.271666"], ["updated_at", "2015-11-25 05:03:39.278344"], ["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/users/forgetpw?email=yxi5@jhu.edu" for ::1 at 2015-11-25 00:03:50 -0500
+Processing by UsersController#forgetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "validation_code" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["validation_code", "lGnqfGA"], ["updated_at", "2015-11-25 05:03:50.064844"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE "users" SET "validation_time" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["validation_time", "2015-11-25 05:03:50.061410"], ["updated_at", "2015-11-25 05:03:50.072508"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:04:26 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `validation_time' for nil:NilClass):
+  app/controllers/users_controller.rb:32:in `resetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.9ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:04:26 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `validation_time' for nil:NilClass):
+  app/controllers/users_controller.rb:32:in `resetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (23.7ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (100.2ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:04:55 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.9ms)
+
+NoMethodError (undefined method `validation_code' for nil:NilClass):
+  app/controllers/users_controller.rb:35:in `resetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (58.5ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:05:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 5.6ms)
+
+NoMethodError (undefined method `validation_code' for nil:NilClass):
+  app/controllers/users_controller.rb:35:in `resetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (62.4ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:05:21 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+Completed 500 Internal Server Error in 16ms (Views: 0.2ms | ActiveRecord: 4.4ms)
+
+NoMethodError (undefined method `password_salt' for nil:NilClass):
+  app/controllers/users_controller.rb:40:in `resetpw'
+
+
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (9.5ms)
+  Rendered /Users/ChrisXi/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.1ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:05:30 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$10$w2QXn8.nAf8MlXzV.Ey02O/E5QzZjCXJcQ9SqHYT34WJL4gEyqudC"], ["updated_at", "2015-11-25 05:05:30.569193"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 98ms (Views: 0.3ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:05:58 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:06:25 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 76ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:07:14 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 200 OK in 78ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:07:55 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 200 OK in 95ms (Views: 0.3ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:10:01 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 200 OK in 95ms (Views: 0.2ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA" for ::1 at 2015-11-25 00:10:47 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 91ms (Views: 1.0ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&aa=ss" for ::1 at 2015-11-25 00:11:47 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "aa"=>"ss"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (1.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 119ms (Views: 0.2ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&aa=oospdoss" for ::1 at 2015-11-25 00:12:10 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "aa"=>"oospdoss"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+Completed 200 OK in 97ms (Views: 0.7ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:13:21 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  UPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["password_digest", "$2a$10$w2QXn8.nAf8MlXzV.Ey02O9jKKgB/X4uOebB1PF8n6GJmuRw4VlXG"], ["updated_at", "2015-11-25 05:13:21.690064"], ["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 92ms (Views: 0.5ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:13:33 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 85ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:16:06 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$10$w2QXn8.nAf8MlXzV.Ey02OfKHwozjCMCBt1OG1qy32Vucvy2IkM8u"], ["updated_at", "2015-11-25 05:16:06.931841"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Completed 200 OK in 118ms (Views: 0.8ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:16:34 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (1.8ms)[0m  COMMIT
+Completed 200 OK in 159ms (Views: 1.2ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:17:19 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 76ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:17:44 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 200 OK in 111ms (Views: 0.5ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:20:46 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "yxi5@jhu.edu"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["password_digest", "$2a$10$w2QXn8.nAf8MlXzV.Ey02OfillpNK3fpoHh1ofAN2ExyIcICpXDsS"], ["updated_at", "2015-11-25 05:20:46.837693"], ["id", 1]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 96ms (Views: 0.2ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:21:17 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (5.2ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["password_digest", "ssdfasfa"], ["updated_at", "2015-11-25 05:21:18.099288"], ["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 122ms (Views: 0.2ms | ActiveRecord: 13.8ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:21:33 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["password_digest", "$2a$10$w2QXn8.nAf8MlXzV.Ey02OfillpNK3fpoHh1ofAN2ExyIcICpXDsS"], ["updated_at", "2015-11-25 05:21:34.205750"], ["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 142ms (Views: 0.3ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/users/resetpw?email=yxi5@jhu.edu&validation_code=lGnqfGA&new_password=[FILTERED]" for ::1 at 2015-11-25 00:24:48 -0500
+Processing by UsersController#resetpw as */*
+  Parameters: {"email"=>"yxi5@jhu.edu", "validation_code"=>"lGnqfGA", "new_password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "yxi5@jhu.edu"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "ssdfasfa"], ["updated_at", "2015-11-25 05:24:48.210661"], ["id", 1]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('yxi5@jhu.edu') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$10$w2QXn8.nAf8MlXzV.Ey02O4tYrseDPA0EG0BSdoHWcZWZ4tyPLsw6"], ["updated_at", "2015-11-25 05:24:48.216433"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 200 OK in 114ms (Views: 0.6ms | ActiveRecord: 6.7ms)
+>>>>>>> 816c885664606f3f70a54f5a8836eb5b2e7cf7dc

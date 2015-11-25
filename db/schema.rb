@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125013831) do
+ActiveRecord::Schema.define(version: 20151125183720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 20151125013831) do
     t.datetime "updated_at",                             null: false
     t.string   "comments"
     t.integer  "duration"
-    t.time     "startTime"
     t.string   "hostid"
     t.integer  "memberNum"
     t.integer  "user_id"
     t.decimal  "longitude",    precision: 64, scale: 12
     t.decimal  "latitude",     precision: 64, scale: 12
+    t.datetime "startTime"
   end
 
   add_index "activities", ["user_id", "created_at"], name: "index_activities_on_user_id_and_created_at", using: :btree

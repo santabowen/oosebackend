@@ -101,6 +101,11 @@ class ActivitiesController < ApplicationController
 			activity[:duration]      = params[:Duration]
 			activity[:longitude]     = params[:Lng]
 			activity[:latitude]      = params[:Lat]
+      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      puts params[:StartTime]
+      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      puts params[:StartTime].to_time
+      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
       activity[:startTime]     = params[:StartTime].to_time
 			activity[:memberNum]     = 1
 			return activity

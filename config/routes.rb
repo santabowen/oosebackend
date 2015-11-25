@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post     'users/forgetpw'
   post     'users/resetpw'
   post     'users/fblogin'
+  post     'users/changepw'
 
   post     'activities/post'
   get      'activities/getsingle'
