@@ -48,7 +48,9 @@ class ActivitiesController < ApplicationController
 	        location:       a.location,
 	        startTime:      a.startTime,
 	        duration:       a.duration,
-	        comments:       a.comments
+	        comments:       a.comments,
+	        lat:            a.latitude,
+	        lng:            a.longitude
 	      }
 	    end
 	    rtn = {
@@ -85,7 +87,9 @@ class ActivitiesController < ApplicationController
 	        location:       a.location,
 	        startTime:      a.startTime,
 	        duration:       a.duration,
-	        comments:       a.comments
+	        comments:       a.comments,
+	        lat:            a.latitude,
+	        lng:            a.longitude
 	      }
 	    end
 	    rtn = {
@@ -165,8 +169,8 @@ class ActivitiesController < ApplicationController
 			}
 			rtn = {
 				act:    rtnact,
-		  	status: "201"
-		  }
+		  		status: "201"
+		  	}
 			render :json => rtn
   	else
   		rtn = {
@@ -189,11 +193,6 @@ class ActivitiesController < ApplicationController
 			activity[:duration]      = params[:Duration]
 			activity[:longitude]     = params[:Lng]
 			activity[:latitude]      = params[:Lat]
-      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      puts params[:StartTime]
-      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      puts params[:StartTime].to_time
-      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
       activity[:startTime]     = params[:StartTime].to_time
 			activity[:memberNum]     = 1
 			return activity
