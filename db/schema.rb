@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125194929) do
+ActiveRecord::Schema.define(version: 20151125230821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20151125194929) do
     t.string   "activityType"
     t.string   "location"
     t.integer  "groupSize"
-    t.integer  "memberNum"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "comments"
     t.integer  "duration"
     t.string   "hostid"
+    t.integer  "memberNum"
     t.integer  "user_id"
     t.decimal  "longitude",    precision: 64, scale: 12
     t.decimal  "latitude",     precision: 64, scale: 12
@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 20151125194929) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "password_digest"
     t.string   "authtoken"
     t.string   "password_salt"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20151125194929) do
     t.string   "validation_code"
     t.datetime "validation_time"
     t.string   "avatar"
+    t.string   "address"
+    t.string   "self_description"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

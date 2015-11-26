@@ -184,9 +184,8 @@ class UsersController < ApplicationController
   	end
   	rtn = {
 	  	status: "201"
-	}
-	render :json => rtn
-
+		}
+		render :json => rtn
   end
 
 
@@ -197,43 +196,96 @@ class UsersController < ApplicationController
   	authtoken = params[:authtoken]
 
   	act = Activity.find_by(id: act_id)
-	ratings = []
-	# puts "user id: " 
-	# print user_id
-	act.memberactivities.each do |ma|
-		member_id = ma.user_id
+		ratings = []
+		# puts "user id: " 
+		# print user_id
+		act.memberactivities.each do |ma|
+			member_id = ma.user_id
 
-		member = User.find_by(id: member_id)
-		member_name = member.name
-		member_avatar = member.avatar
-		
-		if member_id != user_id
-			# puts "member id: "
-			# print member_id 
-			rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+			member = User.find_by(id: member_id)
+			member_name = member.name
+			member_avatar = member.avatar
+			
+			if member_id != user_id
+				# puts "member id: "
+				# print member_id 
+				rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
 
-			if !rate.nil?
-				ratings << {
-			        member_id:          member_id,
-			        member_name:        member_name,
-			        member_avatar:      member_avatar,
-			        rating:       		rate.rating
-	      		}
-			else
-				ratings << {
-			        member_id:          member_id,
-			        member_name:        member_name,
-			        member_avatar:      member_avatar,
-			        rating:       		-1
-	      		}
+				if !rate.nil?
+					ratings << {
+		        member_id:          member_id,
+		        member_name:        member_name,
+		        member_avatar:      member_avatar,
+		        rating:       		rate.rating
+      		}
+				else
+					ratings << {
+		        member_id:          member_id,
+		        member_name:        member_name,
+		        member_avatar:      member_avatar,
+		        rating:       		-1
+      		}
+				end
 			end
 		end
-	end
-	rtn = {
+		rtn = {
       members:   ratings,
       status:    "201"
     }
     render :json => rtn
+  end
+
+  def updateprofile
+  	if checkAuth(params)
+  		user = User.find_by(id: params[:id])
+  		case params[:type]
+  		when "avatar"
+  			user.update(avatar: params[:avatar])
+  		when "name"
+  			user.update(name: params[:name])
+  		when "address"
+  			user.update(address: params[:address])
+  		when "self_description"
+  			user.update(self_description: params[:self_description])
+  		else
+  			puts "No such attributes"
+  		end
+
+			rtn = {
+		  	status:  "201"
+		  }
+			render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+	    render :json => rtn
+  	end
+  end
+
+  def getprofile
+  	if checkAuth(params)
+  		user = User.find_by(id: params[:id])
+			profile = {
+				avatar:           user.avatar,
+				name:             user.name,
+				address:          user.address,
+				email:            user.email,
+				self_description: user.self_description
+			}
+			rtn = {
+				profile: profile,
+		  	status:  "201"
+		  }
+			render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+	    render :json => rtn
+  	end
   end
 
 	private

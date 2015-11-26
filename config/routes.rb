@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post     'users/changepw'
   post     'users/rating'
   post     'users/ratemember'
+  post     'users/updateprofile'
+  post     'users/getprofile'
 
   post     'activities/post'
   get      'activities/getsingle'
