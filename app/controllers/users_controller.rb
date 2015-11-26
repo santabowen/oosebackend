@@ -196,39 +196,51 @@ class UsersController < ApplicationController
   	authtoken = params[:authtoken]
 
   	act = Activity.find_by(id: act_id)
-		ratings = []
+  	
+	ratings = []
+	# puts "user id: " 
+	# print user_id
+	
+	if act.nil? 
+		rtn = {
+     		status:    "401"
+    	}
+    	render :json => rtn
+	end
+
+	act.memberactivities.each do |ma|
+		member_id = ma.user_id
+
 		# puts "user id: " 
 		# print user_id
-		act.memberactivities.each do |ma|
-			member_id = ma.user_id
 
-			member = User.find_by(id: member_id)
-			member_name = member.name
-			member_avatar = member.avatar
-			
-			if member_id != user_id
-				# puts "member id: "
-				# print member_id 
-				rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+		member = User.find_by(id: member_id)
+		member_name = member.name
+		member_avatar = member.avatar
+		
+		if member_id != user_id
+			# puts "member id: "
+			# print member_id 
+			rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
 
-				if !rate.nil?
-					ratings << {
-		        member_id:          member_id,
-		        member_name:        member_name,
-		        member_avatar:      member_avatar,
-		        rating:       		rate.rating
-      		}
-				else
-					ratings << {
-		        member_id:          member_id,
-		        member_name:        member_name,
-		        member_avatar:      member_avatar,
-		        rating:       		-1
-      		}
-				end
+			if !rate.nil?
+				ratings << {
+	        member_id:          member_id,
+	        member_name:        member_name,
+	        member_avatar:      member_avatar,
+	        rating:       		rate.rating
+  		}
+			else
+				ratings << {
+	        member_id:          member_id,
+	        member_name:        member_name,
+	        member_avatar:      member_avatar,
+	        rating:       		-1
+  		}
 			end
 		end
-		rtn = {
+	end
+	rtn = {
       members:   ratings,
       status:    "201"
     }
@@ -266,7 +278,7 @@ class UsersController < ApplicationController
 
   def getprofile
   	if checkAuth(params)
-  		user = User.find_by(id: params[:id])
+  		user = User.find_by(id: params[:uid])
 			profile = {
 				avatar:           user.avatar,
 				name:             user.name,
