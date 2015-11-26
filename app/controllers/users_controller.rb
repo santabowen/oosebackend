@@ -237,7 +237,7 @@ class UsersController < ApplicationController
 
   def updateprofile
   	if checkAuth(params)
-  		user = User.find_by(id: params[:id])
+  		user = User.find_by(id: params[:uid])
   		case params[:type]
   		when "avatar"
   			user.update(avatar: params[:avatar])
