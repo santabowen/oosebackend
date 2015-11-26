@@ -267,6 +267,7 @@ class UsersController < ApplicationController
 	  		status:  "201"
 	  	}
 		render :json => rtn
+
   	else
   		rtn = {
 				errormsg: "Authentication Denied.",
