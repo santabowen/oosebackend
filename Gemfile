@@ -23,7 +23,9 @@ gem 'sdoc', 							'0.4.0', group: :doc
 
 gem 'pg', 								'0.18.3'
 gem 'bcrypt',             '3.1.10'
+gem "koala",              '~> 2.2'
 
+gem 'figaro'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
