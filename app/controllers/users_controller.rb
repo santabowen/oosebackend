@@ -32,10 +32,10 @@ class UsersController < ApplicationController
 			if Time.now - user.validation_time < 60*60
 				validation_code = params[:validation_code]
 		    	
-		    	if validation_code == user.validation_code
-			    	rtn = {
-			  			status: "201"
-			  		}
+	    	if validation_code == user.validation_code
+		    	rtn = {
+		  			status: "201"
+		  		}
 					render :json => rtn
 					psw_token = BCrypt::Engine.hash_secret(params[:new_password], user.password_salt)
 					user.update(password_digest: psw_token)
@@ -47,8 +47,8 @@ class UsersController < ApplicationController
 				end
 			else # validation code expired
 				rtn = {
-	  				status: "402"
-	  			}
+  				status: "402"
+  			}
 				render :json => rtn
 			end
 		else # no such email found
@@ -57,22 +57,19 @@ class UsersController < ApplicationController
 	  		}
 			render :json => rtn
 		end
-  	end
+  end
 
-  	def changepw
-  		user = User.find_by(email: params[:email]) 
+	def changepw
+		user = User.find_by(email: params[:email]) 
 		if !user.nil?
 			if params[:old_password] == user.password_digest 
 				validation_code = params[:validation_code]
-		    
-		    	rtn = {
-		  			status: "201"
-		  		}
-
-				render :json => rtn
+	    	rtn = {
+	  			status: "201"
+	  		}
 				psw_token = BCrypt::Engine.hash_secret(params[:new_password], @user.password_salt)
 				user.update(password_digest: psw_token)
-				
+				render :json => rtn
 			else # validation code expired
 				rtn = {
 	  				status: "402"
@@ -85,7 +82,7 @@ class UsersController < ApplicationController
 	  		}
 			render :json => rtn
 		end
-  	end
+	end
 
 	def signin
 		rtn = {
@@ -94,7 +91,7 @@ class UsersController < ApplicationController
     if params && params[:email] && params[:password]        
       user = User.find_by(email: params[:email])
       
-      if user 
+      if !user.nil?
         if User.authenticate(user, params[:password])
           rtn = returnparams(user)
           render :json => rtn
@@ -113,42 +110,39 @@ class UsersController < ApplicationController
   end
 
   def forgetpw
-	user = User.find_by(email: params[:email])
-	# print params[:email]
-	if !user.nil?
+		user = User.find_by(email: params[:email])
+		# print params[:email]
+		if !user.nil?
 
-   	 	validation_code = rand_string(6)
-    	validation_time = Time.now
+	 	 	validation_code = rand_string(6)
+	  	validation_time = Time.now
 
-    	user.update(validation_code: validation_code)
-    	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-    	# print user.errors.messages
-    	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-    	user.update(validation_time: validation_time)
-    	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-    	# print user.errors.messages
-    	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+	  	user.update(validation_code: validation_code)
+	  	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+	  	# print user.errors.messages
+	  	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+	  	user.update(validation_time: validation_time)
+	  	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+	  	# print user.errors.messages
+	  	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 
-		rtn = {
+			rtn = {
   			status: "201"
   		}
-		render :json => rtn
+			render :json => rtn
 
-		# UserMailer.forget_password_confirmation(@user).deliver_now
-	else
-		rtn = {
-  		status: "404"
-  		}
-		render :json => rtn
-	end
+			# UserMailer.forget_password_confirmation(@user).deliver_now
+		else
+			rtn = {
+	  		status: "404"
+	  	}
+			render :json => rtn
+		end
   end
 
   def fblogin
     @graph = Koala::Facebook::API.new(params[:fbToken])
     profile = @graph.get_object("me")
-    print "~~~~~~~~~~~~~~~~~~~~~~"
-    print profile
-    print "~~~~~~~~~~~~~~~~~~~~~~"
     user = User.find_by(email: params[:email])
     if user.nil?
       @user = User.new(user_params_fb(profile))
@@ -193,15 +187,13 @@ class UsersController < ApplicationController
   	act_id = params[:act_id]
   	user_id = params[:uid]
   	authtoken = params[:authtoken]
-
   	act = Activity.find_by(id: act_id)
-  	
 		ratings = []
 		# print user_id
 		
 		if act.nil?
 			rtn = {
-     		status:    "401"
+     		status:    "404"
     	}
     	render :json => rtn
     else
@@ -214,19 +206,18 @@ class UsersController < ApplicationController
 
 			if inThegroup == 0
 				rtn = {
-	     		status:    "401"
+	     		status:    "404"
 	    	}
 	    	render :json => rtn
 	    else
 	    	act.memberactivities.each do |ma|
-				member_id = ma.user_id
+					member_id = ma.user_id
+					member = User.find_by(id: member_id)
+					member_name = member.name
+					member_avatar = member.avatar
 
-				member = User.find_by(id: member_id)
-				member_name = member.name
-				member_avatar = member.avatar
-
-				if member_id != Integer(user_id)
-					
+					# if member_id != Integer(user_id)
+						
 					rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
 
 					if !rate.nil?
@@ -270,10 +261,10 @@ class UsersController < ApplicationController
   			puts "No such attributes"
   		end
 
-		rtn = {
-	  		status:  "201"
-	  	}
-		render :json => rtn
+			rtn = {
+		  		status:  "201"
+		  	}
+			render :json => rtn
   	else
   		rtn = {
 				errormsg: "Authentication Denied.",
@@ -309,15 +300,15 @@ class UsersController < ApplicationController
 
 	private
 		
-	def user_params
-		user = Hash.new
-		user[:name]      = params[:name]
-		user[:email]     = params[:email]
-		user[:password]  = params[:password]
-		user[:gender]    = params[:gender]
-		user[:authtoken] = rand_string(20)
-		return user
-	end
+		def user_params
+			user = Hash.new
+			user[:name]      = params[:name]
+			user[:email]     = params[:email]
+			user[:password]  = params[:password]
+			user[:gender]    = params[:gender]
+			user[:authtoken] = rand_string(20)
+			return user
+		end
 
     def user_params_fb(profile)
       user = Hash.new
