@@ -173,7 +173,7 @@ class UsersController < ApplicationController
   	members.each do |ma|
   		member_id = ma[:member_id]
   		rating = ma[:rating]
-  		Rating.create(activity_id: act_id, user_id: user_id,
+  		Rating.update(activity_id: act_id, user_id: user_id,
   					  member_id: member_id, rating:rating)
   	end
   	rtn = {
