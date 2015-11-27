@@ -169,8 +169,8 @@ class ActivitiesController < ApplicationController
 			}
 			rtn = {
 				act:    rtnact,
-		  	status: "201"
-		  }
+		  		status: "201"
+		  	}
 			render :json => rtn
   	else
   		rtn = {

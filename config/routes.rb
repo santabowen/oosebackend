@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post     'users/getprofile'
 
   post     'activities/post'
-  get      'activities/getsingle'
+  post     'activities/getsingle'
   post     'activities/getByGeoInfo'
   post     'activities/getByUserID'
   post     'activities/join'

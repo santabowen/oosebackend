@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   def checkAuth(params)
 		user = User.find_by(id: params[:uid])
+		puts user
 		if user && user.authtoken == params[:authtoken]
 			return true
 		else

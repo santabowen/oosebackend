@@ -177,8 +177,8 @@ class UsersController < ApplicationController
   	members = params[:members]
 
   	members.each do |ma|
-  		member_id = members.member_id
-  		rating = members.rating
+  		member_id = ma[:member_id]
+  		rating = ma[:rating]
   		Rating.create(activity_id: act_id, user_id: user_id,
   					  member_id: member_id, rating:rating)
   	end
@@ -190,57 +190,74 @@ class UsersController < ApplicationController
 
 
   def rating
-  	
   	act_id = params[:act_id]
   	user_id = params[:uid]
   	authtoken = params[:authtoken]
 
   	act = Activity.find_by(id: act_id)
   	
-	ratings = []
-	# puts "user id: " 
-	# print user_id
-	
-	if act.nil? 
-		rtn = {
-     		status:    "401"
-    	}
-    	render :json => rtn
-	end
-
-	act.memberactivities.each do |ma|
-		member_id = ma.user_id
-
-		# puts "user id: " 
+		ratings = []
 		# print user_id
-
-		member = User.find_by(id: member_id)
-		member_name = member.name
-		member_avatar = member.avatar
 		
-		if member_id != user_id
-			# puts "member id: "
-			# print member_id 
-			rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+		if act.nil?
+			rtn = {
+	     		status:    "401"
+	    	}
+	    	render :json => rtn
+	    	return
+		end
 
-			if !rate.nil?
-				ratings << {
-	        member_id:          member_id,
-	        member_name:        member_name,
-	        member_avatar:      member_avatar,
-	        rating:       		rate.rating
-  		}
-			else
-				ratings << {
-	        member_id:          member_id,
-	        member_name:        member_name,
-	        member_avatar:      member_avatar,
-	        rating:       		-1
-  		}
+		inThegroup = 0
+		act.memberactivities.each do |ma|
+			if ma.user_id == Integer(user_id)
+				inThegroup = 1
 			end
 		end
-	end
-	rtn = {
+
+		if inThegroup == 0
+			rtn = {
+	     		status:    "401"
+	    	}
+	    	render :json => rtn
+	    	return
+	    end
+
+		act.memberactivities.each do |ma|
+			member_id = ma.user_id
+
+			member = User.find_by(id: member_id)
+			member_name = member.name
+			member_avatar = member.avatar
+
+			if member_id != Integer(user_id)
+				puts "~~~~~~~~~~~~~~~~~~~~"
+				puts act_id 
+				puts "~~~~~~~~~~~~~~~~~~~~"
+				puts user_id 
+				puts "~~~~~~~~~~~~~~~~~~~~"
+				puts member_id
+				puts "~~~~~~~~~~~~~~~~~~~~"
+
+				rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+
+				if !rate.nil?
+					ratings << {
+			        member_id:          member_id,
+			        member_name:        member_name,
+			        member_avatar:      member_avatar,
+			        rating:       			rate.rating
+		  		}
+				else
+					ratings << {
+			        member_id:          member_id,
+			        member_name:        member_name,
+			        member_avatar:      member_avatar,
+			        rating:       			-1
+		  		}
+				end
+			end
+		end
+		rtn = {
       members:   ratings,
       status:    "201"
     }
@@ -263,10 +280,10 @@ class UsersController < ApplicationController
   			puts "No such attributes"
   		end
 
-			rtn = {
-		  	status:  "201"
-		  }
-			render :json => rtn
+		rtn = {
+	  		status:  "201"
+	  	}
+		render :json => rtn
   	else
   		rtn = {
 				errormsg: "Authentication Denied.",
