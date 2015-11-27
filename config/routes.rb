@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   post     'users/getprofile'
 
   post     'activities/post'
+<<<<<<< HEAD
   post     'activities/getsingle'
+=======
+  post      'activities/getsingle'
+>>>>>>> 15674079b25a330bdf96288c8188996b2ee37e9d
   post     'activities/getByGeoInfo'
   post     'activities/getByUserID'
   post     'activities/join'

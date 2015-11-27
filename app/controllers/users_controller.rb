@@ -201,10 +201,10 @@ class UsersController < ApplicationController
 		
 		if act.nil?
 			rtn = {
-	     		status:    "401"
-	    	}
-	    	render :json => rtn
-	    	return
+     		status:    "401"
+    	}
+    	render :json => rtn
+    	return
 		end
 
 		inThegroup = 0
@@ -216,11 +216,11 @@ class UsersController < ApplicationController
 
 		if inThegroup == 0
 			rtn = {
-	     		status:    "401"
-	    	}
-	    	render :json => rtn
-	    	return
-	    end
+     		status:    "401"
+    	}
+    	render :json => rtn
+    	return
+	  end
 
 		act.memberactivities.each do |ma|
 			member_id = ma.user_id
@@ -230,38 +230,31 @@ class UsersController < ApplicationController
 			member_avatar = member.avatar
 
 			if member_id != Integer(user_id)
-				puts "~~~~~~~~~~~~~~~~~~~~"
-				puts act_id 
-				puts "~~~~~~~~~~~~~~~~~~~~"
-				puts user_id 
-				puts "~~~~~~~~~~~~~~~~~~~~"
-				puts member_id
-				puts "~~~~~~~~~~~~~~~~~~~~"
-
+				
 				rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
 
 				if !rate.nil?
 					ratings << {
-			        member_id:          member_id,
-			        member_name:        member_name,
-			        member_avatar:      member_avatar,
-			        rating:       			rate.rating
+		        member_id:          member_id,
+		        member_name:        member_name,
+		        member_avatar:      member_avatar,
+		        rating:       		  rate.rating
 		  		}
 				else
 					ratings << {
-			        member_id:          member_id,
-			        member_name:        member_name,
-			        member_avatar:      member_avatar,
-			        rating:       			-1
+		        member_id:          member_id,
+		        member_name:        member_name,
+		        member_avatar:      member_avatar,
+		        rating:       		  -1
 		  		}
 				end
 			end
-		end
-		rtn = {
-      members:   ratings,
-      status:    "201"
-    }
-    render :json => rtn
+			rtn = {
+	      members:   ratings,
+	      status:    "201"
+	    }
+	    render :json => rtn
+  	end
   end
 
   def updateprofile
