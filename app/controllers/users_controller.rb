@@ -176,12 +176,7 @@ class UsersController < ApplicationController
   	authtoken = params[:authtoken]
   	members = params[:members]
 
-  	puts "~~~~~~~~~~~~~"
   	members.each do |ma|
-  		puts ma
-  		puts ma[:member_id]
-  		puts ma[:rating]
-  		puts "..............."
   		member_id = ma[:member_id]
   		rating = ma[:rating]
   		Rating.create(activity_id: act_id, user_id: user_id,
@@ -195,7 +190,6 @@ class UsersController < ApplicationController
 
 
   def rating
-  	user_id = 3
   	act_id = params[:act_id]
   	user_id = params[:uid]
   	authtoken = params[:authtoken]
@@ -213,20 +207,20 @@ class UsersController < ApplicationController
     	return
 	end
 
-	# inThegroup = 0
-	# act.memberactivities.each do |ma|
-	# 	if Integer(member_id) == Integer(user_id)
-	# 		inThegroup = 1
-	# 	end
-	# end
+	inThegroup = 0
+	act.memberactivities.each do |ma|
+		if ma.user_id == Integer(user_id)
+			inThegroup = 1
+		end
+	end
 
-	# if inThegroup == 0
-	# 	rtn = {
- #     		status:    "401"
- #    	}
- #    	render :json => rtn
- #    	return
- #    end
+	if inThegroup == 0
+		rtn = {
+     		status:    "401"
+    	}
+    	render :json => rtn
+    	return
+    end
 
 	act.memberactivities.each do |ma|
 		member_id = ma.user_id
@@ -234,8 +228,8 @@ class UsersController < ApplicationController
 		member = User.find_by(id: member_id)
 		member_name = member.name
 		member_avatar = member.avatar
-		
-		if member_id != user_id
+
+		if member_id != Integer(user_id)
 			
 			rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
 
