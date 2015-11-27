@@ -173,8 +173,14 @@ class UsersController < ApplicationController
   	members.each do |ma|
   		member_id = ma[:member_id]
   		rating = ma[:rating]
-  		Rating.update(activity_id: act_id, user_id: user_id,
+  		rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+  		if !rate.nil?
+  			Rating.update(activity_id: act_id, user_id: user_id,
   					  member_id: member_id, rating:rating)
+  		else
+  			Rating.create(activity_id: act_id, user_id: user_id,
+  					  member_id: member_id, rating:rating)
+  		end
   	end
   	rtn = {
 	  	status: "201"
