@@ -221,6 +221,7 @@ class UsersController < ApplicationController
 					member = User.find_by(id: member_id)
 					member_name = member.name
 					member_avatar = member.avatar
+					member_gender = member.gender
 
 					# if member_id != Integer(user_id)
 						
@@ -231,6 +232,7 @@ class UsersController < ApplicationController
 			        member_id:          member_id,
 			        member_name:        member_name,
 			        member_avatar:      member_avatar,
+			        member_gender:      member_gender,
 			        rating:       		  rate.rating
 			  		}
 					else
@@ -238,6 +240,7 @@ class UsersController < ApplicationController
 			        member_id:          member_id,
 			        member_name:        member_name,
 			        member_avatar:      member_avatar,
+			        member_gender:      member_gender,
 			        rating:       		  -1
 			  		}
 					end
