@@ -15,4 +15,5 @@ class ActivityTest < ActiveSupport::TestCase
   	assert_not @activity.valid?
 	end
 
+
 end

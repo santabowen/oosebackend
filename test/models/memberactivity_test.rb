@@ -4,8 +4,6 @@ class MemberactivityTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-
-
   def setup
 	 	@member_activity = Memberactivity.new(user_id: 1, activity_id: 1)
 	end
@@ -23,5 +21,4 @@ class MemberactivityTest < ActiveSupport::TestCase
 		@member_activity.activity_id = nil
   	assert_not @member_activity.valid?
 	end
-
 end
