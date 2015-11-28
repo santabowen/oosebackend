@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125230821) do
+ActiveRecord::Schema.define(version: 20151127213640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20151125230821) do
     t.string   "activityType"
     t.string   "location"
     t.integer  "groupSize"
-    t.integer  "memberNum"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "comments"
     t.integer  "duration"
     t.string   "hostid"
+    t.integer  "memberNum"
     t.integer  "user_id"
     t.decimal  "longitude",    precision: 64, scale: 12
     t.decimal  "latitude",     precision: 64, scale: 12
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20151125230821) do
 
   add_index "activities", ["user_id", "created_at"], name: "index_activities_on_user_id_and_created_at", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+
+  create_table "filters", force: :cascade do |t|
+    t.string   "filtertype"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "filters", ["user_id"], name: "index_filters_on_user_id", using: :btree
 
   create_table "memberactivities", force: :cascade do |t|
     t.integer  "user_id"

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     end
     
 		if @user.save
+			@user = createFilters(@user)
 			print "Successfully creat a user."
 			rtn = {
 		  	status: "200"
@@ -307,6 +308,10 @@ class UsersController < ApplicationController
   	end
   end
 
+  def updateFilter
+  	updateFilters(@user, params[:filterDict])
+  end
+
 	private
 		
 		def user_params
@@ -351,4 +356,28 @@ class UsersController < ApplicationController
         avatarUrl:  "https://graph.facebook.com/127235060968514/picture?type=large"
       }
     end
+
+    def createFilters(user)
+			user.filters.create(type: "Basketball")
+			user.filters.create(type: "Tennis")
+			user.filters.create(type: "Gym")
+			user.filters.create(type: "Badminton")
+			user.filters.create(type: "Jogging")
+			user.filters.create(type: "Others")
+			return user
+		end
+
+		def updateFilters(user, filterlist)
+			filts = user.filters
+      filterlist = ["Basketball", "Tennis", "Jogging"]
+      filts.each do |a|
+        a.delete
+      end
+      filterlist.each do |fl|
+        user.filters.create(filtertype: fl)
+      end
+		end
 end
+
+
+

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post     'users/rating'
   post     'users/ratemember'
   post     'users/updateprofile'
-  post     'users/getprofile'
+  get      'users/getprofile'
 
   post     'activities/post'
   post     'activities/getsingle'
@@ -22,5 +22,6 @@ Rails.application.routes.draw do
 
   resources    :users
   resources    :activities
+  resources    :microposts,   only: [:create, :destroy]
   
 end
