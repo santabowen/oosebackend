@@ -32,16 +32,16 @@ class ActivitiesController < ApplicationController
   def getByUserID
   	if checkAuth(params)
   		user = User.find(params[:UserID])
-  		joined_id = Memberactivity.where(user_id: params[:UserID])
-  		joined = []
-  		joined_id.each do |j|
-  			joined << Activity.find_by(id: j.activity_id)
+  		acts_id = Memberactivity.where(user_id: params[:UserID])
+  		acts = []
+  		acts_id.each do |j|
+  			acts << Activity.find_by(id: j.activity_id)
   		end	
-	    acts = user.activities + joined
 
 	    rtnacts = []
 	    acts.each do |a|
 	      rtnacts << {
+	      	avatar:         a.user.avatar,
 	        actid:          a.id,
 	        actType:        a.activityType,
 	        groupSize:      a.groupSize,
@@ -169,8 +169,8 @@ class ActivitiesController < ApplicationController
 			}
 			rtn = {
 				act:    rtnact,
-		  		status: "201"
-		  	}
+	  		status: "201"
+	  	}
 			render :json => rtn
   	else
   		rtn = {
