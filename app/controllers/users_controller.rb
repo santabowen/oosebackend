@@ -174,93 +174,119 @@ class UsersController < ApplicationController
   end
 
   def ratemember
-  	act_id = params[:act_id]
-  	user_id = params[:uid]
-  	authtoken = params[:authtoken]
-  	members = params[:members]
 
-  	members.each do |ma|
-  		member_id = ma[:member_id]
-  		rating = ma[:rating]
-  		rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
-  		if !rate.nil?
-  			Rating.update(activity_id: act_id, user_id: user_id,
-  					  member_id: member_id, rating:rating)
-  		else
-  			Rating.create(activity_id: act_id, user_id: user_id,
-  					  member_id: member_id, rating:rating)
-  		end
-  	end
-  	rtn = {
-	  	status: "201"
-		}
-		render :json => rtn
+    if checkAuth(params)
+      
+      act_id = params[:act_id]
+      user_id = params[:uid]
+      authtoken = params[:authtoken]
+      members = params[:members]
+
+      members.each do |ma|
+        member_id = ma[:member_id]
+        rating = ma[:rating]
+        rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+        if !rate.nil?
+          Rating.update(activity_id: act_id, user_id: user_id,
+                member_id: member_id, rating:rating)
+        else
+          Rating.create(activity_id: act_id, user_id: user_id,
+                member_id: member_id, rating:rating)
+        end
+      end
+      rtn = {
+        status: "201"
+      }
+      render :json => rtn
+      
+    else
+      rtn = {
+        errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+      render :json => rtn
+    end
+  	
   end
 
 
   def rating
-  	act_id = params[:act_id]
-  	user_id = params[:uid]
-  	authtoken = params[:authtoken]
-  	act = Activity.find_by(id: act_id)
-		ratings = []
-		# print user_id
-		
-		if act.nil?
-			rtn = {
-     		status:    "404"
-    	}
-    	render :json => rtn
+
+    if checkAuth(params)
+      
+      act_id = params[:act_id]
+      user_id = params[:uid]
+      authtoken = params[:authtoken]
+      act = Activity.find_by(id: act_id)
+      ratings = []
+      # print user_id
+      
+      if act.nil?
+        rtn = {
+          status:    "404"
+        }
+        render :json => rtn
+      else
+        inThegroup = 0
+        act.memberactivities.each do |ma|
+          if ma.user_id == Integer(user_id)
+            inThegroup = 1
+          end
+        end
+
+        if inThegroup == 0
+          rtn = {
+            status:    "404"
+          }
+          render :json => rtn
+        else
+          act.memberactivities.each do |ma|
+            member_id = ma.user_id
+            member = User.find_by(id: member_id)
+            member_name = member.name
+            member_avatar = member.avatar
+            member_gender = member.gender
+
+            # if member_id != Integer(user_id)
+              
+            rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+
+            if !rate.nil?
+              ratings << {
+                member_id:          member_id,
+                member_name:        member_name,
+                member_avatar:      member_avatar,
+                member_gender:      member_gender,
+                rating:             rate.rating
+              }
+            else
+              ratings << {
+                member_id:          member_id,
+                member_name:        member_name,
+                member_avatar:      member_avatar,
+                member_gender:      member_gender,
+                rating:             -1
+              }
+            end
+          end
+          rtn = {
+            members:   ratings,
+            status:    "201"
+          }
+          render :json => rtn
+        end
+      end
+      
     else
-    	inThegroup = 0
-			act.memberactivities.each do |ma|
-				if ma.user_id == Integer(user_id)
-					inThegroup = 1
-				end
-			end
+      rtn = {
+        errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+      render :json => rtn
+    end
 
-			if inThegroup == 0
-				rtn = {
-	     		status:    "404"
-	    	}
-	    	render :json => rtn
-	    else
-	    	act.memberactivities.each do |ma|
-					member_id = ma.user_id
-					member = User.find_by(id: member_id)
-					member_name = member.name
-					member_avatar = member.avatar
-					member_gender = member.gender
 
-					# if member_id != Integer(user_id)
-						
-					rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
-
-					if !rate.nil?
-						ratings << {
-			        member_id:          member_id,
-			        member_name:        member_name,
-			        member_avatar:      member_avatar,
-			        member_gender:      member_gender,
-			        rating:       		  rate.rating
-			  		}
-					else
-						ratings << {
-			        member_id:          member_id,
-			        member_name:        member_name,
-			        member_avatar:      member_avatar,
-			        member_gender:      member_gender,
-			        rating:       		  -1
-			  		}
-					end
-				end
-				rtn = {
-		      members:   ratings,
-		      status:    "201"
-		    }
-		    render :json => rtn
-		  end
-  	end
+  	
   end
 
   def updateprofile
@@ -317,7 +343,19 @@ class UsersController < ApplicationController
   end
 
   def updateFilter
-  	updateFilters(@user, params[:filterDict])
+    if checkAuth(params)
+      updateFilters(@user, params[:filterDict])
+      rtn = {
+        status:   "201"
+      }
+      render :json => rtn
+    else
+      rtn = {
+        errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+      render :json => rtn
+    end
   end
 
   def setFilter
@@ -359,16 +397,15 @@ class UsersController < ApplicationController
       return user
     end
 
-	  def check_for_valid_authtoken
-	    authenticate_or_request_with_http_token do |token, options|     
-	      @user = User.where(:api_authtoken => token).first      
-	    end
-	  end
+	  # def check_for_valid_authtoken
+	  #   authenticate_or_request_with_http_token do |token, options|     
+	  #     @user = User.where(:api_authtoken => token).first      
+	  #   end
+	  # end
 	  
 	  def rand_string(len)
 	    o =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
-	    string  =  (0..len).map{ o[rand(o.length)]  }.join
-
+	    string  =  (0..len).map{ o[rand(o.length)] }.join
 	    return string
 	  end
 
@@ -378,7 +415,7 @@ class UsersController < ApplicationController
         uid:        user.id,
         authtoken:  user.authtoken,
         status:     "200",
-        avatarUrl:  "https://graph.facebook.com/127235060968514/picture?type=large"
+        avatarUrl:  user.avatar
       }
     end
 
