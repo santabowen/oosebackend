@@ -316,6 +316,10 @@ class UsersController < ApplicationController
     if checkAuth(params)
       user = User.find(params[:uid])
       user = updateFilters(user, filterlist)
+      rtn = {
+        status:   "201"
+      }
+      render :json => rtn
     else
       rtn = {
         errormsg: "Authentication Denied.",
@@ -388,7 +392,7 @@ class UsersController < ApplicationController
       filterlist.each do |fl|
         user.filters.create(filtertype: fl)
       end
-      user
+      return user
 		end
 end
 
