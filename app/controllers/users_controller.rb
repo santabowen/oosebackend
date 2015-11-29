@@ -420,12 +420,12 @@ class UsersController < ApplicationController
     end
 
     def createFilters(user)
-			user.filters.create(type: "Basketball")
-			user.filters.create(type: "Tennis")
-			user.filters.create(type: "Gym")
-			user.filters.create(type: "Badminton")
-			user.filters.create(type: "Jogging")
-			user.filters.create(type: "Others")
+			user.filters.create(filtertype: "Basketball")
+			user.filters.create(filtertype: "Tennis")
+			user.filters.create(filtertype: "Gym")
+			user.filters.create(filtertype: "Badminton")
+			user.filters.create(filtertype: "Jogging")
+			user.filters.create(filtertype: "Others")
 			return user
 		end
 
