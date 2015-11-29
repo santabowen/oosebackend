@@ -61,28 +61,37 @@ class UsersController < ApplicationController
   end
 
 	def changepw
-		user = User.find_by(email: params[:email]) 
-		if !user.nil?
-			if params[:old_password] == user.password_digest 
-				validation_code = params[:validation_code]
-	    	rtn = {
-	  			status: "201"
-	  		}
-				psw_token = BCrypt::Engine.hash_secret(params[:new_password], @user.password_salt)
-				user.update(password_digest: psw_token)
-				render :json => rtn
-			else # validation code expired
-				rtn = {
-	  				status: "402"
-	  			}
-				render :json => rtn
-			end
-		else # no such email found
-			rtn = {
-	  			status: "403"
-	  		}
-			render :json => rtn
-		end
+    if checkAuth(params)
+      user = User.find(params[:uid]) 
+      if !user.nil?
+        old_psw_token = BCrypt::Engine.hash_secret(params[:old_password], user.password_salt)
+        if old_psw_token == user.password_digest
+          
+          rtn = {
+            status: "201"
+          }
+          user.update(password: params[:new_password])
+          render :json => rtn
+        else # validation code expired
+          rtn = {
+              status: "402"
+            }
+          render :json => rtn
+        end
+      else # no such email found
+        rtn = {
+            status: "403"
+          }
+        render :json => rtn
+      end
+    else
+      rtn = {
+        errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+      render :json => rtn
+    end
+
 	end
 
 	def signin
