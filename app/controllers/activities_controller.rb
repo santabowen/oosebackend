@@ -51,7 +51,7 @@ class ActivitiesController < ApplicationController
 	        comments:       a.comments,
 	        lat:            a.latitude,
 	        lng:            a.longitude,
-	        membernumber:   a.memberNum
+	        currentNum:     a.memberNum
 	      }
 	    end
 	    rtn = {
@@ -92,7 +92,7 @@ class ActivitiesController < ApplicationController
 	        comments:       a.comments,
 	        lat:            a.latitude,
 	        lng:            a.longitude,
-	        membernumber:   a.memberNum
+	        currentNum:     a.memberNum
 	      }
 	    end
 	    rtn = {
@@ -169,7 +169,6 @@ class ActivitiesController < ApplicationController
 				comments:         a.comments,
 				longitude:        a.longitude,
 				latitude:         a.latitude,
-				membernumber:     a.memberNum,
 				memberlist:       members
 			}
 			rtn = {
