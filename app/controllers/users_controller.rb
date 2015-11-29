@@ -315,7 +315,7 @@ class UsersController < ApplicationController
   def setFilter
     if checkAuth(params)
       user = User.find(params[:uid])
-      user = updateFilters(user, filterlist)
+      user = updateFilters(user, params[:filterlist])
       rtn = {
         status:   "201"
       }
