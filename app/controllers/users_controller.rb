@@ -312,6 +312,19 @@ class UsersController < ApplicationController
   	updateFilters(@user, params[:filterDict])
   end
 
+  def setFilter
+    if checkAuth(params)
+      user = User.find(params[:uid])
+      user = updateFilters(user, filterlist)
+    else
+      rtn = {
+        errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+      render :json => rtn
+    end
+  end
+
 	private
 		
 		def user_params
@@ -369,13 +382,13 @@ class UsersController < ApplicationController
 
 		def updateFilters(user, filterlist)
 			filts = user.filters
-      filterlist = ["Basketball", "Tennis", "Jogging"]
       filts.each do |a|
         a.delete
       end
       filterlist.each do |fl|
         user.filters.create(filtertype: fl)
       end
+      user
 		end
 end
 
