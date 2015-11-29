@@ -81,6 +81,7 @@ class ActivitiesController < ApplicationController
 	    rtnacts = []
 	    acts.each do |a|
 	      rtnacts << {
+	      	avatar:         a.user.avatar,
 	        actid:          a.id,
 	        actType:        a.activityType,
 	        groupSize:      a.groupSize,
@@ -151,7 +152,8 @@ class ActivitiesController < ApplicationController
 			
 			a.memberactivities.each do |ma|
 				members << {
-					uid:      ma.user_id
+					uid:      ma.user_id,
+					avatar:   ma.avatar
 				}
 			end
 			rtnact = {
