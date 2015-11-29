@@ -66,11 +66,10 @@ class UsersController < ApplicationController
       if !user.nil?
         old_psw_token = BCrypt::Engine.hash_secret(params[:old_password], user.password_salt)
         if old_psw_token == user.password_digest
-          
+          user.update(password: params[:new_password])
           rtn = {
             status: "201"
           }
-          user.update(password: params[:new_password])
           render :json => rtn
         else # validation code expired
           rtn = {
