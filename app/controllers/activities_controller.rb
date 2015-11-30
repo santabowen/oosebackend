@@ -40,6 +40,12 @@ class ActivitiesController < ApplicationController
 
 	    rtnacts = []
 	    acts.each do |a|
+	      expired = 0;
+	      if a.startTime + a.duration - Time.now <= 0
+	      	expired = 1;
+	      end
+
+
 	      rtnacts << {
 	      	avatar:         a.user.avatar,
 	        actid:          a.id,
@@ -52,6 +58,7 @@ class ActivitiesController < ApplicationController
 	        lat:            a.latitude,
 	        lng:            a.longitude,
 	        currentNum:     a.memberNum
+
 	      }
 	    end
 	    rtn = {
@@ -153,9 +160,10 @@ class ActivitiesController < ApplicationController
 			members = []
 			
 			a.memberactivities.each do |ma|
+				user = User.find(ma.user_id)
 				members << {
 					uid:      ma.user_id,
-					avatar:   ma.avatar
+					avatar:   user.avatar
 				}
 			end
 			rtnact = {

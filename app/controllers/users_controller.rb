@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     else
       @user = User.new(user_params)
     end
-    
 		if @user.save
 			@user = createFilters(@user)
 			print "Successfully creat a user."
@@ -320,6 +319,7 @@ class UsersController < ApplicationController
 
   def getprofile
   	if checkAuth(params)
+  		
   		user = User.find_by(id: params[:uid])
 			profile = {
 				avatar:           user.avatar,
@@ -332,6 +332,8 @@ class UsersController < ApplicationController
 				profile: profile,
 		  	status:  "201"
 		  }
+		  puts "~~~~~~~~~~~~~"
+		  puts profile
 			render :json => rtn
   	else
   		rtn = {
