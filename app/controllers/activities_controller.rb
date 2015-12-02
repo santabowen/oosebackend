@@ -89,6 +89,7 @@ class ActivitiesController < ApplicationController
   			 			 longitude > #{@min_lng} AND 
   			 			 latitude < #{@max_lat} AND 
   			 			 latitude > #{@min_lat}
+  			 ORDER BY a.startTime
   			")
   		
 	    rtnacts = []
