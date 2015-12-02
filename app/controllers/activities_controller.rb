@@ -82,9 +82,15 @@ class ActivitiesController < ApplicationController
   		@min_lat = params[:Lat] - 0.045
   		@max_lat = params[:Lat] + 0.045
 
-  		acts = Activity.find_by_sql("SELECT * FROM activities 
-  			WHERE longitude < #{@max_lng} AND longitude > #{@min_lng} 
-  			AND latitude < #{@max_lat} AND latitude > #{@min_lat}")
+  		acts = Activity.find_by_sql(
+  			"SELECT * 
+  			 FROM activities 
+  			 WHERE longitude < #{@max_lng} AND 
+  			 			 longitude > #{@min_lng} AND 
+  			 			 latitude < #{@max_lat} AND 
+  			 			 latitude > #{@min_lat}
+  			 ORDER BY activities.startTime
+  			")
   		
 	    rtnacts = []
 	    acts.each do |a|
