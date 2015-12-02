@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :ratings
   root     'home#index'
   post     'users/signin'
   post     'users/forgetpw'
@@ -10,17 +9,20 @@ Rails.application.routes.draw do
   post     'users/rating'
   post     'users/ratemember'
   post     'users/updateprofile'
-  post     'users/getprofile'
+  get      'users/getprofile'
+  post     'users/setFilter'
 
   post     'activities/post'
-  post      'activities/getsingle'
+  post     'activities/getsingle'
   post     'activities/getByGeoInfo'
   post     'activities/getByUserID'
   post     'activities/join'
   delete   'activities/drop'
 
 
+  resources    :ratings
   resources    :users
   resources    :activities
+  resources    :microposts,   only: [:create, :destroy]
   
 end

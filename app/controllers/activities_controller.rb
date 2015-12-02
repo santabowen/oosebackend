@@ -32,16 +32,22 @@ class ActivitiesController < ApplicationController
   def getByUserID
   	if checkAuth(params)
   		user = User.find(params[:UserID])
-  		joined_id = Memberactivity.where(user_id: params[:UserID])
-  		joined = []
-  		joined_id.each do |j|
-  			joined << Activity.find_by(id: j.activity_id)
+  		acts_id = Memberactivity.where(user_id: params[:UserID])
+  		acts = []
+  		acts_id.each do |j|
+  			acts << Activity.find_by(id: j.activity_id)
   		end	
-	    acts = user.activities + joined
 
 	    rtnacts = []
 	    acts.each do |a|
+	      expired = 0;
+	      if a.startTime + a.duration - Time.now <= 0
+	      	expired = 1;
+	      end
+
+
 	      rtnacts << {
+	      	avatar:         a.user.avatar,
 	        actid:          a.id,
 	        actType:        a.activityType,
 	        groupSize:      a.groupSize,
@@ -50,7 +56,9 @@ class ActivitiesController < ApplicationController
 	        duration:       a.duration,
 	        comments:       a.comments,
 	        lat:            a.latitude,
-	        lng:            a.longitude
+	        lng:            a.longitude,
+	        currentNum:     a.memberNum
+
 	      }
 	    end
 	    rtn = {
@@ -81,6 +89,7 @@ class ActivitiesController < ApplicationController
 	    rtnacts = []
 	    acts.each do |a|
 	      rtnacts << {
+	      	avatar:         a.user.avatar,
 	        actid:          a.id,
 	        actType:        a.activityType,
 	        groupSize:      a.groupSize,
@@ -89,7 +98,8 @@ class ActivitiesController < ApplicationController
 	        duration:       a.duration,
 	        comments:       a.comments,
 	        lat:            a.latitude,
-	        lng:            a.longitude
+	        lng:            a.longitude,
+	        currentNum:     a.memberNum
 	      }
 	    end
 	    rtn = {
@@ -130,10 +140,11 @@ class ActivitiesController < ApplicationController
   		a = Activity.find_by(id: params[:ActID])
 			relation = a.memberactivities.find_by(user_id: params[:UserID])
 			relation.delete
+			a.memberNum = a.memberNum-1
 			rtn = {
 		  	status: "201"
 		  }
-			render :json => rtn
+		render :json => rtn
   	else
   		rtn = {
 				errormsg: "Authentication Denied.",
@@ -150,8 +161,10 @@ class ActivitiesController < ApplicationController
 			members = []
 			
 			a.memberactivities.each do |ma|
+				user = User.find(ma.user_id)
 				members << {
-					uid:      ma.user_id
+					uid:      ma.user_id,
+					avatar:   user.avatar
 				}
 			end
 			rtnact = {
@@ -169,8 +182,8 @@ class ActivitiesController < ApplicationController
 			}
 			rtn = {
 				act:    rtnact,
-		  		status: "201"
-		  	}
+	  		status: "201"
+	  	}
 			render :json => rtn
   	else
   		rtn = {
