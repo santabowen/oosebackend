@@ -140,7 +140,7 @@ class ActivitiesController < ApplicationController
   		a = Activity.find_by(id: params[:ActID])
 			relation = a.memberactivities.find_by(user_id: params[:UserID])
 			relation.delete
-			a.memberNum = a.memberNum-1
+			a.update(memberNum: a.memberNum - 1)
 			rtn = {
 		  	status: "201"
 		  }
