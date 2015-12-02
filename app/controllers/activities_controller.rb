@@ -84,12 +84,12 @@ class ActivitiesController < ApplicationController
 
   		acts = Activity.find_by_sql(
   			"SELECT * 
-  			 FROM activities a
+  			 FROM activities
   			 WHERE longitude < #{@max_lng} AND 
   			 			 longitude > #{@min_lng} AND 
   			 			 latitude < #{@max_lat} AND 
   			 			 latitude > #{@min_lat}
-  			 ORDER BY a.startTime
+  			 ORDER BY duration
   			")
   		
 	    rtnacts = []
