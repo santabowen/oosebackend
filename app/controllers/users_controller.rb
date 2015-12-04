@@ -187,7 +187,7 @@ class UsersController < ApplicationController
         rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
         if !rate.nil?
           Rating.update(activity_id: act_id, user_id: user_id,
-                member_id: member_id, rating:rating)
+          member_id: member_id, rating:rating)
           user = User.find(member_id)
           new_rating = (user.rating + rating) / (user.num_rating + 1)
           user.update(num_rating: user.num_rating + 1, 
