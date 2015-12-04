@@ -41,7 +41,7 @@ class ActivitiesController < ApplicationController
 	    rtnacts = []
 	    acts.each do |a|
 	      expired = 0;
-	      if a.startTime + a.duration - Time.now <= 0
+	      if a.start_time + a.duration - Time.now <= 0
 	      	expired = 1;
 	      end
 
@@ -49,15 +49,15 @@ class ActivitiesController < ApplicationController
 	      rtnacts << {
 	      	avatar:         a.user.avatar,
 	        actid:          a.id,
-	        actType:        a.activityType,
-	        groupSize:      a.groupSize,
+	        actType:        a.activity_type,
+	        groupSize:      a.group_size,
 	        location:       a.location,
-	        startTime:      a.startTime,
+	        startTime:      a.start_time,
 	        duration:       a.duration,
 	        comments:       a.comments,
 	        lat:            a.latitude,
 	        lng:            a.longitude,
-	        currentNum:     a.memberNum
+	        currentNum:     a.member_number
 
 	      }
 	    end
@@ -97,15 +97,15 @@ class ActivitiesController < ApplicationController
 	      rtnacts << {
 	      	avatar:         a.user.avatar,
 	        actid:          a.id,
-	        actType:        a.activityType,
-	        groupSize:      a.groupSize,
+	        actType:        a.activity_type,
+	        groupSize:      a.group_size,
 	        location:       a.location,
-	        startTime:      a.startTime,
+	        startTime:      a.start_time,
 	        duration:       a.duration,
 	        comments:       a.comments,
 	        lat:            a.latitude,
 	        lng:            a.longitude,
-	        currentNum:     a.memberNum
+	        currentNum:     a.member_number
 	      }
 	    end
 	    rtn = {
@@ -126,7 +126,7 @@ class ActivitiesController < ApplicationController
   def join
   	if checkAuth(params)
   		a = Activity.find_by(id: params[:ActID])
-	    a.update(memberNum: a.memberNum + 1)
+	    a.update(member_number: a.member_number + 1)
 	    a.memberactivities.create(user_id: params[:UserID], activity_id: params[:ActID])
 			rtn = {
 		  	status: "201"
@@ -146,7 +146,7 @@ class ActivitiesController < ApplicationController
   		a = Activity.find_by(id: params[:ActID])
 			relation = a.memberactivities.find_by(user_id: params[:UserID])
 			relation.delete
-			a.update(memberNum: a.memberNum - 1)
+			a.update(member_number: a.member_number - 1)
 			rtn = {
 		  	status: "201"
 		  }
@@ -181,11 +181,11 @@ class ActivitiesController < ApplicationController
 				actid:            a.id,
 				hostid:           a.hostid,
 				hostavatar:       host.avatar,
-				actType:          a.activityType,
-				groupSize:        a.groupSize,
-				currentGroupSize: a.memberNum,
+				actType:          a.activity_type,
+				groupSize:        a.group_size,
+				currentNum:       a.member_number,
 				location:         a.location,
-				startTime:        a.startTime,
+				startTime:        a.start_time,
 				duration:         a.duration,
 				comments:         a.comments,
 				longitude:        a.longitude,
@@ -198,6 +198,7 @@ class ActivitiesController < ApplicationController
 	  	}
 			render :json => rtn
   	else
+
   		rtn = {
 				errormsg: "Authentication Denied.",
         status:   "401"
@@ -211,15 +212,15 @@ class ActivitiesController < ApplicationController
 		def activity_params
 			activity = Hash.new
 			activity[:hostid]        = params[:HostID]
-			activity[:activityType]  = params[:ActivityType]
+			activity[:activity_type]  = params[:ActivityType]
 			activity[:location]      = params[:Location]
-			activity[:groupSize]     = params[:GroupSize]
+			activity[:group_size]     = params[:GroupSize]
 			activity[:comments]      = params[:Comments]
 			activity[:duration]      = params[:Duration]
 			activity[:longitude]     = params[:Lng]
 			activity[:latitude]      = params[:Lat]
-      activity[:startTime]     = params[:StartTime].to_time
-			activity[:memberNum]     = 1
+      activity[:start_time]     = params[:StartTime].to_time
+			activity[:member_number]     = 1
 			return activity
 		end
 end

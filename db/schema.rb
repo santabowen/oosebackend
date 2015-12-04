@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20151204035016) do
     t.string   "activity_type"
     t.string   "location"
     t.integer  "group_size"
+    t.integer  "member_number"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.string   "comments"
     t.integer  "duration"
     t.string   "hostid"
-    t.integer  "member_number"
     t.integer  "user_id"
     t.decimal  "longitude",     precision: 64, scale: 12
     t.decimal  "latitude",      precision: 64, scale: 12
