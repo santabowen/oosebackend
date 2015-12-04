@@ -188,6 +188,10 @@ class UsersController < ApplicationController
         if !rate.nil?
           Rating.update(activity_id: act_id, user_id: user_id,
                 member_id: member_id, rating:rating)
+          user = User.find(member_id)
+          new_rating = (user.rating + rating) / (user.num_rating + 1)
+          user.update(num_rating: user.num_rating + 1, 
+            total_rating: user.total_rating + rating, rating: new_rating)
         else
           Rating.create(activity_id: act_id, user_id: user_id,
                 member_id: member_id, rating:rating)
@@ -386,16 +390,22 @@ class UsersController < ApplicationController
 			user[:password]  = params[:password]
 			user[:gender]    = params[:gender]
 			user[:authtoken] = rand_string(20)
+      user[:num_rating]   = 0
+      user[:total_rating] = 0
+      user[:rating]       = 0
 			return user
 		end
 
     def user_params_fb(profile)
       user = Hash.new
-      user[:name]      = profile["name"]
-      user[:email]     = params["email"]
-      user[:password]  = rand_string(15)
-      user[:gender]    = params["gender"]
-      user[:authtoken] = rand_string(20)
+      user[:name]         = profile["name"]
+      user[:email]        = params["email"]
+      user[:password]     = rand_string(15)
+      user[:gender]       = params["gender"]
+      user[:authtoken]    = rand_string(20)
+      user[:num_rating]   = 0
+      user[:total_rating] = 0
+      user[:rating]       = 0
       return user
     end
 
