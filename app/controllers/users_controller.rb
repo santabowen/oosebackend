@@ -231,9 +231,14 @@ class UsersController < ApplicationController
         render :json => rtn
       else
         inThegroup = 0
-        act.memberactivities.each do |ma|
-          if ma.user_id == Integer(user_id)
-            inThegroup = 1
+
+        if act.hostid != Integer(user_id)
+          inThegroup = 1
+        else
+          act.memberactivities.each do |ma|
+            if ma.user_id == Integer(user_id)
+              inThegroup = 1
+            end
           end
         end
 
