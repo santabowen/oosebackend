@@ -330,6 +330,7 @@ class UsersController < ApplicationController
 				name:             user.name,
 				address:          user.address,
 				email:            user.email,
+        rating:           user.rating,
 				self_description: user.self_description
 			}
 			rtn = {
