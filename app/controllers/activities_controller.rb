@@ -41,7 +41,7 @@ class ActivitiesController < ApplicationController
 	    rtnacts = []
 	    acts.each do |a|
 	      expired = 0;
-	      if a.startTime + a.duration - Time.now <= 0
+	      if a.start_time + a.duration - Time.now <= 0
 	      	expired = 1;
 	      end
 
@@ -49,15 +49,15 @@ class ActivitiesController < ApplicationController
 	      rtnacts << {
 	      	avatar:         a.user.avatar,
 	        actid:          a.id,
-	        actType:        a.activityType,
-	        groupSize:      a.groupSize,
+	        actType:        a.activity_type,
+	        groupSize:      a.group_size,
 	        location:       a.location,
-	        startTime:      a.startTime,
+	        startTime:      a.start_time,
 	        duration:       a.duration,
 	        comments:       a.comments,
 	        lat:            a.latitude,
 	        lng:            a.longitude,
-	        currentNum:     a.memberNum
+	        currentNum:     a.member_number
 
 	      }
 	    end
@@ -89,7 +89,7 @@ class ActivitiesController < ApplicationController
   			 			 longitude > #{@min_lng} AND 
   			 			 latitude < #{@max_lat} AND 
   			 			 latitude > #{@min_lat}
-  			 ORDER BY id DESC
+  			 ORDER BY start_time
   			")
   		
 	    rtnacts = []
@@ -97,15 +97,15 @@ class ActivitiesController < ApplicationController
 	      rtnacts << {
 	      	avatar:         a.user.avatar,
 	        actid:          a.id,
-	        actType:        a.activityType,
-	        groupSize:      a.groupSize,
+	        actType:        a.activity_type,
+	        groupSize:      a.group_size,
 	        location:       a.location,
-	        startTime:      a.startTime,
+	        startTime:      a.start_time,
 	        duration:       a.duration,
 	        comments:       a.comments,
 	        lat:            a.latitude,
 	        lng:            a.longitude,
-	        currentNum:     a.memberNum
+	        currentNum:     a.member_number
 	      }
 	    end
 	    rtn = {
@@ -126,7 +126,7 @@ class ActivitiesController < ApplicationController
   def join
   	if checkAuth(params)
   		a = Activity.find_by(id: params[:ActID])
-	    a.update(memberNum: a.memberNum + 1)
+	    a.update(memberNum: a.member_number + 1)
 	    a.memberactivities.create(user_id: params[:UserID], activity_id: params[:ActID])
 			rtn = {
 		  	status: "201"
@@ -146,7 +146,7 @@ class ActivitiesController < ApplicationController
   		a = Activity.find_by(id: params[:ActID])
 			relation = a.memberactivities.find_by(user_id: params[:UserID])
 			relation.delete
-			a.update(memberNum: a.memberNum - 1)
+			a.update(memberNum: a.member_number - 1)
 			rtn = {
 		  	status: "201"
 		  }
@@ -180,12 +180,12 @@ class ActivitiesController < ApplicationController
 			rtnact = {
 				actid:            a.id,
 				hostid:           a.hostid,
-				hostavatar:       host.avatar
-				actType:          a.activityType,
-				groupSize:        a.groupSize,
-				currentGroupSize: a.memberNum,
+				hostavatar:       host.avatar,
+				actType:          a.activity_type,
+				groupSize:        a.group_size,
+				currentGroupSize: a.member_number,
 				location:         a.location,
-				startTime:        a.startTime,
+				startTime:        a.start_time,
 				duration:         a.duration,
 				comments:         a.comments,
 				longitude:        a.longitude,
@@ -198,6 +198,7 @@ class ActivitiesController < ApplicationController
 	  	}
 			render :json => rtn
   	else
+  		
   		rtn = {
 				errormsg: "Authentication Denied.",
         status:   "401"
