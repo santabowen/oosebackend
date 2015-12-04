@@ -185,16 +185,18 @@ class UsersController < ApplicationController
         member_id = ma[:member_id]
         rating = ma[:rating]
         rate = Rating.find_by(activity_id: act_id, user_id: user_id, member_id: member_id)
+        user = User.find(member_id)
         if !rate.nil?
-          Rating.update(activity_id: act_id, user_id: user_id,
-                member_id: member_id, rating: rating)
-          user = User.find(member_id)
-          new_rating = (user.rating + rating) / (user.num_rating + 1)
-          user.update(num_rating: user.num_rating + 1, 
-            total_rating: user.total_rating + rating, rating: new_rating)
+          new_rating = (user.total_rating - rate.rating + rating) / user.num_rating
+          rate.update(rating: rating)
+          user.update(num_rating: user.num_rating, 
+            total_rating: user.total_rating - rate.rating + rating, rating: new_rating)
         else
           Rating.create(activity_id: act_id, user_id: user_id,
                 member_id: member_id, rating:rating)
+          new_rating = (user.total_rating + rating) / (user.num_rating + 1)
+          user.update(num_rating: user.num_rating + 1, 
+            total_rating: user.total_rating + rating, rating: new_rating)
         end
       end
       rtn = {
@@ -231,14 +233,9 @@ class UsersController < ApplicationController
         render :json => rtn
       else
         inThegroup = 0
-
-        if act.hostid != Integer(user_id)
-          inThegroup = 1
-        else
-          act.memberactivities.each do |ma|
-            if ma.user_id == Integer(user_id)
-              inThegroup = 1
-            end
+        act.memberactivities.each do |ma|
+          if ma.user_id == Integer(user_id)
+            inThegroup = 1
           end
         end
 
@@ -277,22 +274,6 @@ class UsersController < ApplicationController
               }
             end
           end
-
-          if act.hostid != Integer(user_id)
-            member = User.find_by(id: act.hostid)
-            member_name = member.name
-            member_avatar = member.avatar
-            member_gender = member.gender
-            ratings << {
-              member_id:          act.hostid,
-              member_name:        member_name,
-              member_avatar:      member_avatar,
-              member_gender:      member_gender,
-              rating:             -1
-            }
-          end
-
-
           rtn = {
             members:   ratings,
             status:    "201"
