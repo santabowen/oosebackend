@@ -11,25 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204012811) do
+ActiveRecord::Schema.define(version: 20151204035016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string   "activityType"
+    t.string   "activity_type"
     t.string   "location"
-    t.integer  "groupSize"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.integer  "group_size"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "comments"
     t.integer  "duration"
     t.string   "hostid"
-    t.integer  "memberNum"
+    t.integer  "member_number"
     t.integer  "user_id"
-    t.decimal  "longitude",    precision: 64, scale: 12
-    t.decimal  "latitude",     precision: 64, scale: 12
-    t.datetime "startTime"
+    t.decimal  "longitude",     precision: 64, scale: 12
+    t.decimal  "latitude",      precision: 64, scale: 12
+    t.datetime "start_time"
   end
 
   add_index "activities", ["user_id", "created_at"], name: "index_activities_on_user_id_and_created_at", using: :btree
