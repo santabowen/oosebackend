@@ -431,7 +431,7 @@ class UsersController < ApplicationController
 			return user
 		end
 
-		def updateFilters(user, filterlist)
+	def updateFilters(user, filterlist)
 			filts = user.filters
       filts.each do |a|
         a.delete

@@ -173,8 +173,14 @@ class ActivitiesController < ApplicationController
 					avatar:   user.avatar
 				}
 			end
+
+			hostid = a.hostid
+			host = User.find_by(id: hostid)
+
 			rtnact = {
 				actid:            a.id,
+				hostid:           a.hostid,
+				hostavatar:       host.avatar
 				actType:          a.activityType,
 				groupSize:        a.groupSize,
 				currentGroupSize: a.memberNum,
