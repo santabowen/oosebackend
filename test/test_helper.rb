@@ -7,4 +7,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def rand_string(len)
+    o =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
+    string  =  (0..len).map{ o[rand(o.length)]  }.join
+
+    return string
+  end
 end

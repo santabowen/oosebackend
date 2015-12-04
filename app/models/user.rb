@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :activities, dependent: :destroy
+  has_many :filters, dependent: :destroy
 	attr_accessor :password
 	before_save { self.email  = email.downcase }
   before_save { self.gender = gender.downcase }
@@ -9,7 +10,7 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, :on => :create
 
   def encrypt_password
     if password.present?      
@@ -31,4 +32,5 @@ class User < ActiveRecord::Base
       nil
     end
   end
+
 end
