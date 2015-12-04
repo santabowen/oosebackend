@@ -231,9 +231,14 @@ class UsersController < ApplicationController
         render :json => rtn
       else
         inThegroup = 0
-        act.memberactivities.each do |ma|
-          if ma.user_id == Integer(user_id)
-            inThegroup = 1
+
+        if act.hostid != Integer(user_id)
+          inThegroup = 1
+        else
+          act.memberactivities.each do |ma|
+            if ma.user_id == Integer(user_id)
+              inThegroup = 1
+            end
           end
         end
 
@@ -272,6 +277,22 @@ class UsersController < ApplicationController
               }
             end
           end
+
+          if act.hostid != Integer(user_id)
+            member = User.find_by(id: act.hostid)
+            member_name = member.name
+            member_avatar = member.avatar
+            member_gender = member.gender
+            ratings << {
+              member_id:          act.hostid,
+              member_name:        member_name,
+              member_avatar:      member_avatar,
+              member_gender:      member_gender,
+              rating:             -1
+            }
+          end
+
+
           rtn = {
             members:   ratings,
             status:    "201"
