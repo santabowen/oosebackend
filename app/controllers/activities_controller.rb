@@ -82,9 +82,15 @@ class ActivitiesController < ApplicationController
   		@min_lat = params[:Lat] - 0.045
   		@max_lat = params[:Lat] + 0.045
 
-  		acts = Activity.find_by_sql("SELECT * FROM activities 
-  			WHERE longitude < #{@max_lng} AND longitude > #{@min_lng} 
-  			AND latitude < #{@max_lat} AND latitude > #{@min_lat}")
+  		acts = Activity.find_by_sql(
+  			"SELECT * 
+  			 FROM activities
+  			 WHERE longitude < #{@max_lng} AND 
+  			 			 longitude > #{@min_lng} AND 
+  			 			 latitude < #{@max_lat} AND 
+  			 			 latitude > #{@min_lat}
+  			 ORDER BY id DESC
+  			")
   		
 	    rtnacts = []
 	    acts.each do |a|
@@ -140,10 +146,11 @@ class ActivitiesController < ApplicationController
   		a = Activity.find_by(id: params[:ActID])
 			relation = a.memberactivities.find_by(user_id: params[:UserID])
 			relation.delete
+			a.update(memberNum: a.memberNum - 1)
 			rtn = {
 		  	status: "201"
 		  }
-			render :json => rtn
+		render :json => rtn
   	else
   		rtn = {
 				errormsg: "Authentication Denied.",
