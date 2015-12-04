@@ -272,6 +272,22 @@ class UsersController < ApplicationController
               }
             end
           end
+
+          if act.hostid != Integer(user_id)
+            member = User.find_by(id: member_id)
+            member_name = member.name
+            member_avatar = member.avatar
+            member_gender = member.gender
+            ratings << {
+              member_id:          member_id,
+              member_name:        member_name,
+              member_avatar:      member_avatar,
+              member_gender:      member_gender,
+              rating:             -1
+            }
+          end
+
+
           rtn = {
             members:   ratings,
             status:    "201"
