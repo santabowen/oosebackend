@@ -198,7 +198,7 @@ class ActivitiesController < ApplicationController
 	  	}
 			render :json => rtn
   	else
-  		
+
   		rtn = {
 				errormsg: "Authentication Denied.",
         status:   "401"
@@ -212,15 +212,15 @@ class ActivitiesController < ApplicationController
 		def activity_params
 			activity = Hash.new
 			activity[:hostid]        = params[:HostID]
-			activity[:activityType]  = params[:ActivityType]
+			activity[:activity_type]  = params[:ActivityType]
 			activity[:location]      = params[:Location]
-			activity[:groupSize]     = params[:GroupSize]
-			activity[:comments]      = params[:Comments]
+			activity[:group_size]     = params[:GroupSize]
+			activity[:comments]      = p_arams[:Comments]
 			activity[:duration]      = params[:Duration]
 			activity[:longitude]     = params[:Lng]
 			activity[:latitude]      = params[:Lat]
-      activity[:startTime]     = params[:StartTime].to_time
-			activity[:memberNum]     = 1
+      activity[:start_time]     = params[:StartTime].to_time
+			activity[:member_num]     = 1
 			return activity
 		end
 end
