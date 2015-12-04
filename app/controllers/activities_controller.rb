@@ -220,7 +220,7 @@ class ActivitiesController < ApplicationController
 			activity[:longitude]     = params[:Lng]
 			activity[:latitude]      = params[:Lat]
       activity[:start_time]     = params[:StartTime].to_time
-			activity[:member_num]     = 1
+			activity[:member_number]     = 1
 			return activity
 		end
 end
