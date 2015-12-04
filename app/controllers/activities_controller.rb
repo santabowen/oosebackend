@@ -180,7 +180,7 @@ class ActivitiesController < ApplicationController
 			rtnact = {
 				actid:            a.id,
 				hostid:           a.hostid,
-				hostavatar:       host.avatar
+				hostavatar:       host.avatar,
 				actType:          a.activityType,
 				groupSize:        a.groupSize,
 				currentGroupSize: a.memberNum,
