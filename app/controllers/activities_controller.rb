@@ -183,7 +183,7 @@ class ActivitiesController < ApplicationController
 				hostavatar:       host.avatar,
 				actType:          a.activity_type,
 				groupSize:        a.group_size,
-				currentGroupSize: a.member_number,
+				currentNum:       a.member_number,
 				location:         a.location,
 				startTime:        a.start_time,
 				duration:         a.duration,
