@@ -279,12 +279,12 @@ class UsersController < ApplicationController
           end
 
           if act.hostid != Integer(user_id)
-            member = User.find_by(id: member_id)
+            member = User.find_by(id: act.hostid)
             member_name = member.name
             member_avatar = member.avatar
             member_gender = member.gender
             ratings << {
-              member_id:          member_id,
+              member_id:          act.hostid,
               member_name:        member_name,
               member_avatar:      member_avatar,
               member_gender:      member_gender,
