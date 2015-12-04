@@ -215,7 +215,7 @@ class ActivitiesController < ApplicationController
 			activity[:activity_type]  = params[:ActivityType]
 			activity[:location]      = params[:Location]
 			activity[:group_size]     = params[:GroupSize]
-			activity[:comments]      = p_arams[:Comments]
+			activity[:comments]      = params[:Comments]
 			activity[:duration]      = params[:Duration]
 			activity[:longitude]     = params[:Lng]
 			activity[:latitude]      = params[:Lat]
