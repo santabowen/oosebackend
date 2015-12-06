@@ -326,7 +326,7 @@ class UsersController < ApplicationController
   def getprofile
   	if checkAuth(params)
   		
-  		user = User.find_by(id: params[:uid])
+  		user = User.find_by(id: params[:viewUid])
 			profile = {
 				avatar:           user.avatar,
 				name:             user.name,
@@ -339,8 +339,6 @@ class UsersController < ApplicationController
 				profile: profile,
 		  	status:  "201"
 		  }
-		  puts "~~~~~~~~~~~~~"
-		  puts profile
 			render :json => rtn
   	else
   		rtn = {
