@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   post     'activities/join'
   delete   'activities/drop'
 
-
   resources    :ratings
   resources    :users
   resources    :activities
