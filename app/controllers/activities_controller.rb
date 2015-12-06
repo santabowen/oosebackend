@@ -5,7 +5,9 @@ class ActivitiesController < ApplicationController
   def post
   	if checkAuth(params)
   		@user = User.find_by(id: params[:HostID])
-	    if @user and @user.activities.create(activity_params) 
+  		a = @user.activities.new(activity_params)
+	    if @user and a.save
+		    a.memberactivities.create(user_id: params[:HostID], activity_id: a.id)
 	      print "Successfully create an activity."
 	      rtn = {
 	        status: "201"
@@ -212,15 +214,15 @@ class ActivitiesController < ApplicationController
 		def activity_params
 			activity = Hash.new
 			activity[:hostid]        = params[:HostID]
-			activity[:activity_type]  = params[:ActivityType]
+			activity[:activity_type] = params[:ActivityType]
 			activity[:location]      = params[:Location]
-			activity[:group_size]     = params[:GroupSize]
+			activity[:group_size]    = params[:GroupSize]
 			activity[:comments]      = params[:Comments]
 			activity[:duration]      = params[:Duration]
 			activity[:longitude]     = params[:Lng]
 			activity[:latitude]      = params[:Lat]
-      activity[:start_time]     = params[:StartTime].to_time
-			activity[:member_number]     = 1
+      activity[:start_time]    = params[:StartTime].to_time
+			activity[:member_number] = 1
 			return activity
 		end
 end
