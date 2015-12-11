@@ -93,8 +93,17 @@ class ActivitiesController < ApplicationController
   			 			 latitude > #{@min_lat}
   			 ORDER BY start_time")
   		
+  		# avatar = a.user.avatar
+  		# if a.user.avatar.nil?
+
+
 	    rtnacts = []
 	    acts.each do |a|
+
+	    	put "\n~~~~~~~~~~~~~\n"
+	    	put a.user.avatar
+	    	put "\n~~~~~~~~~~~~~\n"
+
 	    	if a.start_time > Time.now
 
 	    		puts "\n~~~~~~~~~~~~~\n"
@@ -187,7 +196,7 @@ class ActivitiesController < ApplicationController
 			rtn = {
 		  	status: "201"
 		  }
-		render :json => rtn
+			render :json => rtn
   	else
   		rtn = {
 				errormsg: "Authentication Denied.",
