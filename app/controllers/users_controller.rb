@@ -8,19 +8,27 @@ class UsersController < ApplicationController
       profile = @graph.get_object("me")
 		  @user = User.new(user_params_fb(profile)) 
     else
+      if /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i =~ params[:email]
+        print "Email Wrong Format."
+        rtn = {
+          errormsg: "Email Wrong Format.",
+          status:   "401"
+        }
+      end
       @user = User.new(user_params)
     end
 		if @user.save
 			@user = createFilters(@user)
 			print "Successfully creat a user."
 			rtn = {
-		  	status: "200"
+        errormsg: "You succeed!",
+		  	status:   "200"
 		  }
 			render :json => rtn
 		else
 			print "Fail to create a user."
 			rtn = {
-		  	status: "401"
+		  	status:   "401"
 		  }
 			render :json => rtn
 		end
