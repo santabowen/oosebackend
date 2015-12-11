@@ -96,6 +96,11 @@ class ActivitiesController < ApplicationController
 	    rtnacts = []
 	    acts.each do |a|
 	    	if a.start_time > Time.now
+
+	    		put "\n~~~~~~~~~~~~~\n"
+	    		put a.user.avatar
+	    		put "\n~~~~~~~~~~~~~\n"
+
 		      rtnacts << {
 		      	avatar:         a.user.avatar,
 		        actid:          a.id,
