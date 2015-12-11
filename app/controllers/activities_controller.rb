@@ -160,7 +160,35 @@ class ActivitiesController < ApplicationController
       }
 	    render :json => rtn
   	end
-		
+	end
+
+	def hostdrop
+		if checkAuth(params)
+  		a = Activity.find_by(id: params[:ActID])
+  		if a.member_number == 1
+  			a.delete
+  		else
+  			relation = a.memberactivities.find_by(user_id: )
+				relation.delete
+
+  			new_host_id = a.memberactivities.first.user_id
+        a.hostid = new_host_id
+        a.user_id = new_host_id
+
+  			a.update(member_number: a.member_number - 1)
+  		end 
+
+			rtn = {
+		  	status: "201"
+		  }
+		render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+	    render :json => rtn
+  	end
 	end
 	
 	def getsingle

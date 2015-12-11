@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post     'activities/getByUserID'
   post     'activities/join'
   delete   'activities/drop'
+  delete   'activities/hostdrop'
 
   resources    :ratings
   resources    :users
