@@ -42,9 +42,9 @@ class ActivitiesController < ApplicationController
 
 	    rtnacts = []
 	    acts.each do |a|
-	      expired = 0;
-	      if a.start_time + a.duration - Time.now <= 0
-	      	expired = 1;
+	      expired = false;
+	      if a.start_time + a.duration - Time.now < 0
+	      	expired = true;
 	      end
 
 	      rtnacts << {
@@ -58,7 +58,8 @@ class ActivitiesController < ApplicationController
 	        comments:       a.comments,
 	        lat:            a.latitude,
 	        lng:            a.longitude,
-	        currentNum:     a.member_number
+	        currentNum:     a.member_number,
+	        is_expired:     expired
 	      }
 	    end
 	    rtn = {
