@@ -47,7 +47,6 @@ class ActivitiesController < ApplicationController
 	      	expired = 1;
 	      end
 
-
 	      rtnacts << {
 	      	avatar:         a.user.avatar,
 	        actid:          a.id,
@@ -60,7 +59,6 @@ class ActivitiesController < ApplicationController
 	        lat:            a.latitude,
 	        lng:            a.longitude,
 	        currentNum:     a.member_number
-
 	      }
 	    end
 	    rtn = {
@@ -83,6 +81,7 @@ class ActivitiesController < ApplicationController
   		@max_lng = params[:Lng] + 0.045
   		@min_lat = params[:Lat] - 0.045
   		@max_lat = params[:Lat] + 0.045
+  		@time_now = Time.now
 
   		acts = Activity.find_by_sql(
   			"SELECT * 
@@ -90,9 +89,9 @@ class ActivitiesController < ApplicationController
   			 WHERE longitude < #{@max_lng} AND 
   			 			 longitude > #{@min_lng} AND 
   			 			 latitude < #{@max_lat} AND 
-  			 			 latitude > #{@min_lat}
-  			 ORDER BY start_time
-  			")
+  			 			 latitude > #{@min_lat} AND
+  			 			 start_time + duration < #{@time_now}
+  			 ORDER BY start_time")
   		
 	    rtnacts = []
 	    acts.each do |a|
