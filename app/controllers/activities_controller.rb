@@ -169,7 +169,7 @@ class ActivitiesController < ApplicationController
   		if a.member_number == 1
   			a.delete
   		else
-  			relation = a.memberactivities.find_by(user_id: )
+  			relation = a.memberactivities.find_by(user_id: params[:UserID])
 				relation.delete
 
   			new_host_id = a.memberactivities.first.user_id
