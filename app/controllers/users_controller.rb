@@ -8,7 +8,8 @@ class UsersController < ApplicationController
       profile = @graph.get_object("me")
 		  @user = User.new(user_params_fb(profile)) 
     else
-      if /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i =~ params[:email]
+      emailcheck = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i =~ params[:email]
+      if emailcheck.nil?
         print "Email Wrong Format."
         rtn = {
           errormsg: "Email Wrong Format.",
