@@ -42,11 +42,10 @@ class ActivitiesController < ApplicationController
 
 	    rtnacts = []
 	    acts.each do |a|
-	      expired = 0;
-	      if a.start_time + a.duration - Time.now <= 0
-	      	expired = 1;
+	      expired = false;
+	      if a.start_time + a.duration - Time.now < 0
+	      	expired = true;
 	      end
-
 
 	      rtnacts << {
 	      	avatar:         a.user.avatar,
@@ -59,8 +58,8 @@ class ActivitiesController < ApplicationController
 	        comments:       a.comments,
 	        lat:            a.latitude,
 	        lng:            a.longitude,
-	        currentNum:     a.member_number
-
+	        currentNum:     a.member_number,
+	        is_expired:     expired
 	      }
 	    end
 	    rtn = {
@@ -83,6 +82,7 @@ class ActivitiesController < ApplicationController
   		@max_lng = params[:Lng] + 0.045
   		@min_lat = params[:Lat] - 0.045
   		@max_lat = params[:Lat] + 0.045
+  		@time_now = Time.now
 
   		acts = Activity.find_by_sql(
   			"SELECT * 
@@ -91,24 +91,25 @@ class ActivitiesController < ApplicationController
   			 			 longitude > #{@min_lng} AND 
   			 			 latitude < #{@max_lat} AND 
   			 			 latitude > #{@min_lat}
-  			 ORDER BY start_time
-  			")
+  			 ORDER BY start_time")
   		
 	    rtnacts = []
 	    acts.each do |a|
-	      rtnacts << {
-	      	avatar:         a.user.avatar,
-	        actid:          a.id,
-	        actType:        a.activity_type,
-	        groupSize:      a.group_size,
-	        location:       a.location,
-	        startTime:      a.start_time,
-	        duration:       a.duration,
-	        comments:       a.comments,
-	        lat:            a.latitude,
-	        lng:            a.longitude,
-	        currentNum:     a.member_number
-	      }
+	    	if a.start_time > Time.now
+		      rtnacts << {
+		      	avatar:         a.user.avatar,
+		        actid:          a.id,
+		        actType:        a.activity_type,
+		        groupSize:      a.group_size,
+		        location:       a.location,
+		        startTime:      a.start_time,
+		        duration:       a.duration,
+		        comments:       a.comments,
+		        lat:            a.latitude,
+		        lng:            a.longitude,
+		        currentNum:     a.member_number
+		      }
+		    end
 	    end
 	    rtn = {
 	      acts:   rtnacts,
@@ -160,7 +161,35 @@ class ActivitiesController < ApplicationController
       }
 	    render :json => rtn
   	end
-		
+	end
+
+	def hostdrop
+		if checkAuth(params)
+  		a = Activity.find_by(id: params[:ActID])
+  		if a.member_number == 1
+  			a.delete
+  		else
+  			relation = a.memberactivities.find_by(user_id: )
+				relation.delete
+
+  			new_host_id = a.memberactivities.first.user_id
+        a.hostid = new_host_id
+        a.user_id = new_host_id
+
+  			a.update(member_number: a.member_number - 1)
+  		end 
+
+			rtn = {
+		  	status: "201"
+		  }
+		render :json => rtn
+  	else
+  		rtn = {
+				errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+	    render :json => rtn
+  	end
 	end
 	
 	def getsingle
