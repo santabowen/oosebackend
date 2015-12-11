@@ -95,7 +95,7 @@ class ActivitiesController < ApplicationController
   		
 	    rtnacts = []
 	    acts.each do |a|
-	    	if a.start_time + a.duration < Time.now
+	    	if a.start_time > Time.now
 		      rtnacts << {
 		      	avatar:         a.user.avatar,
 		        actid:          a.id,
