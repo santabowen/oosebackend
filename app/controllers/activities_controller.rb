@@ -100,10 +100,6 @@ class ActivitiesController < ApplicationController
 	    rtnacts = []
 	    acts.each do |a|
 
-	    	put "\n~~~~~~~~~~~~~\n"
-	    	put a.user.avatar
-	    	put "\n~~~~~~~~~~~~~\n"
-
 	    	if a.start_time > Time.now
 
 	    		puts "\n~~~~~~~~~~~~~\n"
