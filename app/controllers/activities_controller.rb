@@ -89,25 +89,26 @@ class ActivitiesController < ApplicationController
   			 WHERE longitude < #{@max_lng} AND 
   			 			 longitude > #{@min_lng} AND 
   			 			 latitude < #{@max_lat} AND 
-  			 			 latitude > #{@min_lat} AND
-  			 			 start_time < #{@time_now}
+  			 			 latitude > #{@min_lat}
   			 ORDER BY start_time")
   		
 	    rtnacts = []
 	    acts.each do |a|
-	      rtnacts << {
-	      	avatar:         a.user.avatar,
-	        actid:          a.id,
-	        actType:        a.activity_type,
-	        groupSize:      a.group_size,
-	        location:       a.location,
-	        startTime:      a.start_time,
-	        duration:       a.duration,
-	        comments:       a.comments,
-	        lat:            a.latitude,
-	        lng:            a.longitude,
-	        currentNum:     a.member_number
-	      }
+	    	if a.start_time + a.duration < Time.now
+		      rtnacts << {
+		      	avatar:         a.user.avatar,
+		        actid:          a.id,
+		        actType:        a.activity_type,
+		        groupSize:      a.group_size,
+		        location:       a.location,
+		        startTime:      a.start_time,
+		        duration:       a.duration,
+		        comments:       a.comments,
+		        lat:            a.latitude,
+		        lng:            a.longitude,
+		        currentNum:     a.member_number
+		      }
+		    end
 	    end
 	    rtn = {
 	      acts:   rtnacts,
