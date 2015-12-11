@@ -90,7 +90,7 @@ class ActivitiesController < ApplicationController
   			 			 longitude > #{@min_lng} AND 
   			 			 latitude < #{@max_lat} AND 
   			 			 latitude > #{@min_lat} AND
-  			 			 start_time + duration < #{@time_now}
+  			 			 start_time < #{@time_now}
   			 ORDER BY start_time")
   		
 	    rtnacts = []
