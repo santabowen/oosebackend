@@ -102,10 +102,6 @@ class ActivitiesController < ApplicationController
 
 	    	if a.start_time > Time.now
 
-	    		puts "\n~~~~~~~~~~~~~\n"
-	    		puts a.user.avatar
-	    		puts "\n~~~~~~~~~~~~~\n"
-
 		      rtnacts << {
 		      	avatar:         a.user.avatar,
 		        actid:          a.id,
