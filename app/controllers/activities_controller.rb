@@ -42,7 +42,7 @@ class ActivitiesController < ApplicationController
 	    acts.each do |a|
 	    	if !a.nil?
 		      expired = false;
-		      if a.start_time + a.duuration - Time.now < 0
+		      if a.start_time + a.duration - Time.now < 0
 		      	expired = true;
 		      end
 
