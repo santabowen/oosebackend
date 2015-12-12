@@ -419,12 +419,6 @@ class UsersController < ApplicationController
       return user
     end
 
-	  # def check_for_valid_authtoken
-	  #   authenticate_or_request_with_http_token do |token, options|     
-	  #     @user = User.where(:api_authtoken => token).first      
-	  #   end
-	  # end
-	  
 	  def rand_string(len)
 	    o =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
 	    string  =  (0..len).map{ o[rand(o.length)] }.join

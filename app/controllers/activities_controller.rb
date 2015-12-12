@@ -92,19 +92,11 @@ class ActivitiesController < ApplicationController
   			 			 latitude < #{@max_lat} AND 
   			 			 latitude > #{@min_lat}
   			 ORDER BY start_time")
-  		
-  		# avatar = a.user.avatar
-  		# if a.user.avatar.nil?
-
 
 	    rtnacts = []
 	    acts.each do |a|
 
 	    	if a.start_time > Time.now
-
-	    		puts "\n~~~~~~~~~~~~~\n"
-	    		puts a.user.avatar
-	    		puts "\n~~~~~~~~~~~~~\n"
 
 		      rtnacts << {
 		      	avatar:         a.user.avatar,
