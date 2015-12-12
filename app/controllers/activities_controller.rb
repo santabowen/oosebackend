@@ -94,14 +94,18 @@ class ActivitiesController < ApplicationController
   			 ORDER BY start_time")
 
   		user = User.find_by(id: params[:uid])
-  		filters = []
-  		user.filters.each do |f|
-  			filters << f.filtertype
+  		filchecks = []
+  		user.filchecks.each do |f|
+  			filchecks << f.filtertype
   		end
 	    rtnacts = []
 	    acts.each do |a|
-
-	    	if a.start_time > Time.now
+	    	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	    	puts filchecks
+	    	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	    	puts a.activity_type
+	    	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	    	if a.start_time > Time.now and filchecks.include? a.activity_type
 
 		      rtnacts << {
 		      	avatar:         a.user.avatar,
