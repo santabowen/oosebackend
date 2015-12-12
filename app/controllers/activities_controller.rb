@@ -100,7 +100,7 @@ class ActivitiesController < ApplicationController
   		end
 	    rtnacts = []
 	    acts.each do |a|
-	    	
+
 	    	if a.start_time > Time.now and filchecks.include? a.activity_type
 
 		      rtnacts << {
@@ -226,8 +226,8 @@ class ActivitiesController < ApplicationController
 				startTime:        a.start_time,
 				duration:         a.duration,
 				comments:         a.comments,
-				longitude:        a.longitude,
-				latitude:         a.latitude,
+				lng:              a.longitude,
+				lat:              a.latitude,
 				memberlist:       members
 			}
 			rtn = {
