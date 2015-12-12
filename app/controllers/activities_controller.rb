@@ -93,10 +93,15 @@ class ActivitiesController < ApplicationController
   			 			 latitude > #{@min_lat}
   			 ORDER BY start_time")
 
+  		user = User.find_by(id: params[:uid])
+  		filters = []
+  		user.filters.each do |f|
+  			filters << f.filtertype
+  		end
 	    rtnacts = []
 	    acts.each do |a|
 
-	    	if a.start_time > Time.now
+	    	if a.start_time > Time.now && filters.include? a.activity_type
 
 		      rtnacts << {
 		      	avatar:         a.user.avatar,
