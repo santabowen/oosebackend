@@ -95,7 +95,7 @@ class ActivitiesController < ApplicationController
 
   		user = User.find_by(id: params[:uid])
   		filchecks = []
-  		user.filchecks.each do |f|
+  		user.filters.each do |f|
   			filchecks << f.filtertype
   		end
 	    rtnacts = []
