@@ -100,11 +100,7 @@ class ActivitiesController < ApplicationController
   		end
 	    rtnacts = []
 	    acts.each do |a|
-	    	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	    	puts filchecks
-	    	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	    	puts a.activity_type
-	    	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	    	
 	    	if a.start_time > Time.now and filchecks.include? a.activity_type
 
 		      rtnacts << {
