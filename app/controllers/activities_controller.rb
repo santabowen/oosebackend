@@ -36,31 +36,31 @@ class ActivitiesController < ApplicationController
   		user = User.find(params[:UserID])
   		acts_id = Memberactivity.where(user_id: params[:UserID])
   		acts = []
-  		acts_id.each do |j|
-  			acts << Activity.find_by(id: j.activity_id)
-  		end	
+  		acts_id.each do |j| acts << Activity.find_by(id: j.activity_id) end	
 
 	    rtnacts = []
 	    acts.each do |a|
-	      expired = false;
-	      if a.start_time + a.duration - Time.now < 0
-	      	expired = true;
-	      end
+	    	if !a.nil?
+		      expired = false;
+		      if a.start_time + a.duuration - Time.now < 0
+		      	expired = true;
+		      end
 
-	      rtnacts << {
-	      	avatar:         a.user.avatar,
-	        actid:          a.id,
-	        actType:        a.activity_type,
-	        groupSize:      a.group_size,
-	        location:       a.location,
-	        startTime:      a.start_time,
-	        duration:       a.duration,
-	        comments:       a.comments,
-	        lat:            a.latitude,
-	        lng:            a.longitude,
-	        currentNum:     a.member_number,
-	        is_expired:     expired
-	      }
+		      rtnacts << {
+		      	avatar:         a.user.avatar,
+		        actid:          a.id,
+		        actType:        a.activity_type,
+		        groupSize:      a.group_size,
+		        location:       a.location,
+		        startTime:      a.start_time,
+		        duration:       a.duration,
+		        comments:       a.comments,
+		        lat:            a.latitude,
+		        lng:            a.longitude,
+		        currentNum:     a.member_number,
+		        is_expired:     expired
+		      }
+		    end
 	    end
 	    rtn = {
 	      acts:   rtnacts,
@@ -82,16 +82,16 @@ class ActivitiesController < ApplicationController
   		@max_lng = params[:Lng] + 0.045
   		@min_lat = params[:Lat] - 0.045
   		@max_lat = params[:Lat] + 0.045
-  		@time_now = Time.now
 
   		acts = Activity.find_by_sql(
-  			"SELECT * 
-  			 FROM activities
-  			 WHERE longitude < #{@max_lng} AND 
-  			 			 longitude > #{@min_lng} AND 
-  			 			 latitude < #{@max_lat} AND 
-  			 			 latitude > #{@min_lat}
-  			 ORDER BY start_time")
+        "SELECT * FROM activities 
+         WHERE longitude < #{@max_lng} AND 
+               longitude > #{@min_lng} AND 
+               latitude < #{@max_lat} AND 
+               latitude > #{@min_lat}
+         ORDER BY start_time")
+
+  		#Activity.find_by_sql("SELECT activities.latitude, activities.longitude FROM activities WHERE longitude < 0 AND longitude > -10.176 AND latitude < 55 AND latitude > 50 ORDER BY start_time")
 
   		user = User.find_by(id: params[:uid])
   		filchecks = []
