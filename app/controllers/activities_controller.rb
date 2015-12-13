@@ -37,8 +37,11 @@ class ActivitiesController < ApplicationController
   		acts_id = Memberactivity.where(user_id: params[:UserID])
   		acts = []
   		acts_id.each do |j| 
-        acts << Activity.find_by(id: j.activity_id, :order => "start_time") 
+        acts << Activity.find_by(id: j.activity_id) 
       end	
+      acts.sort_by! do |a|
+        a[:start_time]
+      end
 
 	    rtnacts = []
 	    acts.each do |a|
