@@ -80,7 +80,7 @@ class ActivitiesController < ApplicationController
               is_expired:     true
             }
           else
-            acts_expired << {
+            acts_inexpired << {
               avatar:         host.avatar,
               actid:          a["id"].to_i,
               actType:        a["activity_type"],
