@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 	def resetpw
 		user = User.find_by(email: params[:email]) 
 		if !user.nil?
-			if Time.now - user.validation_time < 60*60
+			if Time.now - user.validation_time < 60 * 60
 				validation_code = params[:validation_code]
 		    	
 	    	if validation_code == user.validation_code
@@ -445,7 +445,7 @@ class UsersController < ApplicationController
 			return user
 		end
 
-	def updateFilters(user, filterlist)
+	  def updateFilters(user, filterlist)
 			filts = user.filters
       filts.each do |a|
         a.delete
