@@ -34,35 +34,53 @@ class ActivitiesController < ApplicationController
   def getByUserID
   	if checkAuth(params)
   		user = User.find(params[:UserID])
-  		acts_id = Memberactivity.where(user_id: params[:UserID])
-  		acts = []
-  		acts_id.each do |j| 
-        acts << Activity.find_by(id: j.activity_id) 
-      end	
-      acts.sort_by! do |a|
-        a[:start_time]
+      @user_id = user.id
+      acts = execute_statement(
+        "SELECT * 
+         FROM activities, memberactivities
+         WHERE activities.id = memberactivities.activity_id AND 
+               memberactivities.user_id = #{@user_id}
+         ORDER BY start_time")
+      act_arr = []
+      acts.each do |a|
+        act_arr << a
       end
+
+  		# acts_id = Memberactivity.where(user_id: params[:UserID])
+  		# acts = []
+    #   acts_ids = []
+    #   acts_id.each do |j| acts_ids << j.activity_id end 
+    #   Activity.find(acts_ids, :order => "start_time")
+  		# acts_id.each do |j| 
+    #     acts << Activity.find_by(id: j.activity_id) 
+    #   end	
+    #   acts.sort_by! do |a| a[:start_time] end
+    #   nacts = acts.sort_by do |a| a.start_time end
+
+    #   nacts = acts.order("start_time")
 
 	    rtnacts = []
 	    acts.each do |a|
 	    	if !a.nil?
 		      expired = false;
-		      if a.start_time + a.duration - Time.now < 0
+		      if a["start_time"] + a["duration"] - Time.now < 0
 		      	expired = true;
 		      end
 
+          host = User.find(a["user_id"])
+
 		      rtnacts << {
-		      	avatar:         a.user.avatar,
-		        actid:          a.id,
-		        actType:        a.activity_type,
-		        groupSize:      a.group_size,
-		        location:       a.location,
-		        startTime:      a.start_time,
-		        duration:       a.duration,
-		        comments:       a.comments,
-		        lat:            a.latitude,
-		        lng:            a.longitude,
-		        currentNum:     a.member_number,
+		      	avatar:         host.avatar,
+		        actid:          a["id"],
+		        actType:        a["activity_type"],
+		        groupSize:      a["group_size"],
+		        location:       a["location"],
+		        startTime:      a["start_time"],
+		        duration:       a["duration"],
+		        comments:       a["comments"],
+		        lat:            a["latitude"],
+		        lng:            a["longitude"],
+		        currentNum:     a["member_number"],
 		        is_expired:     expired
 		      }
 		    end
