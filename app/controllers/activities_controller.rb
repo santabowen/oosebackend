@@ -60,32 +60,42 @@ class ActivitiesController < ApplicationController
 
     #   nacts = acts.order("start_time")
 
-      rtnacts = []
+      rtnacts        = []
+      acts_expired   = []
+      acts_inexpired = []
       act_arr.each do |a|
         if !a.nil?
-          expired = false;
-          if a["start_time"].to_time + a["duration"].to_i - Time.now < 0
-            expired = true;
-          end
-
           host = User.find(a["user_id"])
-
-          rtnacts << {
-            avatar:         host.avatar,
-            actid:          a["id"].to_i,
-            actType:        a["activity_type"],
-            groupSize:      a["group_size"].to_i,
-            location:       a["location"],
-            startTime:      a["start_time"].to_time,
-            duration:       a["duration"].to_i,
-            comments:       a["comments"],
-            # lat:            a["latitude"],
-            # lng:            a["longitude"],
-            currentNum:     a["member_number"].to_i,
-            is_expired:     expired
-          }
+          if a["start_time"].to_time + a["duration"].to_i - Time.now < 0
+            acts_expired << {
+              avatar:         host.avatar,
+              actid:          a["id"].to_i,
+              actType:        a["activity_type"],
+              groupSize:      a["group_size"].to_i,
+              location:       a["location"],
+              startTime:      a["start_time"].to_time,
+              duration:       a["duration"].to_i,
+              comments:       a["comments"],
+              currentNum:     a["member_number"].to_i,
+              is_expired:     true
+            }
+          else
+            acts_expired << {
+              avatar:         host.avatar,
+              actid:          a["id"].to_i,
+              actType:        a["activity_type"],
+              groupSize:      a["group_size"].to_i,
+              location:       a["location"],
+              startTime:      a["start_time"].to_time,
+              duration:       a["duration"].to_i,
+              comments:       a["comments"],
+              currentNum:     a["member_number"].to_i,
+              is_expired:     false
+            }
+          end
         end
       end
+      rtnacts = acts_inexpired + acts_expired
       rtn = {
         acts:   rtnacts,
         status: "201"
