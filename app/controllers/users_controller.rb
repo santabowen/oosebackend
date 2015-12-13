@@ -27,10 +27,12 @@ class UsersController < ApplicationController
 		  }
 			render :json => rtn
 		else
-			print "Fail to create a user."
-			rtn = {
-		  	status:   "401"
-		  }
+			if !User.find_by(email: params[:email]).nil?
+  			rtn = {
+          errormsg: "Existing email!",
+  		  	status:   "401"
+  		  }
+      end
 			render :json => rtn
 		end
 	end
