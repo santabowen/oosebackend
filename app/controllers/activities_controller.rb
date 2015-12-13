@@ -34,6 +34,7 @@ class ActivitiesController < ApplicationController
   def getByUserID
     if checkAuth(params)
       user = User.find(params[:UserID])
+      user = User.find(35)
       @user_id = user.id
       acts = ActiveRecord::Base.connection.exec_query(
         "SELECT * 
@@ -63,7 +64,7 @@ class ActivitiesController < ApplicationController
       act_arr.each do |a|
         if !a.nil?
           expired = false;
-          if a["start_time"] + a["duration"] - Time.now < 0
+          if a["start_time"].to_time + a["duration"].to_i - Time.now < 0
             expired = true;
           end
 
@@ -71,16 +72,16 @@ class ActivitiesController < ApplicationController
 
           rtnacts << {
             avatar:         host.avatar,
-            actid:          a["id"],
+            actid:          a["id"].to_i,
             actType:        a["activity_type"],
-            groupSize:      a["group_size"],
+            groupSize:      a["group_size"].to_i,
             location:       a["location"],
-            startTime:      a["start_time"],
-            duration:       a["duration"],
+            startTime:      a["start_time"].to_time,
+            duration:       a["duration"].to_i,
             comments:       a["comments"],
-            lat:            a["latitude"],
-            lng:            a["longitude"],
-            currentNum:     a["member_number"],
+            # lat:            a["latitude"],
+            # lng:            a["longitude"],
+            currentNum:     a["member_number"].to_i,
             is_expired:     expired
           }
         end
