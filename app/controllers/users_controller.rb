@@ -33,6 +33,9 @@ class UsersController < ApplicationController
   		  	status:   "401"
   		  }
       end
+      rtn = {
+        status:   "401"
+      }
 			render :json => rtn
 		end
 	end
