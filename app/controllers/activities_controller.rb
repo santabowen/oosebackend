@@ -32,10 +32,10 @@ class ActivitiesController < ApplicationController
   end
 
   def getByUserID
-  	if checkAuth(params)
-  		user = User.find(params[:UserID])
+    if checkAuth(params)
+      user = User.find(params[:UserID])
       @user_id = user.id
-      acts = execute_statement(
+      acts = ActiveRecord::Base.connection.exec_query(
         "SELECT * 
          FROM activities, memberactivities
          WHERE activities.id = memberactivities.activity_id AND 
@@ -59,37 +59,37 @@ class ActivitiesController < ApplicationController
 
     #   nacts = acts.order("start_time")
 
-	    rtnacts = []
-	    acts.each do |a|
-	    	if !a.nil?
-		      expired = false;
-		      if a["start_time"] + a["duration"] - Time.now < 0
-		      	expired = true;
-		      end
+      rtnacts = []
+      act_arr.each do |a|
+        if !a.nil?
+          expired = false;
+          if a["start_time"] + a["duration"] - Time.now < 0
+            expired = true;
+          end
 
           host = User.find(a["user_id"])
 
-		      rtnacts << {
-		      	avatar:         host.avatar,
-		        actid:          a["id"],
-		        actType:        a["activity_type"],
-		        groupSize:      a["group_size"],
-		        location:       a["location"],
-		        startTime:      a["start_time"],
-		        duration:       a["duration"],
-		        comments:       a["comments"],
-		        lat:            a["latitude"],
-		        lng:            a["longitude"],
-		        currentNum:     a["member_number"],
-		        is_expired:     expired
-		      }
-		    end
-	    end
-	    rtn = {
-	      acts:   rtnacts,
-	      status: "201"
-	    }
-	    render :json => rtn
+          rtnacts << {
+            avatar:         host.avatar,
+            actid:          a["id"],
+            actType:        a["activity_type"],
+            groupSize:      a["group_size"],
+            location:       a["location"],
+            startTime:      a["start_time"],
+            duration:       a["duration"],
+            comments:       a["comments"],
+            lat:            a["latitude"],
+            lng:            a["longitude"],
+            currentNum:     a["member_number"],
+            is_expired:     expired
+          }
+        end
+      end
+      rtn = {
+        acts:   rtnacts,
+        status: "201"
+      }
+      render :json => rtn
   	else
   		rtn = {
 				errormsg: "Authentication Denied.",
