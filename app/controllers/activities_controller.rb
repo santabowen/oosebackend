@@ -69,7 +69,7 @@ class ActivitiesController < ApplicationController
           if a["start_time"].to_time + a["duration"].to_i - Time.now < 0
             acts_expired << {
               avatar:         host.avatar,
-              actid:          a["id"].to_i,
+              actid:          a["activity_id"].to_i,
               actType:        a["activity_type"],
               groupSize:      a["group_size"].to_i,
               location:       a["location"],
