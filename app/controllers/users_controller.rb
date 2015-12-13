@@ -148,7 +148,7 @@ class UsersController < ApplicationController
   		}
 			render :json => rtn
 
-			# UserMailer.forget_password_confirmation(@user).deliver_now
+			UserMailer.forget_password_confirmation(user).deliver_now
 		else
 			rtn = {
 	  		status: "404"

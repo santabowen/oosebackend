@@ -103,7 +103,8 @@ class ActivitiesController < ApplicationController
 	    rtnacts = []
 	    acts.each do |a|
 
-	    	if a.start_time > Time.now and filchecks.include? a.activity_type
+	    if a.start_time > Time.now and filchecks.include? a.activity_type
+
 
 		      rtnacts << {
 		      	avatar:         a.user.avatar,
