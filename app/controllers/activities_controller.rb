@@ -82,7 +82,7 @@ class ActivitiesController < ApplicationController
           else
             acts_inexpired << {
               avatar:         host.avatar,
-              actid:          a["id"].to_i,
+              actid:          a["activity_id"].to_i,
               actType:        a["activity_type"],
               groupSize:      a["group_size"].to_i,
               location:       a["location"],
