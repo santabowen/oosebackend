@@ -36,11 +36,12 @@ class ActivitiesController < ApplicationController
       user = User.find(params[:UserID])
       @user_id = user.id
       acts = ActiveRecord::Base.connection.exec_query(
-        "SELECT * 
+        "SELECT activities.*
          FROM activities, memberactivities
          WHERE activities.id = memberactivities.activity_id AND 
                memberactivities.user_id = #{@user_id}
          ORDER BY start_time")
+
       act_arr = []
       acts.each do |a|
         act_arr << a
