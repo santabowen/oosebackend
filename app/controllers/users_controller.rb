@@ -183,6 +183,7 @@ class UsersController < ApplicationController
         render :json => rtn
       end
     else
+      user.update(avatar: params[:avatarUrl])
       rtn = returnparams(user)
       render :json => rtn
     end
@@ -420,6 +421,7 @@ class UsersController < ApplicationController
       user[:password]     = rand_string(15)
       user[:gender]       = params["gender"]
       user[:authtoken]    = rand_string(20)
+      user[:avatar]       = params["avatarUrl"]
       user[:num_rating]   = 0
       user[:total_rating] = 0
       user[:rating]       = 0
