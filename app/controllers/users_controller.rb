@@ -169,6 +169,7 @@ class UsersController < ApplicationController
     if user.nil?
       @user = User.new(user_params_fb(profile))
       if @user.save
+        @user = createFilters(@user)
         user = User.find_by(email: params[:email])
         print "Successfully creat a user."
         rtn = returnparams(user)
