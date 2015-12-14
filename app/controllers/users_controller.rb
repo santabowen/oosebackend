@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   		  }
       end
       rtn = {
-        errormsg: "Other Faults."
+        errormsg: "Other Faults.",
         status:   "401"
       }
 			render :json => rtn
