@@ -34,7 +34,6 @@ class ActivitiesController < ApplicationController
   def getByUserID
     if checkAuth(params)
       user = User.find(params[:UserID])
-      user = User.find(35)
       @user_id = user.id
       acts = ActiveRecord::Base.connection.exec_query(
         "SELECT * 
