@@ -408,6 +408,7 @@ class UsersController < ApplicationController
 			user[:password]     = params[:password]
 			user[:gender]       = params[:gender]
 			user[:authtoken]    = rand_string(20)
+      user[:avatar]       = params["avatarUrl"]
       user[:num_rating]   = 0
       user[:total_rating] = 0
       user[:rating]       = 0
