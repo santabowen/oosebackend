@@ -2,6 +2,11 @@ class ActivitiesController < ApplicationController
   def new
   end
 
+  # Post a new activity
+  # POST /activities/post
+  # Params: user_id, token, activity_params: ActivityType, Location, GroupSize, 
+  #         Comments, Duration, Lng, Lat, StartTime
+  # Return: status: 201, 401, 404
   def post
   	if checkAuth(params)
   		@user = User.find_by(id: params[:HostID])
@@ -28,9 +33,14 @@ class ActivitiesController < ApplicationController
       }
 	    render :json => rtn
   	end
-    
   end
 
+  # Get activities by user id.
+  # POST /activities/getByUserID
+  # Params: user_id, token
+  # Return: status: 201, 401, 404
+  #         acts: avatar, actid, actType, groupSize, location, 
+  #         startTime, duration, comments, currentNum, is_expired
   def getByUserID
     if checkAuth(params)
       user = User.find(params[:UserID])
@@ -46,19 +56,6 @@ class ActivitiesController < ApplicationController
       acts.each do |a|
         act_arr << a
       end
-
-  		# acts_id = Memberactivity.where(user_id: params[:UserID])
-  		# acts = []
-    #   acts_ids = []
-    #   acts_id.each do |j| acts_ids << j.activity_id end 
-    #   Activity.find(acts_ids, :order => "start_time")
-  		# acts_id.each do |j| 
-    #     acts << Activity.find_by(id: j.activity_id) 
-    #   end	
-    #   acts.sort_by! do |a| a[:start_time] end
-    #   nacts = acts.sort_by do |a| a.start_time end
-
-    #   nacts = acts.order("start_time")
 
       rtnacts        = []
       acts_expired   = []
@@ -110,8 +107,20 @@ class ActivitiesController < ApplicationController
   	end
   end
 
+  # Get activities by current location.
+  # POST /activities/getByGeoID
+  # Params: user_id, token, Lng, Lat
+  # Return: status: 201, 401, 404
+  #         acts: avatar, actid, actType, groupSize, location, 
+  #         startTime, duration, comments, currentNum, is_expired
   def getByGeoInfo
-  	if checkAuth(params)
+  	if !checkAuth(params)
+      rtn = {
+        errormsg: "Authentication Denied.",
+        status:   "401"
+      }
+      render :json => rtn
+    else
   		@min_lng = params[:Lng] - 0.045
   		@max_lng = params[:Lng] + 0.045
   		@min_lat = params[:Lat] - 0.045
@@ -124,8 +133,6 @@ class ActivitiesController < ApplicationController
                latitude < #{@max_lat} AND 
                latitude > #{@min_lat}
          ORDER BY start_time")
-
-  		#Activity.find_by_sql("SELECT activities.latitude, activities.longitude FROM activities WHERE longitude < 0 AND longitude > -10.176 AND latitude < 55 AND latitude > 50 ORDER BY start_time")
 
   		user = User.find_by(id: params[:uid])
   		filchecks = []
@@ -156,16 +163,13 @@ class ActivitiesController < ApplicationController
 	      status: "201"
 	    }
 	    render :json => rtn
-  	else
-  		rtn = {
-				errormsg: "Authentication Denied.",
-        status:   "401"
-      }
-	    render :json => rtn
   	end
-    
   end
 
+  # Join an activity.
+  # POST /activities/join
+  # Params: user_id, token, ActID
+  # Return: status: 201, 401
   def join
   	if checkAuth(params)
   		a = Activity.find_by(id: params[:ActID])
@@ -182,8 +186,12 @@ class ActivitiesController < ApplicationController
       }
 	    render :json => rtn
   	end
-   end
+  end
 
+  # Drop an activity.
+  # DELETE /activities/drop
+  # Params: user_id, token, ActID
+  # Return: status: 201, 401
 	def drop
 		if checkAuth(params)
   		a = Activity.find_by(id: params[:ActID])
@@ -203,6 +211,10 @@ class ActivitiesController < ApplicationController
   	end
 	end
 
+  # Host drops an activity.
+  # DELETE /activities/hostdrop
+  # Params: user_id, token, ActID
+  # Return: status: 201, 401
 	def hostdrop
 		if checkAuth(params)
   		a = Activity.find_by(id: params[:ActID])
@@ -232,6 +244,12 @@ class ActivitiesController < ApplicationController
   	end
 	end
 	
+  # Get a single activity by activity id.
+  # POST /activities/getsingle
+  # Params: user_id, token, actID
+  # Return: status: 201, 401
+  #         acts: avatar, actid, actType, groupSize, location, 
+  #         startTime, duration, comments, currentNum, is_expired
 	def getsingle
 		if checkAuth(params)
   		a = Activity.find_by(id: params[:actId])
@@ -280,6 +298,10 @@ class ActivitiesController < ApplicationController
 
 	private
 		
+    # Helper function to create a new activity.
+    # Params: user_id, token, activity_params: ActivityType, Location, GroupSize, 
+    #         Comments, Duration, Lng, Lat, StartTime
+    # Return: activity
 		def activity_params
 			activity = Hash.new
 			activity[:hostid]        = params[:HostID]

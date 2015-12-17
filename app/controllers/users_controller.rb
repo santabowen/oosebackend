@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   def new
   end
 
+  # Create a new user.
+  # POST /users
+  # Params: mode, email, name, password, gender
+  # Return: status: 200, 401
   def create
     if params[:mode] == "fb"
       @graph = Koala::Facebook::API.new(params[:fbToken])
@@ -41,6 +45,10 @@ class UsersController < ApplicationController
 		end
 	end
 
+  # Reset a user's password.
+  # POST /users/resetpw
+  # Params: mode, email, validation_code, new_password
+  # Return: status: 201, 401, 402, 403
 	def resetpw
 		user = User.find_by(email: params[:email]) 
 		if !user.nil?
@@ -74,6 +82,10 @@ class UsersController < ApplicationController
 		end
   end
 
+  # Change a new's password.
+  # POST /users/changepw
+  # Params: mode, email, old_password, new_password
+  # Return: status: 201, 401, 402, 403
 	def changepw
     if checkAuth(params)
       user = User.find(params[:uid]) 
@@ -104,50 +116,59 @@ class UsersController < ApplicationController
       }
       render :json => rtn
     end
-
 	end
 
+  # User log in.
+  # POST /users/signin
+  # Params: email, password
+  # Return: status: 201, 401, 402, 403
+  #         parameters: user.name, user.id, user.authtoken, user.avatar
 	def signin
-		rtn = {
-	  	status: "401"
-	  }
     if params && params[:email] && params[:password]        
       user = User.find_by(email: params[:email])
       
       if !user.nil?
         if User.authenticate(user, params[:password])
           rtn = returnparams(user)
+          rtn = {
+            status: "201"
+          }
           render :json => rtn
         else
+          rtn = {
+            status: "401"
+          }
           # e = Error.new(status: 401, message: "Wrong Password")
           render :json => rtn
         end      
       else
+        rtn = {
+          status: "402"
+        }
         # e = Error.new(status: 400, message: "No USER found by this email ID")
         render :json => rtn
       end
     else
+      rtn = {
+        status: "403"
+      }
       # e = Error.new(status: 400, message: "required parameters are missing")
       render :json => rtn
     end
   end
 
+  # User forget password, and backend sends email.
+  # POST /users/forgetpw
+  # Params: email
+  # Return: status: 201, 404
   def forgetpw
 		user = User.find_by(email: params[:email])
-		# print params[:email]
 		if !user.nil?
 
 	 	 	validation_code = rand_string(6)
 	  	validation_time = Time.now
-
 	  	user.update(validation_code: validation_code)
-	  	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-	  	# print user.errors.messages
-	  	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 	  	user.update(validation_time: validation_time)
-	  	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-	  	# print user.errors.messages
-	  	# print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 
 			rtn = {
   			status: "201"
@@ -163,6 +184,11 @@ class UsersController < ApplicationController
 		end
   end
 
+  # User facebook login
+  # POST /users/fblogin
+  # Params: email, fbToken
+  # Return: status: 200, 401
+  #         parameters: user.name, user.id, user.authtoken, user.avatar
   def fblogin
     @graph = Koala::Facebook::API.new(params[:fbToken])
     profile = @graph.get_object("me")
@@ -188,13 +214,15 @@ class UsersController < ApplicationController
     end
   end
 
+  # User rates others.
+  # POST /users/ratemember
+  # Params: user_id, user_token, act_id, uid, members
+  # Return: status: 200, 401
+  #         parameters: user.name, user.id, user.authtoken, user.avatar
   def ratemember
-
     if checkAuth(params)
-      
       act_id = params[:act_id]
       user_id = params[:uid]
-      authtoken = params[:authtoken]
       members = params[:members]
 
       members.each do |ma|
@@ -205,11 +233,10 @@ class UsersController < ApplicationController
         if !rate.nil?
           new_rating = (user.total_rating - rate.rating + rating) / user.num_rating
           rate.update(rating: rating)
-          user.update(num_rating: user.num_rating, 
-            total_rating: user.total_rating - rate.rating + rating, rating: new_rating)
+          user.update(total_rating: user.total_rating - rate.rating + rating, rating: new_rating)
         else
           Rating.create(activity_id: act_id, user_id: user_id,
-                member_id: member_id, rating:rating)
+                member_id: member_id, rating: rating)
           new_rating = (user.total_rating + rating) / (user.num_rating + 1)
           user.update(num_rating: user.num_rating + 1, 
             total_rating: user.total_rating + rating, rating: new_rating)
@@ -227,10 +254,13 @@ class UsersController < ApplicationController
       }
       render :json => rtn
     end
-  	
   end
 
-
+  # User rates others.
+  # POST /users/ratemember
+  # Params: user_id, user_token, act_id, uid, members
+  # Return: status: 200, 404
+  #         parameters: user.name, user.id, user.authtoken, user.avatar
   def rating
 
     if checkAuth(params)
@@ -305,11 +335,12 @@ class UsersController < ApplicationController
       }
       render :json => rtn
     end
-
-
-  	
   end
 
+  # User updates profile.
+  # POST /users/updateprofile
+  # Params: user_id, user_token, type(update), value
+  # Return: status: 201, 401
   def updateprofile
   	if checkAuth(params)
   		user = User.find_by(id: params[:uid])
@@ -339,6 +370,11 @@ class UsersController < ApplicationController
   	end
   end
 
+  # User gets profile.
+  # GET /users/updateprofile
+  # Params: user_id, user_token, type(update), value
+  # Return: status: 201, 401
+  #         profile: avatar, name, address, email, rating, self_description
   def getprofile
   	if checkAuth(params)
   		
@@ -365,6 +401,10 @@ class UsersController < ApplicationController
   	end
   end
 
+  # User updates filters.
+  # POST /users/updateFilter
+  # Params: user_id, user_token, filterDict
+  # Return: status: 201, 401
   def updateFilter
     if checkAuth(params)
       updateFilters(@user, params[:filterDict])
@@ -381,6 +421,10 @@ class UsersController < ApplicationController
     end
   end
 
+  # User sets filters.
+  # POST /users/updateFilter
+  # Params: user_id, user_token, filterDict
+  # Return: status: 201, 401
   def setFilter
     if checkAuth(params)
       user = User.find(params[:uid])
@@ -399,7 +443,9 @@ class UsersController < ApplicationController
   end
 
 	private
-		
+		# Helper method for user's parameters when create users.
+    # Params: name, email, password, gender, avatarUrl
+    # Return: new User
 		def user_params
 			user = Hash.new
 			user[:name]         = params[:name]
@@ -414,6 +460,9 @@ class UsersController < ApplicationController
 			return user
 		end
 
+    # Helper method for user's parameters when fb login.
+    # Params: name, email, gender
+    # Return: new User
     def user_params_fb(profile)
       user = Hash.new
       user[:name]         = profile["name"]
@@ -427,12 +476,18 @@ class UsersController < ApplicationController
       return user
     end
 
+    # Helper function to generate certain sized random number.
+    # Params: length
+    # Return: random number
 	  def rand_string(len)
 	    o =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
 	    string  =  (0..len).map{ o[rand(o.length)] }.join
 	    return string
 	  end
 
+    # Helper function to return rtn object.
+    # Params: user
+    # Return: rtn
     def returnparams(user)
       rtn = {
         name:       user.name,
@@ -443,6 +498,9 @@ class UsersController < ApplicationController
       }
     end
 
+    # Helper function to return rtn object.
+    # Params: user
+    # Return: user
     def createFilters(user)
 			user.filters.create(filtertype: "Basketball")
 			user.filters.create(filtertype: "Tennis")
@@ -453,6 +511,9 @@ class UsersController < ApplicationController
 			return user
 		end
 
+    # Helper function to update user's filter.
+    # Params: user, filterlist
+    # Return: user
 	  def updateFilters(user, filterlist)
 			filts = user.filters
       filts.each do |a|

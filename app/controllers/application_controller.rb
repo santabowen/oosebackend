@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
     render :json => e.to_json, :status => 404
   end
 
+  # Helper function to check user authentication.
+  # Params: user_id, token
+  # Return: true/false
   def checkAuth(params)
 		user = User.find_by(id: params[:uid])
 		puts user
